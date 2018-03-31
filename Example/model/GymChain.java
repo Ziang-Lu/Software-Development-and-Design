@@ -40,10 +40,6 @@ public class GymChain {
      * @return gym if found, null if not found
      */
     public Gym findGym(String location) {
-        if ((location == null) || (location.length() == 0)) {
-            throw new IllegalArgumentException("The location name should not be null.");
-        }
-
         for (Gym gym : gyms) {
             if (gym.getLocation().equals(location)) {
                 return gym;
@@ -67,10 +63,6 @@ public class GymChain {
      * @return member if found, null if not found
      */
     public Member findMember(String name) {
-        if ((name == null) || (name.length() == 0)) {
-            throw new IllegalArgumentException("The name should not be null.");
-        }
-
         for (Member member : members) {
             if (member.getName().equals(name)) {
                 return member;

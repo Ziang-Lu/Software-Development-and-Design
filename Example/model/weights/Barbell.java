@@ -35,7 +35,7 @@ public class Barbell extends Weight {
      * @param pounds weight of the barbell
      */
     public Barbell(int pounds) {
-        // We assume that pounds is positive.
+        // We assume that pounds is greater than or equal to 45.
         super(pounds);
     }
 
@@ -53,21 +53,13 @@ public class Barbell extends Weight {
         List<Plate> plates = new ArrayList<>();
         while (remainingPounds > 0) {
             if (remainingPounds >= (2 * PLATE_POUNDS_45)) {
-                plates.add(new Plate(PLATE_POUNDS_45));
-                plates.add(new Plate(PLATE_POUNDS_45));
-                remainingPounds -= 2 * PLATE_POUNDS_45;
+                remainingPounds = addPlatePair(plates, PLATE_POUNDS_45, remainingPounds);
             } else if (remainingPounds >= (2 * PLATE_POUNDS_25)) {
-                plates.add(new Plate(PLATE_POUNDS_25));
-                plates.add(new Plate(PLATE_POUNDS_25));
-                remainingPounds -= 2 * PLATE_POUNDS_25;
+                remainingPounds = addPlatePair(plates, PLATE_POUNDS_25, remainingPounds);
             } else if (remainingPounds >= (2 * PLATE_POUNDS_10)) {
-                plates.add(new Plate(PLATE_POUNDS_10));
-                plates.add(new Plate(PLATE_POUNDS_10));
-                remainingPounds -= 2 * PLATE_POUNDS_10;
+                remainingPounds = addPlatePair(plates, PLATE_POUNDS_10, remainingPounds);
             } else if (remainingPounds >= (2 * PLATE_POUNDS_5)) {
-                plates.add(new Plate(PLATE_POUNDS_5));
-                plates.add(new Plate(PLATE_POUNDS_5));
-                remainingPounds -= 2 * PLATE_POUNDS_5;
+                remainingPounds = addPlatePair(plates, PLATE_POUNDS_5, remainingPounds);
             } else {
                 while (remainingPounds > 0) {
                     plates.add(new Plate(PLATE_POUNDS_1));
@@ -76,6 +68,19 @@ public class Barbell extends Weight {
             }
         }
         return plates;
+    }
+
+    /**
+     * 
+     * @param plates
+     * @param platePounds
+     * @param remainingPounds
+     * @return
+     */
+    private int addPlatePair(List<Plate> plates, int platePounds, int remainingPounds) {
+        plates.add(new Plate(platePounds));
+        plates.add(new Plate(platePounds));
+        return remainingPounds - 2 * platePounds;
     }
 
 }

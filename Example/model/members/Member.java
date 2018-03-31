@@ -71,9 +71,8 @@ public class Member {
      */
     public void checkIn() {
         Calendar today = Calendar.getInstance();
-        int year = today.get(Calendar.YEAR);
-        int month = today.get(Calendar.MONTH) + 1;
-        int day = today.get(Calendar.DAY_OF_MONTH);
+        int year = today.get(Calendar.YEAR), month = today.get(Calendar.MONTH) + 1,
+                day = today.get(Calendar.DAY_OF_MONTH);
         visitRecords.add(new Visit(year, month, day));
     }
 

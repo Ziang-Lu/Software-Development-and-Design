@@ -20,7 +20,7 @@ public class Gym {
     /**
      * Cardio machines in this gym.
      */
-    private final List<CardioMachine> cardioMachines;
+    private final List<CardioMachine> machines;
     /**
      * Fitness classes of this gym.
      */
@@ -38,7 +38,7 @@ public class Gym {
     public Gym(String location, boolean hasPool) {
         this.location = location;
         weights = new ArrayList<>();
-        cardioMachines = new ArrayList<>();
+        machines = new ArrayList<>();
         classes = new ArrayList<>();
         this.hasPool = hasPool;
     }
@@ -63,8 +63,8 @@ public class Gym {
      * Accessor of cardioMachines.
      * @return cardioMachines
      */
-    public List<CardioMachine> getCardioMachines() {
-        return cardioMachines;
+    public List<CardioMachine> getMachines() {
+        return machines;
     }
 
     /**
@@ -102,7 +102,7 @@ public class Gym {
         if (machine == null) {
             throw new IllegalArgumentException("The cardio machine should not be null");
         }
-        cardioMachines.add(machine);
+        machines.add(machine);
     }
 
     /**
@@ -121,18 +121,21 @@ public class Gym {
      * @param member member to guide
      */
     public void guideMemberThroughWorkout(Member member) {
-        String memberName = member.getName();
-        for (Weight weight : weights) {
-            System.out.println(memberName + " is lifting " + weight.getWeight() + " pounds");
+        if (member == null) {
+            throw new IllegalArgumentException("The member should not be null.");
         }
-        for (CardioMachine cardioMachine : cardioMachines) {
-            System.out.println(memberName + " is exercising on " + cardioMachine.getClass().getSimpleName() + " at "
-                    + cardioMachine.getSpeed() + " speed for " + cardioMachine.getMinutes() + " minutes " + " at level "
-                    + cardioMachine.getLevel());
+
+        String name = member.getName();
+        for (Weight weight : weights) {
+            System.out.println(name + " is lifting " + weight.getWeight() + " pounds");
+        }
+        for (CardioMachine machine : machines) {
+            System.out.println(name + " is exercising on " + machine.getClass().getSimpleName() + " at speed "
+                    + machine.getSpeed() + " for " + machine.getMinutes() + " minutes at level " + machine.getLevel());
         }
         for (FitnessClass cls : classes) {
             cls.registerMember(member);
-            System.out.println(memberName + " is registered for " + cls.getName() + " on " + cls.getClassDate());
+            System.out.println(name + " is registered for " + cls.getName() + " on " + cls.getClassDate());
         }
     }
 

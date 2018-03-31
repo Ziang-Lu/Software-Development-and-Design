@@ -3,17 +3,9 @@ package model.members;
 public class Visit {
 
     /**
-     * Year of this visit.
+     * Year, month and day of this visit.
      */
-    private int year;
-    /**
-     * Month of this visit.
-     */
-    private int month;
-    /**
-     * Day of this visit.
-     */
-    private int day;
+    private int year, month, day;
 
     /**
      * Constructor with parameter.
