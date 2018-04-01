@@ -130,8 +130,8 @@ public class Gym {
             System.out.println(name + " is lifting " + weight.getWeight() + " pounds");
         }
         for (CardioMachine machine : machines) {
-            System.out.println(name + " is exercising on " + machine.getClass().getSimpleName() + " at speed "
-                    + machine.getSpeed() + " for " + machine.getMinutes() + " minutes at level " + machine.getLevel());
+            System.out.println(name + " is exercising on " + machine.getClass().getSimpleName() + " for "
+                    + machine.getMinutes() + " minutes at level " + machine.getLevel());
         }
         for (FitnessClass cls : classes) {
             cls.registerMember(member);

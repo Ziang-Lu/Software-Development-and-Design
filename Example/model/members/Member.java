@@ -56,9 +56,9 @@ public class Member {
     }
 
     /**
-     * Levels up this member.
+     * Upgrades this member, if possible.
      */
-    public void levelUp() {
+    public void upgrade() {
         if (myLevel == MembershipLevel.BASIC) {
             myLevel = MembershipLevel.CLASSES;
         } else if (myLevel == MembershipLevel.CLASSES) {

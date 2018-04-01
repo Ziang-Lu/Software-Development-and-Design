@@ -8,10 +8,6 @@ public abstract class CardioMachine {
     private static final int DEFAULT_LEVEL = 1;
 
     /**
-     * Speed of this cardio machine.
-     */
-    protected double speed;
-    /**
      * Minutes of this cardio machine.
      */
     protected int minutes;
@@ -24,18 +20,9 @@ public abstract class CardioMachine {
      * Constructor with parameter.
      * @param minutes minutes of the cardio
      */
-    protected CardioMachine(double speed, int minutes) {
-        this.speed = speed;
+    protected CardioMachine(int minutes) {
         this.minutes = minutes;
         level = DEFAULT_LEVEL;
-    }
-
-    /**
-     * Accessor of speed.
-     * @return speed
-     */
-    public double getSpeed() {
-        return speed;
     }
 
     /**
@@ -52,17 +39,6 @@ public abstract class CardioMachine {
      */
     public int getLevel() {
         return level;
-    }
-
-    /**
-     * Mutator of speed.
-     * @param speed speed to set
-     */
-    public void setSpeed(double speed) {
-        if (speed <= 0.0) {
-            throw new IllegalArgumentException("The speed to set should be positive.");
-        }
-        this.speed = speed;
     }
 
     /**
@@ -84,7 +60,7 @@ public abstract class CardioMachine {
     }
 
     /**
-     * Levels down this cardio machine.
+     * Levels down this cardio machine, if possible.
      */
     public void levelDown() {
         if (level > 1) {
