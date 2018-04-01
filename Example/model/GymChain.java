@@ -41,7 +41,7 @@ public class GymChain {
      */
     public Gym findGym(String location) {
         for (Gym gym : gyms) {
-            if (gym.getLocation().equals(location)) {
+            if (gym.getLocation().toLowerCase().equals(location.toLowerCase())) {
                 return gym;
             }
         }
@@ -64,7 +64,7 @@ public class GymChain {
      */
     public Member findMember(String name) {
         for (Member member : members) {
-            if (member.getName().equals(name)) {
+            if (member.getName().toLowerCase().equals(name.toLowerCase())) {
                 return member;
             }
         }
