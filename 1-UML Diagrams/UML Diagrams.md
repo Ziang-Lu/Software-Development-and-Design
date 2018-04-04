@@ -1,6 +1,6 @@
 # UML Diagrams
 
-## Class Diagram (类图)
+## [Structural] Class Diagram (类图)
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/1-UML Diagrams/class_hierarchy.png?raw=true">
 
@@ -10,7 +10,7 @@
 
 <br>
 
-## Associations (关联)
+## [Structural] Associations (关联)
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/1-UML Diagrams/associations.png?raw=true">
 
@@ -20,7 +20,7 @@
 
 <br>
 
-## Sequence Diagram (序列图)
+## [Behavior] Sequence Diagram (序列图)
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/1-UML Diagrams/sequence_diagram.png?raw=true">
 
