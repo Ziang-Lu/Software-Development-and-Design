@@ -2,9 +2,9 @@
 
 ## UML Diagrams
 
-1. Class hierarchy
-2. Associations
-3. Sequence Diagram
+1. Class Diagram (类图)
+2. Associations (关联)
+3. Sequence Diagram (序列图)
 
 ## Design Principles
 
@@ -18,7 +18,11 @@
 
 5. *Dependency Inversion (依赖反转原则)*
 
-   **
 
 ## Design Patterns
+
+1. Factory Method Pattern (工厂方法模式)
+2. Composite Pattern (复合模式)
+3. Observer Pattern (观察者模式)
+4. Iterator Pattern (迭代器模式)
 
