@@ -3,34 +3,16 @@ package model;
 public abstract class FrontOfHouseEmployee {
 
     /**
-     * Current order number.
-     */
-    protected static int currOrderNum = 100;
-
-    /**
-     * Dish instance.
-     */
-    protected Dish dish;
-
-    /**
-     * Constructor with parameter.
-     * @param dish dish instance
-     */
-    public FrontOfHouseEmployee(Dish dish) {
-        this.dish = dish;
-    }
-
-    /**
      * Greets the customers.
      */
-    public void greet() {
+    public void greet(Dish dish) {
         System.out.println("Hello and welcome to Busy's, the home of the " + dish.getName() +".");
     }
 
     /**
      * Describes the dish.
      */
-    public void describeDish() {
+    public void describeDish(Dish dish) {
         System.out.println(dish.getDescription());
     }
 

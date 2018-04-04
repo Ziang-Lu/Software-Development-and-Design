@@ -10,6 +10,10 @@ import model.Waiter;
 public class Diner {
 
     /**
+     * Dish instance.
+     */
+    private static final Dish DISH_INSTANCE = generateTurkeyClubSandwich();
+    /**
      * Host of this diner.
      */
     private static Host host;
@@ -27,9 +31,8 @@ public class Diner {
      * @param args arguments from command line
      */
     public static void main(String[] args) {
-        Dish dish = generateTurkeyClubSandwich();
-        host = new Host(dish);
-        waiter = new Waiter(dish);
+        host = new Host();
+        waiter = new Waiter();
         chef = new Chef();
 
         for (int i = 0; i < 2; ++i) {
@@ -63,9 +66,9 @@ public class Diner {
      * Private helper method to follow the routines of a table.
      */
     private static void tableRoutine() {
-        waiter.greet();
-        waiter.describeDish();
-        Order order = waiter.takeOrder();
+        waiter.greet(DISH_INSTANCE);
+        waiter.describeDish(DISH_INSTANCE);
+        Order order = waiter.takeOrder(DISH_INSTANCE);
         orderRoutine(order);
     }
 

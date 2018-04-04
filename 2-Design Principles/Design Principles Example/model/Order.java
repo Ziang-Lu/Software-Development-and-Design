@@ -4,6 +4,11 @@ import java.util.List;
 public class Order {
 
     /**
+     * Current order number.
+     */
+    protected static int currOrderNum = 100;
+
+    /**
      * Order number.
      */
     private final int num;
@@ -25,8 +30,9 @@ public class Order {
      * @param orderNum order number
      * @param dish dish in the order
      */
-    public Order(int orderNum, Dish dish) {
-        num = orderNum;
+    public Order(Dish dish) {
+        ++currOrderNum;
+        num = currOrderNum;
         this.dish = dish;
         prepared = false;
         served = false;

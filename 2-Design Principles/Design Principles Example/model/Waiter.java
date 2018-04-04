@@ -19,11 +19,9 @@ public class Waiter extends FrontOfHouseEmployee {
     private double cash;
 
     /**
-     * Constructor with parameter.
-     * @param dish dish instance
+     * Default constructor.
      */
-    public Waiter(Dish dish) {
-        super(dish);
+    public Waiter() {
         orders = new ArrayList<>();
         cash = 0.0;
     }
@@ -45,13 +43,13 @@ public class Waiter extends FrontOfHouseEmployee {
     }
 
     /**
-     * Takes a new order and returns it.
+     * Takes a new order or the given dish and returns it.
+     * @param dish given dish
      * @return new order
      */
-    public Order takeOrder() {
+    public Order takeOrder(Dish dish) {
         System.out.println(getPrefix() + "Taking order...");
-        ++currOrderNum;
-        Order o = new Order(currOrderNum, dish);
+        Order o = new Order(dish);
         orders.add(o);
         System.out.println("Order taken: ");
         o.print();
