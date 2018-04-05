@@ -2,6 +2,8 @@
 
 -> Tried and true solutions to commonly encountered problems in OOD
 
+<br>
+
 ## Factory Method Pattern (工厂方法模式)
 
 A creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact clss of the object that will be created.
@@ -17,6 +19,8 @@ This is done by calling a factory method — either specified in an interface an
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/1-Factory%20Method%20Pattern/MazeGame-Room%20Example.png?raw=true">
 
+<br>
+
 ## Composite Pattern (复合模式)
 
 An OO solution for a **hierarchical structure**
@@ -27,11 +31,17 @@ An OO solution for a **hierarchical structure**
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/2-Composite Pattern/Topic-Lecture-Video%20Example.png?raw=true">
 
+<br>
+
 ## Observer Pattern (观察者模式)
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/observer_pattern.png?raw=true">
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/Observer Pattern.png?raw=true">
+
+<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/Java_Observable_Observer.png?raw=true">
+
+<br>
 
 ## Iterator Pattern (迭代器模式)
 
