@@ -39,7 +39,7 @@ An OO solution for a **hierarchical structure**
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/Observer Pattern.png?raw=true">
 
-<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/Java_Observable_Observer.png?raw=true">
+<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design Patterns/3-Observer Pattern/Java_Observable_Observer.png?raw=true">
 
 <br>
 
