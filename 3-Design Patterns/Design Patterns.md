@@ -29,9 +29,9 @@ An OO solution for a **hierarchical structure**
 
 ## Observer Pattern (观察者模式)
 
-When one (or more) object(s) wants to watch the state of one (or more) other object(s)
+<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/observer_pattern.png?raw=true">
 
-Design programs that involve notifications, or one class monitoring another
+<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/Observer Pattern.png?raw=true">
 
 ## Iterator Pattern (迭代器模式)
 
