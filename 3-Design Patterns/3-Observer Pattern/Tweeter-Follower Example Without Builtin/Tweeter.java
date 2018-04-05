@@ -1,5 +1,5 @@
 /**
- * Concrete Tweeter class working as "subject".
+ * Concrete Tweeter class working as "Subject".
  *
  * @author Ziang Lu
  */

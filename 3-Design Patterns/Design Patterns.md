@@ -23,7 +23,7 @@ This is done by calling a factory method — either specified in an interface an
 
 ## Composite Pattern (复合模式)
 
-An OO solution for a **hierarchical structure**
+-> An OO solution for a **hierarchical structure**
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/2-Composite Pattern/composite_pattern.png?raw=true">
 
@@ -34,6 +34,8 @@ An OO solution for a **hierarchical structure**
 <br>
 
 ## Observer Pattern (观察者模式)
+
+-> An OO solution for **interaction between one object and one or more objects**
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/observer_pattern.png?raw=true">
 

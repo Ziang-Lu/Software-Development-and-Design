@@ -1,5 +1,5 @@
 /**
- * Concrete Follower class working as "observer".
+ * Concrete Follower class working as "Observer".
  *
  * @author Ziang Lu
  */
@@ -7,7 +7,7 @@ public class Follower extends Observer {
 
     /**
      * Constructor with parameter.
-     * @param name
+     * @param name name of the follower
      */
     public Follower(String name) {
         super(name);
