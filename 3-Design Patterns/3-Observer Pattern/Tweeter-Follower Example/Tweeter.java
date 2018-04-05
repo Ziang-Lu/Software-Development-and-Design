@@ -18,11 +18,11 @@ public class Tweeter extends Subject {
      */
     public void writeTweeter() {
         System.out.println(name + " -> I wrote a new Tweeter!");
-        notifyAllObservers();
+        notifyObservers();
     }
 
     @Override
-    public void notifyAllObservers() {
+    public void notifyObservers() {
         for (Observer observer : myObservers) {
             observer.update();
         }

@@ -28,7 +28,7 @@ public abstract class Subject {
 
     /**
      * Adds a new observer.
-     * @param observer 
+     * @param observer
      */
     public void addObserver(Observer observer) {
         myObservers.add(observer);
@@ -37,6 +37,6 @@ public abstract class Subject {
     /**
      * Notifies all observers about an update.
      */
-    protected abstract void notifyAllObservers();
+    protected abstract void notifyObservers();
 
 }
