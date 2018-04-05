@@ -28,7 +28,7 @@ public abstract class Subject {
 
     /**
      * Adds a new observer.
-     * @param observer
+     * @param observer observer to add
      */
     public void addObserver(Observer observer) {
         myObservers.add(observer);
