@@ -35,6 +35,8 @@ This is done by calling a factory method — either specified in an interface an
 
 ## Iterator Pattern (迭代器模式)
 
+User Java **Iterable and Iterator** to iterate collections that are not built-in
+
 <br>
 
 ## Observer Pattern (观察者模式)
