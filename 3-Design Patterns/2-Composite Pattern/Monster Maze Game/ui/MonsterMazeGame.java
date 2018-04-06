@@ -59,7 +59,7 @@ public class MonsterMazeGame {
     }
 
     /**
-     * Prints the instructions.
+     * Private helper method to print the instructions.
      */
     private void printInstructions() {
         System.out.println("Welcome to Monster Maze, a dangerous \"choose your own path\" game!");
@@ -72,7 +72,7 @@ public class MonsterMazeGame {
     }
 
     /**
-     * Gets player input.
+     * Private helper method to get player input.
      * @return player input
      */
     private String getPlayerInput() {
@@ -86,7 +86,7 @@ public class MonsterMazeGame {
     }
 
     /**
-     * Handles the given input.
+     * Private helper method to handle the given input.
      * @param input given input
      */
     private void handleInput(String input) {
@@ -103,7 +103,7 @@ public class MonsterMazeGame {
     }
 
     /**
-     * Handles the given option in the current room.
+     * Helper method to handle the given option in the current room.
      * @param option given option
      */
     private void handleOption(int option) {
@@ -122,7 +122,7 @@ public class MonsterMazeGame {
     }
 
     /**
-     * Handles state change according to the given input.
+     * Helper method to handle state change according to the given input.
      * @param input given input
      */
     private void handleStateChange(String input) {
