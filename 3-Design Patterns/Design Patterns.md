@@ -33,18 +33,19 @@ This is done by calling a factory method — either specified in an interface an
 
 <br>
 
+## Iterator Pattern (迭代器模式)
+
+Iterave over classes that are not in Java Collection
+
+<br>
+
 ## Observer Pattern (观察者模式)
 
 -> An OO solution for **interaction between one object and one or more objects**
 
-<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/observer_pattern.png?raw=true">
+<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/4-Observer%20Pattern/observer_pattern.png?raw=true">
 
-<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/3-Observer%20Pattern/Observer Pattern.png?raw=true">
+<img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design%20Patterns/4-Observer%20Pattern/Observer Pattern.png?raw=true">
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design Patterns/3-Observer Pattern/Java_Observable_Observer.png?raw=true">
 
-<br>
-
-## Iterator Pattern (迭代器模式)
-
-Iterave over classes that are not in Java Collection
