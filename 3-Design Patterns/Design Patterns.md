@@ -23,7 +23,11 @@ This is done by calling a factory method — either specified in an interface an
 
 ## Composite Pattern (复合模式)
 
--> An OO solution for a **hierarchical structure**
+Problem: Many things in the world are **self-referential**, as in **they can contain themselves** in their inherent structure.
+
+e.g., branches may contain branches and leaves, folders may contain folders and files...
+
+-> Composite pattern is an OO solution for a **hierarchical structure**.
 
 <img src="https://github.com/Ziang-Lu/edX-Software-Object-Oriented-Design/blob/master/3-Design Patterns/2-Composite Pattern/composite_pattern.png?raw=true">
 
