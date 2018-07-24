@@ -1,4 +1,25 @@
-# edX-Software Construction: Object-Oriented Design [University of British Columbia]
+# Software Development and Design
+
+Notes from:
+
+Udacity course "Software Development Process"
+
+edX course 
+
+## Software Phases
+
+1. Requirement Engineering (需求工程)
+2. Design
+3. Implementation
+4. Validation and Verification
+5. Maintenance
+
+## Software Process Models
+
+1. Waterfall Model (瀑布模型)
+2. Evolutionary Prototyping (演化型)
+3. Rational Unified Process (RUP) / Unified Software Process (USP) (统一软件开发)
+4. Agile Software Process (敏捷软件过程)
 
 ## UML Diagrams
 
