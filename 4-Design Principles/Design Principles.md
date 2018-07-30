@@ -1,6 +1,6 @@
 # Design Principles
 
-## Single Responsibility Principle (SRP) (单一功能原则)
+## Single Responsibility Principle (SRP) (单一职责原则)
 
 * **Each class** should be centered around **one cohesive concept**.
 
