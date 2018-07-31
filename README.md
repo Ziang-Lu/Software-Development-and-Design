@@ -2,9 +2,9 @@
 
 Notes from:
 
-Udacity course "Software Development Process"
+"Software Development Process" by Georgia Tech on Udacity
 
-edX course 
+edX course "Software Construction " by University of British Columbia on edX
 
 ## Software Phases
 
