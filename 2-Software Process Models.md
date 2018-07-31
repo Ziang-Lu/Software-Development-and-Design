@@ -1,11 +1,11 @@
-How should we organize the software phases into the software development process?
+How should we <u>organize</u> the <u>software phases</u> into the software development process?
 
 # Software Process Models (软件过程模型) / Software Lifecycle Model (软件生命周期模型)
 
 Main functions:
 
-* Determine the order of the software activities described in "Software Phases"
-* Determine the transition criteria for the software activities, i.e., when we can go from one phase to another
+* Determine the **order of the software activities** described in "Software Phases"
+* Determine the **transition criteria for the software activities**, i.e., when we can go from one phase to another
 
 ## Waterfall Model (瀑布模型)
 
@@ -31,7 +31,7 @@ Main functions:
 
 <br>
 
-## Rational Unified Process (RUP) / Unified Software Process (USP) (统一软件开发过程)
+## Unified Software Process (USP) (统一软件开发过程)
 
 -> Based on UML
 
