@@ -54,7 +54,19 @@
 
   => Together, they form an **architectural configuration** (架构形态), which is <u>a set of specific associations between the components and connectors</u> of the SWA.
 
+<br>
+
+Example architectures:
+
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/Napster_architecture.png?raw=true">
+
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/Skype_architecture.png?raw=true">
+
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/Skype_architecture_abnormal.png?raw=true">
+
 ****
+
+<br>
 
 Design activities (设计活动) and their corresponding design products (设计产品):
 
