@@ -37,13 +37,32 @@ edX course "Software Construction " by University of British Columbia on edX
 
 4. Open-Closed Principle (开闭原则)
 
-5. *Dependency Inversion (依赖反转原则)*
-
+5. Dependency Inversion (依赖反转原则)
 
 ## Design Patterns
 
-1. Factory Method Pattern (工厂方法模式)
-2. Composite Pattern (复合模式)
-3. Observer Pattern (观察者模式)
-4. Iterator Pattern (迭代器模式)
+Classification (by purpose)
+
+1. Fundamental patterns (基础模式)
+
+2. Creational patterns (创建型模式)
+
+   *e.g., Factory Method Pattern (工厂方法模式)*
+
+3. Structural patterns (结构型模式)
+
+   *e.g., Composite Pattern (复合模式)*
+
+4. Behavioral patterns (行为型模式)
+
+   *e.g., iterator Pattern (迭代器模式), Observer Pattern (观察者模式)*
+
+5. Concurrency patterns (并发型模式)
+
+<br>
+
+* Factory Method Pattern (工厂方法模式)
+* Composite Pattern (复合模式)
+* Observer Pattern (观察者模式)
+* Iterator Pattern (迭代器模式)
 
