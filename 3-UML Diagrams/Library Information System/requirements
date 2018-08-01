@@ -1,0 +1,11 @@
+1. The library needs to know at least the name, address, phone number, and library card number for each patron.
+2. Each patron has one unique library card for as long as they are in the system.
+3. A patron can check out books or audio/video materials.
+4. Children (age 12 and under) have a special restriction-they can only check out 5 items at a time.
+5. Books are checked out for 3 weeks, unless they are current best sellers, in which case the limit is 2 weeks.
+6. A/V materials may be checked out for 2 weeks.
+7. A patron can renew an item once (and only once), unless there is an outstanding request for the item, in which case the patron must return it.
+8. At any particular point in time, the library may need to know or to calculate the items a patron has checked out, when they are due, and any outstanding overdue fines.
+9. The overdue fine is 10 cents per item per day, but cannot be higher than the value of the overdue item.
+10. A patron can request a book or A/V item that is not currently in.
+11. The library has reference books and magazines, which can't be checked out.
