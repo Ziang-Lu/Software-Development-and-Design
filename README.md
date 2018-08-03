@@ -17,9 +17,10 @@ edX course "Software Construction " by University of British Columbia on edX
 ## Software Process Models
 
 1. Waterfall Model (瀑布模型)
-2. Evolutionary Prototyping (演化型)
-3. Rational Unified Process (RUP) / Unified Software Process (USP) (统一软件开发)
-4. Agile Software Process (敏捷软件过程)
+2. Spiral Model (螺旋模型)
+3. Evolutionary Prototyping (演化型)
+4. Rational Unified Process (RUP) / Unified Software Process (USP) (统一软件开发)
+5. Agile Software Process (敏捷软件过程)
 
 ## UML Diagrams
 
@@ -47,7 +48,7 @@ Classification (by purpose)
 
 2. Creational patterns (创建型模式)
 
-   *e.g., Factory Method Pattern (工厂方法模式)*
+   *e.g., Factory Method Pattern (工厂方法模式) + Abstract Factory Pattern (抽象工厂模式), Lazy Initialization Pattern (惰性初始化模式), Singleton Pattern (单例模式)*
 
 3. Structural patterns (结构型模式)
 
@@ -55,14 +56,25 @@ Classification (by purpose)
 
 4. Behavioral patterns (行为型模式)
 
-   *e.g., iterator Pattern (迭代器模式), Observer Pattern (观察者模式)*
+   *e.g., iterator Pattern (迭代器模式), Observer Pattern (观察者模式), Strategy Pattern (策略模式)*
 
 5. Concurrency patterns (并发型模式)
 
 <br>
 
 * Factory Method Pattern (工厂方法模式)
+* Lazy Initialization Pattern (惰性初始化模式)
+* Singleton Pattern (单例模式)
 * Composite Pattern (复合模式)
-* Observer Pattern (观察者模式)
 * Iterator Pattern (迭代器模式)
+* Observer Pattern (观察者模式)
+* Strategy Pattern (策略模式)
 
+<br>
+
+Choosing a pattern:
+
+1. Understand the design context
+2. (Examine the pattern catalogue)
+3. Identify and study related patterns
+4. Apply suitable pattern

@@ -10,7 +10,7 @@
 
 -> **Support object creation**
 
-*e.g., Factory Method Pattern (工厂方法模式), Lazy Initialization Pattern (惰性初始化模式), Singleton Pattern (单例模式)*
+*e.g., Factory Method Pattern (工厂方法模式) + Abstract Factory Pattern (抽象工厂模式), Lazy Initialization Pattern (惰性初始化模式), Singleton Pattern (单例模式)*
 
 #### 3. Structural Patterns (结构型模式)
 
@@ -30,7 +30,7 @@
 
 <br>
 
-## Factory Method Pattern (工厂方法模式)
+## Factory Method Pattern (工厂方法模式) + Abstract Factory Pattern (抽象工厂模式)
 
 **Applicability:**
 
@@ -66,6 +66,71 @@ This is done by calling a factory method — either specified in an interface an
 ## Lazy Initialization Pattern (惰性初始化模式)
 
 => Lazy Initialization Pattern is a **creational pattern** of **delaying the initialization of objects until the first time it is needed**.
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+enum FruitType {
+    none, apple, banana
+}
+
+class Fruit {
+    private static Map<FruitType, Fruit> fruits = new HashMap<>();
+
+    private Fruit(FruitType type) {}
+
+    static Fruit getFruitByType(FruitType type) {
+        Fruit fruit = fruits.getOrDefault(type, new Fruit(type));
+        fruits.put(type, fruit);
+        return fruit;
+    }
+
+    static void showAll() {
+        if (!fruits.isEmpty()) {
+            System.out.println("Number of fruit instances made: " + fruits.size());
+            for (FruitType type: fruits.keySet()) {
+                // Capitalize the first letter of the fruit type
+                String typeName = type.toString();
+                System.out.println(Character.toUpperCase(typeName.charAt(0)) + typeName.substring(1));
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class LazyInitialization {
+
+    /**
+     * Main driver.
+     * @param args arguments from command line
+     */
+    public static void main(String[] args) {
+        Fruit.getFruitByType(FruitType.apple);
+        Fruit.showAll();
+        Fruit.getFruitByType(FruitType.banana);
+        Fruit.showAll();
+        Fruit.getFruitByType(FruitType.apple);
+        Fruit.showAll();
+
+        /*
+         * Output:
+         * Number of fruit instances made: 1
+         * Apple
+         *
+         * Number of fruit instances made: 2
+         * Apple
+         * Banana
+         *
+         * Number of fruit instances made: 2
+         * Apple
+         * Banana
+         */
+    }
+
+}
+
+```
 
 <br>
 

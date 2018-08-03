@@ -25,6 +25,14 @@ Main functions:
 
 <br>
 
+## Spiral Model (螺旋模型)
+
+An **incremental, risk-oriented** model
+
+
+
+<br>
+
 ## Evolutionary Prototyping (演化型)
 
 -> Start with an initial prototype, and evolve it based on the feedback from the customer

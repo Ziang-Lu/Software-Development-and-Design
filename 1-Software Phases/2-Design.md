@@ -44,13 +44,13 @@
     - <u>encapsulates a subset of the system's functionality and/or data</u>
     - <u>restricts access to that subset via an explicitly defined interface</u>
 
-    *These are the blocks in UML class diagrams.*
+    *Blocks in UML class diagrams*
 
   - Software <u>connectors</u> (软件连接件)
 
     A software connector is an architectural entity that <u>affects and regulates interactions among components</u>.
 
-    *These are the connecting lines in UML class diagrams.*
+    *Connecting lines in UML class diagrams*
 
   => Together, they form an **architectural configuration** (架构形态), which is <u>a set of specific associations between the components and connectors</u> of the SWA.
 
