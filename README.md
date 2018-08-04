@@ -17,10 +17,12 @@ edX course "Software Construction " by University of British Columbia on edX
 ## Software Process Models
 
 1. Waterfall Model (瀑布模型)
-2. Spiral Model (螺旋模型)
-3. Evolutionary Prototyping (演化型)
-4. Rational Unified Process (RUP) / Unified Software Process (USP) (统一软件开发)
-5. Agile Software Process (敏捷软件过程)
+2. Evolutionary Prototyping (进化原型)
+3. Spiral Model (螺旋模型) ***
+4. Rational Unified Process (RUP) / Unified Software Process (USP) (统一软件开发) ***
+5. Agile Software Process (敏捷软件过程) ***
+
+***: Popularly used
 
 ## UML Diagrams
 
