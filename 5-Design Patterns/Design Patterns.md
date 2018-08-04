@@ -178,11 +178,3 @@ Use Java **Iterable and Iterator** to iterate collections that are not built-in
 
 ## Strategy Pattern (策略模式)
 
-<br>
-
-## Choosing a Pattern
-
-1. Understand the design context
-2. (Examine the pattern catalogue)
-3. Identify and study related patterns
-4. Apply suitable pattern

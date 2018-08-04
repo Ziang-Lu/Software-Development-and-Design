@@ -6,7 +6,7 @@
 
   GIven the description of the system that we derived from the previous requirement engineering and design phases, did we build a system that actually implements the specifications that we defined?
 
-  - Unit testing (单元测试)
+  - Unit testing
 
   - Integration testing (集成测试)
 

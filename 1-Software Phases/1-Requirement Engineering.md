@@ -38,7 +38,7 @@ Classification:
 
 ****
 
-### 1. Elicitation (引出)
+### 1. Elicitation
 
 **Collect requirements** from stakeholders and other sources (anyone who might be affected by this software)
 
@@ -54,7 +54,7 @@ Classification:
 
   - Hard data sampling
 
-    与background reading类似, 只不过取了sample来阅读
+    *与background reading类似, 只不过取了sample来阅读*
 
   - Interviews
 
