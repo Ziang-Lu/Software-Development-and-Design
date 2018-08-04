@@ -29,7 +29,7 @@ Main functions:
 
 An **incremental, risk-oriented** model
 
-
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/2-Software%20Process%20Models/spiral_model.png?raw=true">
 
 <br>
 
