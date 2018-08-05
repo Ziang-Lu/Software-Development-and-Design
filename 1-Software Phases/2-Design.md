@@ -52,7 +52,7 @@
 
     *Connecting lines in UML class diagrams*
 
-  => Together, they form an **architectural configuration** (架构形态), which is <u>a set of specific associations between the components and connectors</u> of the SWA.
+  => Together, they form an **architecture configuration** (架构形态), which is <u>a set of specific associations between the components and connectors</u> of the SWA.
 
 <br>
 

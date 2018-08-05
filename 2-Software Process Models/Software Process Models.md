@@ -102,11 +102,51 @@ Main functions:
 
 ## Unified Software Process (USP) (统一软件开发过程) ***
 
-**[Iterative/Incremental]**
+**Distinguishing Aspects:**
 
--> **Based on UML**
+Use cases define the function of the system, whereas architecture defines the form of the system in order to provide that function.
+
+* **Use-case driven (用例驱动)**
+
+  Use cases <u>capture the interaction between users and the system</u>, and answered the question "What is the system supposed to do <u>for each user</u>?"
+
+  *(针对不同use case)*
+
+* **Architecture-centric (以架构为中心)**
+
+  * **Based on UML**
+
+  1. Create a rough outline (general structure) of the system <u>independently of the functionality</u>
+
+     *Model aspects such as the platform that the system will run on, the overall architecture style, ...*
+
+  2. According to the <u>key use cases</u>, identify and define the main subsystems
+
+  3. According to <u>additional use cases</u>, refine the architecture   *(iterative process)*
+
+  Use-case driven development can also be reflected here.
+
+* **Iterative/Incremental**
+
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/2-Software%20Process%20Models/usp_lifecycle.png?raw=true">
+
+Each **cycle terminates** with a **production release**.
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/2-Software%20Process%20Models/unified_software_process.png?raw=true">
+
+Note that the labels represents **iterations** within each phase:
+
+1. Select some use cases to implement
+
+2. According to the use cases and the architecture, create a design
+
+3. Implement the design => Components
+
+4. Verify the components against the use cases
+
+5. <u>Release a product</u>
+
+   *Represent the end of the iteration.*
 
 <br>
 

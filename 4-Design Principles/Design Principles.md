@@ -10,7 +10,7 @@
 
   A sympton of having two responsibilities is having multiple clusters of methods, with each cluster referring to their own data within the class. Each cluster may represent its own responsibility, and may be best separated into its own class.
 
-## Interface Segregation (ISP) (接口分离原则)
+## Interface Segregation Principle (ISP) (接口分离原则)
 
 - **No client** should be forced to **depend on methods it does not use**.
 - ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them.
