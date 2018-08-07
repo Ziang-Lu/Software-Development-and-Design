@@ -1,5 +1,10 @@
 package model.weights;
 
+/**
+ * Weight machine class.
+ *
+ * @author Ziang Lu
+ */
 public class WeightMachine extends Weight {
 
     /**

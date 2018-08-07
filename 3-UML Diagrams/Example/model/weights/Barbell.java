@@ -3,6 +3,11 @@ package model.weights;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Barbell class.
+ *
+ * @author Ziang Lu
+ */
 public class Barbell extends Weight {
 
     /**

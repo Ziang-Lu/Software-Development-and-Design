@@ -13,6 +13,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Library class.
+ *
+ * @author Ziang Lu
+ */
 public class Library {
 
     /**

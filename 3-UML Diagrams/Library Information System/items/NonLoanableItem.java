@@ -1,5 +1,10 @@
 package items;
 
+/**
+ * Abstract non-loanable item class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class NonLoanableItem extends Item {
 
     /**

@@ -7,6 +7,11 @@ import model.cardio.CardioMachine;
 import model.members.Member;
 import model.weights.Weight;
 
+/**
+ * Gym class.
+ *
+ * @author Ziang Lu
+ */
 public class Gym {
 
     /**

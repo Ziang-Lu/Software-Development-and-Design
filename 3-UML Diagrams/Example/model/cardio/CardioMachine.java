@@ -1,5 +1,10 @@
 package model.cardio;
 
+/**
+ * Abstract cardio machine class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class CardioMachine {
 
     /**

@@ -1,5 +1,10 @@
 package model.weights;
 
+/**
+ * Plate class.
+ *
+ * @author Ziang Lu
+ */
 public class Plate extends Weight {
 
     /**

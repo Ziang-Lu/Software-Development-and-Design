@@ -1,5 +1,10 @@
 package model.weights;
 
+/**
+ * Dumbbell class.
+ *
+ * @author Ziang Lu
+ */
 public class Dumbbell extends Weight {
 
     /**

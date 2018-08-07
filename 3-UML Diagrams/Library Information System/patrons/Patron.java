@@ -11,6 +11,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Patron class.
+ *
+ * @author Ziang Lu
+ */
 public class Patron {
 
     /**

@@ -7,6 +7,11 @@ import model.gym.Gym;
 import model.members.Member;
 import model.members.MembershipLevel;
 
+/**
+ * Gym chain class.
+ *
+ * @author Ziang Lu
+ */
 public class GymChain {
 
     /**

@@ -1,5 +1,10 @@
 package model.weights;
 
+/**
+ * Abstract weight class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class Weight {
 
     /**

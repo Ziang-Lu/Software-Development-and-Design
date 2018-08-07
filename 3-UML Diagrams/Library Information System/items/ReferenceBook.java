@@ -1,5 +1,10 @@
 package items;
 
+/**
+ * Reference book class.
+ *
+ * @author Ziang Lu
+ */
 public class ReferenceBook extends NonLoanableItem {
 
     /**

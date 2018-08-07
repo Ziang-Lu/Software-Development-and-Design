@@ -3,6 +3,11 @@ package items;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Abstract loanable item class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class LoanableItem extends Item {
 
     /**
@@ -10,13 +15,25 @@ public abstract class LoanableItem extends Item {
      */
     protected static final int DAYS_PER_WEEK = 7;
 
+    /**
+     * Value of this loanable item.
+     */
     private final double value;
+    /**
+     * Whether this loanable item has been checked out.
+     */
     private boolean checkedOut;
+    /**
+     * Due date of this loanable item.
+     */
     private Date dueDate;
+    /**
+     * Whether this loanable item has been renewed.
+     */
     private boolean renewed;
 
     /**
-     * Constructor with parameters.
+     * Constructor with parameter.
      * @param title title of the item
      * @param value value of the item
      */

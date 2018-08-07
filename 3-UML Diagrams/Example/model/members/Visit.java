@@ -1,5 +1,10 @@
 package model.members;
 
+/**
+ * Visit class.
+ *
+ * @author Ziang Lu
+ */
 public class Visit {
 
     /**

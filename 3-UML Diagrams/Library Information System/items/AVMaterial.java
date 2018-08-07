@@ -1,5 +1,10 @@
 package items;
 
+/**
+ * Audio/Video material class.
+ *
+ * @author Ziang Lu
+ */
 public class AVMaterial extends LoanableItem {
 
     /**
@@ -8,7 +13,7 @@ public class AVMaterial extends LoanableItem {
     private static final int LOAN_LENGTH = 2 * DAYS_PER_WEEK;
 
     /**
-     * Constructor with parameters.
+     * Constructor with parameter.
      * @param title title of the A/V material
      * @param value value of this A/V material
      */

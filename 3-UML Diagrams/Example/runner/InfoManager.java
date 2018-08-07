@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 import model.GymChain;
 
+/**
+ * Gym chain information manager class.
+ *
+ * @author Ziang Lu
+ */
 public class InfoManager {
 
     /**

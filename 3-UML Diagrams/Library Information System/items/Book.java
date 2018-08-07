@@ -1,5 +1,10 @@
 package items;
 
+/**
+ * Book class.
+ *
+ * @author Ziang Lu
+ */
 public class Book extends LoanableItem {
 
     /**
@@ -17,7 +22,7 @@ public class Book extends LoanableItem {
     private boolean bestSeller;
 
     /**
-     * Constructor with parameters.
+     * Constructor with parameter.
      * @param title title of the book
      * @param value value of the book
      * @param bestSeller whether this book is best-seller

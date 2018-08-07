@@ -1,5 +1,10 @@
 package model.cardio;
 
+/**
+ * Elliptical class.
+ *
+ * @author Ziang Lu
+ */
 public class Elliptical extends CardioMachine {
 
     /**

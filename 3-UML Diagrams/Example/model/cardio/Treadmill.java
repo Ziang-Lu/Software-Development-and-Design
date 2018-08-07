@@ -1,5 +1,10 @@
 package model.cardio;
 
+/**
+ * Treadmill class.
+ *
+ * @author Ziang Lu
+ */
 public class Treadmill extends CardioMachine {
 
     /**

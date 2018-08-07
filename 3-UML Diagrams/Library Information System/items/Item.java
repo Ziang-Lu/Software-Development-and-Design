@@ -1,5 +1,10 @@
 package items;
 
+/**
+ * Abstract item class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class Item {
 
     /**
@@ -8,7 +13,7 @@ public abstract class Item {
     private final String title;
 
     /**
-     * Constructor with parameters.
+     * Constructor with parameter.
      * @param title title of the item
      */
     public Item(String title) {

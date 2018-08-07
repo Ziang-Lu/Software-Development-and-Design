@@ -1,5 +1,10 @@
 package model.gym;
 
+/**
+ * Deluxe gym class.
+ *
+ * @author Ziang Lu
+ */
 public class DeluxeGym extends Gym {
 
     /**

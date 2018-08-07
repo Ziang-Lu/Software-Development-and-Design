@@ -1,11 +1,16 @@
 package model.members;
 
-import model.members.MembershipLevel;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import model.members.MembershipLevel;
+
+/**
+ * Member class.
+ *
+ * @author Ziang Lu
+ */
 public class Member {
 
     /**

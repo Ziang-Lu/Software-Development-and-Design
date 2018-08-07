@@ -1,5 +1,10 @@
 package model.cardio;
 
+/**
+ * Inner bike class.
+ *
+ * @author Ziang Lu
+ */
 public class InnerBike extends CardioMachine {
 
     /**

@@ -5,6 +5,11 @@ import java.util.List;
 
 import model.members.Member;
 
+/**
+ * Class of fitness class.
+ *
+ * @author Ziang Lu
+ */
 public class FitnessClass {
 
     /**
