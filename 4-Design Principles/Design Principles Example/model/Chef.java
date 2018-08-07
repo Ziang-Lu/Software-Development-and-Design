@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Chef class.
+ *
+ * @author Ziang Lu
+ */
 public class Chef {
 
     /**

@@ -7,12 +7,18 @@ import model.Host;
 import model.Order;
 import model.Waiter;
 
+/**
+ * Diner class.
+ *
+ * @author Ziang Lu
+ */
 public class Diner {
 
     /**
      * Dish instance.
      */
     private static final Dish DISH_INSTANCE = generateTurkeyClubSandwich();
+
     /**
      * Host of this diner.
      */

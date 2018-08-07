@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Host class.
+ *
+ * @author Ziang Lu
+ */
 public class Host extends FrontOfHouseEmployee {
 
     /**

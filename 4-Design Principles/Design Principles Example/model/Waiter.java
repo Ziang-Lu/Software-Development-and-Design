@@ -2,6 +2,11 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Waiter class.
+ *
+ * @author Ziang Lu
+ */
 public class Waiter extends FrontOfHouseEmployee {
 
     /**

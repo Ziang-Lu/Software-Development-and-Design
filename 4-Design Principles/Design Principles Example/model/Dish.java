@@ -1,6 +1,11 @@
 package model;
 import java.util.List;
 
+/**
+ * Dish class
+ *
+ * @author Ziang Lu
+ */
 public class Dish {
 
     /**

@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Abstract front-of-house employee class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class FrontOfHouseEmployee {
 
     /**

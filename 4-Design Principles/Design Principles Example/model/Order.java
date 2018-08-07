@@ -1,6 +1,11 @@
 package model;
 import java.util.List;
 
+/**
+ * Order class.
+ *
+ * @author Ziang Lu
+ */
 public class Order {
 
     /**
