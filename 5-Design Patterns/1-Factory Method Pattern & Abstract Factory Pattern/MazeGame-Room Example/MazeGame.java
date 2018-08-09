@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Abstract factory MazeGame class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class MazeGame {
 
     /**
@@ -21,8 +26,10 @@ public abstract class MazeGame {
     }
 
     /**
-     * Factory method to make a Room.
-     * @return created Room
+     * Abstract factory method to make an abstract product Room instance.
+     * However, the ability to determine which concrete type of Room product to
+     * instantiate is deferred to concrete factories (subclasses).
+     * @return instantiated Room
      */
     public abstract Room makeRoom();
 

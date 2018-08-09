@@ -249,4 +249,27 @@ Note that the labels represents **iterations** within each phase:
 
 -> **Sacrifice discipline a little bit, in order to be more flexible, and be more able to account for changes**, specifically changes in requirements
 
+### Test-Driven Development (TDD) (测试驱动开发)
+
+(在收集完requirements之后)
+
+#### 1. Test cases according to the requirements
+
+Since we haven't implement of the system, these <u>tests must fail</u>.
+
+#### 2. Code implementation to make the test cases pass
+
+Since the <u>test cases represent requirements</u>, we have <u>just enough code implementation to satisfy the requirements</u>.
+
+*Since this is just a raw and naive implementation, the structure of the code deteriorate over time because we keep adding pieces.*
+
+#### 3. Refactoring to improve the code quality
+
+*Then go back to Phase 1 to collect more requirements and turn them into new test cases.*
+
+<br>
+
+根据需求写test case => 写代码 => 重构 => 根据新需求写新test case => 写代码 => 重构 => ......
+
+<br>
 

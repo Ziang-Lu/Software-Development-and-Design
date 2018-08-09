@@ -118,7 +118,7 @@ The collective **requirements** are suitably **represented, organized** and save
 
 <br>
 
-=> **Software Requirement Specification (SRS) (软件需求规格说明)**
+=> **Software Requirements Specification (SRS) (软件需求规格说明)**
 
 - Introduction
 

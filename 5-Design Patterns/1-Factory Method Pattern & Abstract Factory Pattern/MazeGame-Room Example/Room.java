@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Abstract product Room class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class Room {
 
     /**
