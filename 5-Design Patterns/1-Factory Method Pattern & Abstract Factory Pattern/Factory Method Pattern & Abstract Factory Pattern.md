@@ -27,7 +27,7 @@ This is done by calling a factory method — <u>either specified in an interface
   - Create an object by calling a factory method
 - This enables writing of subclasses to change the way an object is created (to redefine which class to instantiate).
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern/factory_method_pattern.jpg?raw=true">
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/factory_method_pattern.jpg?raw=true">
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern/MazeGame-Room%20Example.png?raw=true">
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/MazeGame-Room%20Example.png?raw=true">
 
