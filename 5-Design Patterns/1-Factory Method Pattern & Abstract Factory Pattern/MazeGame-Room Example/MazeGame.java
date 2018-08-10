@@ -18,6 +18,13 @@ public abstract class MazeGame {
      */
     public MazeGame() {
         rooms = new ArrayList<>();
+        prepareRooms();
+    }
+
+    /**
+     * Private helper method to initially prepare rooms.
+     */
+    private void prepareRooms() {
         Room room1 = makeRoom();
         rooms.add(room1);
         Room room2 = makeRoom();

@@ -38,7 +38,7 @@
 
   * Non-functional testing (非功能测试)
 
-    Aims to verify the non-functional properties of the system, e.g., performance test (性能测试), load test (负载测试), robustness test (稳健性测试)
+    Aims to verify the non-functional properties of the system, e.g., configuration testing (配置测试), compatibility testing (兼容性测试), performance testing (性能测试), concurrency testing (并发测试), load testing (负载测试), robustness testing (稳健性测试), security testing (安全测试), reliability testing (可信赖度测试), recovery testing (故障恢复测试), ...
 
 <br>
 

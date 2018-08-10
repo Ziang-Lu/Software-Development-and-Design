@@ -28,5 +28,3 @@
 
 -> **Supports concurrency**
 
-<br>
-

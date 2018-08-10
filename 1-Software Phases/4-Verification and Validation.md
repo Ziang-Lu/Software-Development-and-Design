@@ -30,6 +30,8 @@
 
 #### 1. Dynamic Verification (动态验证) / Testing ***
 
+*<u>Dynamic</u> here means the tester <u>has to run the code</u>.*
+
 Check out `Testing.md`
 
 <br>
@@ -47,6 +49,8 @@ Check out `Testing.md`
 
 #### 3. Static Verification (静态验证)
 
+*In constract to dynamic verification, <u>static</u> here means the tester doe <u>NOT have to run the code</u>.*
+
 -> A <u>complete consideration of the entire input domain</u>, and thus all the possible executions of the program
 
 - Pros:
@@ -61,9 +65,9 @@ Check out `Testing.md`
 
 <br>
 
-#### 4. Formal Proofs (of Correctness)
+#### 4. Formal Proofs (形式证明) (of Correctness)
 
--> Given the software specifications, <u>use sophiscated mathematical analysis on the specifications and the code, to prove that the program actually implement the specifications</u>
+-> Given the software specifications, <u>use sophiscated mathematical analysis on the specifications and the code, to **prove** that the program actually implemented the specifications</u>
 
 * Pros:
 
@@ -74,7 +78,7 @@ Check out `Testing.md`
 * **Cons:**
 
   * **Need a formal specification (a complete mathematical description) of the expected behavior of the program, which is rarely available**
-  * **Complex & Expensive**
+  * **Complex + Expensive**
 
 <br>
 
