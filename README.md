@@ -91,4 +91,4 @@ This repo takes aspects regarding software development and design notes from:
 
 ## License
 
-This repo is distributed under the MIT license.
+This repo is distributed under the <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/LICENSE">MIT license</a>.
