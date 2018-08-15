@@ -1,10 +1,10 @@
 # Software Development and Design
 
-Notes from:
+This repo takes aspects regarding software development and design notes from:
 
-"Software Development Process" by Georgia Tech on Udacity
+**Software Development Process** by Georgia Tech on Udacity
 
-edX course "Software Construction " by University of British Columbia on edX
+**Software Construction** by University of British Columbia on edX
 
 ## Software Phases
 
@@ -43,6 +43,8 @@ edX course "Software Construction " by University of British Columbia on edX
 * Liskov Substitution Principle (LSP) (里氏代换原则)
 * Open-Closed Principle (开闭原则)
 * Dependency Inversion (依赖反转原则)
+
+<br>
 
 ## Design Patterns
 
@@ -84,3 +86,9 @@ edX course "Software Construction " by University of British Columbia on edX
 2. (Examine the pattern catalogue)
 3. Identify and study related patterns
 4. Apply suitable pattern
+
+<br>
+
+## License
+
+This repo is distributed under the MIT license.
