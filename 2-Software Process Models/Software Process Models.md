@@ -7,6 +7,8 @@ Main functions:
 * Determine the **order of the software activities** described in "Software Phases"
 * Determine the **transition criteria (转换准则) for the software activities**, i.e., when we can go from one phase to another
 
+<br>
+
 ## Waterfall Model (瀑布模型)
 
 **[Procedural]**
