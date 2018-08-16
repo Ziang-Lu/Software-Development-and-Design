@@ -12,7 +12,7 @@ public interface DocumentCreator {
 
     /**
      * Abstract factory method to make an abstract product Letter instance.
-     * However, the ability to determine which concrete type of Resume product
+     * However, the ability to determine which concrete type of Letter product
      * to instantiate is deferred to concrete factories (subclasses).
      * @return instantiated Letter
      */

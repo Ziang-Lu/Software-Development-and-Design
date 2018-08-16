@@ -41,6 +41,17 @@ This is done by calling a factory method — **either specified in an interface 
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/factory_method_pattern.png?raw=true">
 
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/gui_example.png?raw=true">
+
 
 
 => **By separating the objects creation process from the client code that actually use the abstract interface instances, the classes (both the factory, product and client classes) become more reusable.**
+
+=> Adding new concrete types is done by modifying the client code to use a different factory, a modification that is typically one line in one file.
+
+e.g.,
+
+```java
+DocumentCreator newCreator = new NewDocumentCreator();
+```
+

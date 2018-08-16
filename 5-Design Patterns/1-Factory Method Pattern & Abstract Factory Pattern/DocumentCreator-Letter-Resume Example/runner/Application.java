@@ -7,7 +7,8 @@ import product_document.Letter;
 import product_document.Resume;
 
 /**
- * Main application that actually uses the factories and products.
+ * Main application that actually uses the conrete factories and abstract
+ * products.
  *
  * @author Ziang Lu
  */
