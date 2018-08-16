@@ -2,6 +2,10 @@
 
 **Applicability:** (of Factory Method Pattern and Abstract Factory Pattern combined)
 
+- How can an application be independent of how its objects are created?
+
+- How can a class be independent of how the objects it requires are created?
+
 - <u>The class can't anticipate the type of objects it must create</u>, i.e., the type of the object is unknown at compile time.
 
   *即当前class并不知道自己将创建的object的实际具体type是什么.*
@@ -13,6 +17,8 @@
 - The class needs control over the creation of its objects.
 
   *e.g., when there is a limit on the number of objects that can be created*
+
+- How can families of related or dependent objects be created?
 
 ***
 
@@ -33,7 +39,8 @@ This is done by calling a factory method — **either specified in an interface 
   - Create an object by calling a factory method
 - This enables writing of subclasses to change the way an object is created (to redefine which class to instantiate).
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/factory_method_pattern.jpg?raw=true">
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/factory_method_pattern.png?raw=true">
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/MazeGame-Room%20Example.png?raw=true">
 
+
+=> **By separating the objects creation process from the client code that actually use the abstract interface instances, the classes (both the factory, product and client classes) become more reusable.**

@@ -9,7 +9,7 @@ public class ModernResume implements Resume {
 
     @Override
     public String toString() {
-        return "This is a MODERN RESUME";
+        return "This is a MODERN RESUME.";
     }
 
 }
