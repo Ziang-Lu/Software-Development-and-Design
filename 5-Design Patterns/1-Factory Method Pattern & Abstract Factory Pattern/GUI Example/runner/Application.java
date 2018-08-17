@@ -16,11 +16,11 @@ public class Application {
      * @param args arguments from command line
      */
     public void main(String[] args) {
-        GuiFactory osxFactory = new OsxFactory();
+        GuiFactory osxFactory = OsxFactory.getInstance();
         Renderer osxRenderer = new Renderer(osxFactory);
         osxRenderer.render();
 
-        GuiFactory winFactory = new WinFactory();
+        GuiFactory winFactory = WinFactory.getInstance();
         Renderer winRenderer = new Renderer(winFactory);
         winRenderer.render();
     }
