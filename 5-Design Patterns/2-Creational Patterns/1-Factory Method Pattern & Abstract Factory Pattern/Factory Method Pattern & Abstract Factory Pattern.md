@@ -43,7 +43,7 @@ This is done by calling a factory method — **either specified in an interface 
   - Create an object by calling a factory method
 - This enables writing of subclasses to change the way an object is created (to redefine which class to instantiate).
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/factory_method_pattern.png?raw=true">
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/factory_method_pattern.png?raw=true">
 
 => **By separating the objects creation process from the client code that actually use the abstract interface instances, the classes (both the factory, product and client classes) become more reusable.**
 
@@ -59,6 +59,6 @@ DocumentCreator newCreator = new NewDocumentCreator();
 
 ### Code Example
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/gui_example.png?raw=true">
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/gui_example.png?raw=true">
 
 
