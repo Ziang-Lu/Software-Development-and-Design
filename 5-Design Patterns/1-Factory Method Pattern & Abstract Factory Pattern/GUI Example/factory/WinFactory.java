@@ -18,6 +18,8 @@ public class WinFactory implements GuiFactory {
 
     /**
      * Gets the singleton instance.
+     * This implementation utilizes Lazy Initialization Pattern and double-check
+     * locking mechanism.
      * @return singleton instance
      */
     public static WinFactory getInstance() {
