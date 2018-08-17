@@ -73,7 +73,7 @@ public class Singleton {
 
     /**
      * Factory method to get the singleton instance.
-     * To avoid the above case, use a double-checked locking mechanism.
+     * To avoid the above case, use a double-check locking mechanism.
      * @return singleton instance
      */
     public static Singleton getInstanceThreadSafe() {
@@ -97,8 +97,7 @@ public class Singleton {
         /*
          * This implementation looks perfect, at least in theory. However, it is practically not.
          *
-         * The creation of an object is actually compiled
-         * to the following three instructions:
+         * The creation of an object is actually compiled to the following three instructions:
          * 1. memory = allocate();  // Allocate the memory for the object
          * 2. ConstructInstance(memory);  // Construct the object
          * 3. instance = memory;  // Let instance points to the memory that just got allocated
@@ -111,7 +110,7 @@ public class Singleton {
          *
          * Imagine a scenario that Thread-A and Thread-B come into the methods one by one
          * When Thread-A is creating the object, specifically just finished (3), instance now points to some memory
-         * address (null) which haven't finish initialization.
+         * address (not null) which haven't finish initialization.
          * Now if Thread-B gets the CPU resource and execute the null-check, it will be false, and Thread-B will simply
          * return instance. However, the instance haven't finish initialization!
          *
@@ -121,8 +120,8 @@ public class Singleton {
 
     /**
      * Private default constructor.
-     * This has to be private so that the class instances be created outside of
-     * the class.
+     * This has to be private so that the class instances cannot be created\
+     * outside of the class.
      */
     private Singleton() {}
 
@@ -144,3 +143,4 @@ Singletons are often preferred to global variables because:
 ### Controversy
 
 Some people are critical of the Singleton Pattern and consider it to be an anti-pattern (反模式), in that it is frequently used in scenarios where <u>it is not beneficial, introduces unnecessary restrictions in situations where a sole instance of a class is not actually required, and introduces global state into an application</u>.
+

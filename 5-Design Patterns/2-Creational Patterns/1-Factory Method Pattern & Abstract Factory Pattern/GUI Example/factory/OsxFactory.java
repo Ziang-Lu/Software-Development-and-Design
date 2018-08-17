@@ -1,20 +1,20 @@
 package factory;
 
 import product_button.MyButton;
-import product_button.WinButton;
+import product_button.OsxButton;
 
 /**
- * Concrete factory WinFactory class.
+ * Concrete factory OsxFactory class.
  * This class is implemented as a singleton class.
  *
  * @author Ziang Lu
  */
-public class WinFactory implements GuiFactory {
+public class OsxFactory implements GuiFactory {
 
     /**
      * Singleton instance.
      */
-    private volatile static WinFactory instance = null;
+    private volatile static OsxFactory instance = null;
 
     /**
      * Gets the singleton instance.
@@ -22,11 +22,11 @@ public class WinFactory implements GuiFactory {
      * locking mechanism.
      * @return singleton instance
      */
-    public static WinFactory getInstance() {
+    public static OsxFactory getInstance() {
         if (instance == null) {
-            synchronized (WinFactory.class) {
+            synchronized (OsxFactory.class) {
                 if (instance == null) {
-                    instance = new WinFactory();
+                    instance = new OsxFactory();
                 }
             }
         }
@@ -35,18 +35,18 @@ public class WinFactory implements GuiFactory {
 
     /**
      * Private default constructor.
-     * This has to be private so that the class instances be created outside of
-     * the class.
+     * This has to be private so that the class instances cannot be created
+     * outside of the class.
      */
-    private WinFactory() {}
+    private OsxFactory() {}
 
     /**
-     * Concrete factory method to make a concrete product WinButton instance.
+     * Concrete factory method to make a concrete product OsxButton instance.
      * @return instantiated MyButton
      */
     @Override
     public MyButton createButton() {
-        return new WinButton();
+        return new OsxButton();
     }
 
 }

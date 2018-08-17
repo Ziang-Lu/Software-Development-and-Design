@@ -31,8 +31,8 @@ public class ModernDocumentCreator implements DocumentCreator {
 
     /**
      * Private default constructor.
-     * This has to be private so that the class instances be created outside of
-     * the class.
+     * This has to be private so that the class instances cannot be created
+     * outside of the class.
      */
     private ModernDocumentCreator() {}
 

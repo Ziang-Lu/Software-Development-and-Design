@@ -73,6 +73,7 @@ This repo takes aspects regarding software development and design notes from:
 * Factory Method Pattern (工厂方法模式)
 * Lazy Initialization Pattern (惰性初始化模式)
 * Singleton Pattern (单例模式)
+* Multiton Pattern (多例模式)
 * Composite Pattern (复合模式)
 * Iterator Pattern (迭代器模式)
 * Observer Pattern (观察者模式)
