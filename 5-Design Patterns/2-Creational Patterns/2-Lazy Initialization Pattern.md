@@ -18,7 +18,7 @@ import java.util.Map;
  * Fruit types.
  */
 enum FruitType {
-    none, apple, banana
+    APPLE, BANANA, NONE
 }
 
 /**
@@ -91,7 +91,7 @@ class Fruit {
             System.out.println("Number of fruit instances made: " + fruits.size());
             for (FruitType type : fruits.keySet()) {
                 String typeName = type.toString();
-                String prettyTypeName = Character.toUpperCase(typeName.charAt(0)) + typeName.substring(1);
+                String prettyTypeName = typeName.charAt(0) + typeName.substring(1).toLowerCase();
                 System.out.println(prettyTypeName);
             }
         }

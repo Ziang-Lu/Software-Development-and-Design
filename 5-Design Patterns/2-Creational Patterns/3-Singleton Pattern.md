@@ -140,7 +140,7 @@ Singletons are often preferred to global variables because:
 
 <br>
 
-### Controversy
+### Drawback
 
 Some people are critical of the Singleton Pattern and consider it to be an anti-pattern (反模式), in that it is frequently used in scenarios where <u>it is not beneficial, introduces unnecessary restrictions in situations where a sole instance of a class is not actually required, and introduces global state into an application</u>.
 
