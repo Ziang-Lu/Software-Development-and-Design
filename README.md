@@ -54,7 +54,12 @@ This repo takes aspects regarding software development and design notes from:
 
 2. Creational patterns (创建型模式)
 
-   e.g., Factory Method Pattern (工厂方法模式) + Abstract Factory Pattern (抽象工厂模式), Lazy Initialization Pattern (惰性初始化模式), Singleton Pattern (单例模式)
+   * Factory Method Pattern (工厂方法模式) + Abstract Factory Pattern (抽象工厂模式)
+   * Lazy Initialization Pattern (惰性初始化模式)
+   * Singleton Pattern (单例模式)
+   * Multiton Pattern (多例模式)
+   * Prototype Pattern (原型模式)
+   * Builder Pattern (建造者模式)
 
 3. Structural patterns (结构型模式)
 
