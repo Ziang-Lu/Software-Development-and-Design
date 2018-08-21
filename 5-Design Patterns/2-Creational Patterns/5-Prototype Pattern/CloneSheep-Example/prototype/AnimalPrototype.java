@@ -1,7 +1,7 @@
 package prototype;
 
 /**
- * Abstract Prototype class.
+ * Abstract AnimalPrototype class.
  *
  * Note that according to the documentation of Object, any class overriding
  * clone() method better calls super.clone() first, so this will trace up to
@@ -13,24 +13,24 @@ package prototype;
  * class itself doesn't implement Cloneable interface, calling Object.clone()
  * will throw CloneNotSupportedException.
  *
- * Therefore, if we want to use Prototype.clone() method, we need to let it
- * implement Cloneable interface, to indicate to Object.clone() method that
+ * Therefore, if we want to use AnimalPrototype.clone() method, we need to let
+ * it implement Cloneable interface, to indicate to Object.clone() method that
  * it is legal for that method to make a field-for-field copy of instances of
  * that class.
  *
  * @author Ziang Lu
  */
-public abstract class Prototype implements Cloneable {
+public abstract class AnimalPrototype implements Cloneable {
 
     /**
      * By convention, classes that implement Cloneable interface should override
      * Object.clone() method (which is protected) with a public method.
      * @return cloned object
-     * @throws CloneNotSupportedException if this class is not cloneable
+     * @throws CloneNotSupportedException if this class if not cloneable
      */
     @Override
-    public Prototype clone() throws CloneNotSupportedException {
-        return (Prototype) super.clone();
+    public AnimalPrototype clone() throws CloneNotSupportedException {
+        return (AnimalPrototype) super.clone();
     }
 
 }

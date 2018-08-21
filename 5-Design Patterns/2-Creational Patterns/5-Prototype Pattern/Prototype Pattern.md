@@ -30,7 +30,9 @@ Prototype Pattern is a **creational pattern** that **creates objects whose type 
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/5-Prototype%20Pattern/prototype_pattern.png?raw=true">
 
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/5-Prototype%20Pattern/clone_sheep_example.png?raw=true">
 
+ 
 
 ### Benefits
 
