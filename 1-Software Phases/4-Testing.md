@@ -38,7 +38,18 @@
 
   * Non-functional testing (非功能测试)
 
-    Aims to verify the non-functional properties of the system, e.g., configuration testing (配置测试), compatibility testing (兼容性测试), performance testing (性能测试), concurrency testing (并发测试), load testing (负载测试), robustness testing (稳健性测试), security testing (安全测试), reliability testing (可信赖度测试), recovery testing (故障恢复测试), ...
+    Aims to verify the non-functional properties of the system
+
+    * Configuration testing (配置测试)
+    * Compatibility testing (兼容性测试)
+    * Performance testing (性能测试),
+    * Concurrency testing (并发测试)
+    * Load testing (负载测试)
+    * Robustness testing (稳健性测试)
+    * Security testing (安全测试)
+    * Reliability testing (可信赖度测试)
+    * Recovery testing (故障恢复测试)
+    * ...
 
 <br>
 
@@ -60,9 +71,13 @@
 
 ### Black-box Testing (黑箱测试)
 
-Consider the software as a closed box (black-box).
+#### 1. Definition & Explanation
+
+Consider the software as a closed box (black-box)
 
 => Based on the **specification of the software**, but **not look into the software and the code implementation**
+
+#### 2. Pros & Cons
 
 * Pros:
 
@@ -78,9 +93,27 @@ Consider the software as a closed box (black-box).
 
 * Cons:
 
-Limitation:
+  * Since we don't look into the implementation, we cannot reveal failures due to implementation details.
 
-* Since we don't look into the implementation, we cannot reveal failures due to implementation details.
+#### 3. Systematic Approach
+
+*即根据功能描述 -> 找可独立测试的feature -> 确定测试的相关input -> 写test cases*
+
+*且由于一次性找出所有的可独立测试的features太不现实, 这应该是一个iterative的过程.*
+
+1. Start from <u>functional specification (功能规格说明)</u>
+
+2. Identify <u>independent testable features</u>
+
+3. identify the <u>relevant inputs</u> for each one of the independent testable features
+
+   "Test data selection"
+
+4. Derive <u>test case specifications (测试用例规格说明)</u>
+
+   -> Descriptions of test cases
+
+5. Generate <u>test cases</u> from the corresponding test case specifications
 
 <br>
 
