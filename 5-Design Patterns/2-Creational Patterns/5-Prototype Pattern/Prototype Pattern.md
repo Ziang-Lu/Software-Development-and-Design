@@ -2,15 +2,15 @@
 
 ### Applicability
 
-* How can objects be created so that which objects to create can be specified at runtime?
+* How can objects be created so that <u>which objects to create can be specified at runtime</u>?
 
   *即如何才能在runtime时再决定创建哪种具体类型的object*
 
-  *类似于Factory Method Pattern + Abstract Factory Pattern*
-
 * How can dynamically loaded classes be instantiated?
 
-* Avoid the inherent cost of creating a new object in the standard way (using the `new` operator). when it is prohibitively expensive for a given application
+  i.e., <u>when there are numerous potential classes that you want to only use if needed at runtime</u>
+
+* <u>Avoid the inherent cost of creating a new object in the standard way (using the `new` operator)</u>, when it is prohibitively expensive for a given application
 
   *即正常用new创建object的成本过高以至于application中无法承担*
 
@@ -56,3 +56,8 @@ Prototype Pattern is a **creational pattern** that **creates objects whose type 
 
 ***
 
+<br>
+
+### Drawback
+
+Requires to create prototypes before create other objects

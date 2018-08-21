@@ -1,8 +1,15 @@
+package runner;
+
 import model.Lecture;
 import model.Topic;
 import model.Video;
 
-public class MainDriver {
+/**
+ * Application.
+ *
+ * @author Ziang Lu
+ */
+public class Application {
 
     /**
      * Main driver.

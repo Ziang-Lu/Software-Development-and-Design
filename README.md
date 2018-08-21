@@ -63,11 +63,13 @@ This repo takes aspects regarding software development and design notes from:
 
 3. Structural patterns (结构型模式)
 
-   e.g., Composite Pattern (复合模式)
+   * Composite Pattern (复合模式)
 
 4. Behavioral patterns (行为型模式)
 
-   e.g., iterator Pattern (迭代器模式), Observer Pattern (观察者模式), Strategy Pattern (策略模式)
+   * iterator Pattern (迭代器模式)
+   * Observer Pattern (观察者模式)
+   * Strategy Pattern (策略模式)
 
 5. Concurrency patterns (并发型模式)
 

@@ -1,3 +1,5 @@
+package prototype;
+
 public abstract class Prototype implements Cloneable {
 
     @Override

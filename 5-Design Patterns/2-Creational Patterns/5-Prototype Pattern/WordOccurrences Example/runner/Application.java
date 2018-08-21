@@ -1,3 +1,7 @@
+package runner;
+
+import prototype.WordOccurrences;
+
 /**
  * Application that actually uses WordOccurrences objects to perform some tasks.
  *
