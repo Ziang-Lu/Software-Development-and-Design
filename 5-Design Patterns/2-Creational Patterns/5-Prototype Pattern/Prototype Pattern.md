@@ -12,7 +12,11 @@
 
 * <u>Avoid the inherent cost of creating a new object in the standard way (using the `new` operator)</u>, when it is prohibitively expensive for a given application
 
+  i.e., <u>when creation of object directly is costly</u>
+
   *即正常用new创建object的成本过高以至于application中无法承担*
+
+  -> <u>Performance</u>
 
 <br>
 
@@ -25,10 +29,12 @@ Prototype Pattern is a **creational pattern** that **creates objects whose type 
 *即由现有的某个prototype通过clone的方式创建新的object*
 
 * The Prototype Pattern describes how to solve such problems:
-  * Define a `Prototype` object that is able to return copies of itself
-  * Create new objects by copying a `Prototype` object
+  * <u>Define a `Prototype` object, acting as a cache, that is able to return copies of itself</u>
+  * <u>Create new objects by copying a `Prototype` object</u>
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/5-Prototype%20Pattern/prototype_pattern.png?raw=true">
+
+
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/5-Prototype%20Pattern/clone_sheep_example.png?raw=true">
 

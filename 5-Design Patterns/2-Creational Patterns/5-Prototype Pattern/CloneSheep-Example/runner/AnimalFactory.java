@@ -1,4 +1,6 @@
-package prototype;
+package runner;
+
+import prototype.Animal;
 
 /**
  * AnimalFactory class that clones abstract animals.
@@ -12,9 +14,9 @@ public class AnimalFactory {
      * memory.
      * @param prototype animal prototype to clone
      * @return cloned animal
-     * @throws CloneNotSupportedException if AnimalPrototype is not cloneable
+     * @throws CloneNotSupportedException if Animal is not cloneable
      */
-    public AnimalPrototype getClone(AnimalPrototype prototype) throws CloneNotSupportedException {
+    public Animal getClone(Animal prototype) throws CloneNotSupportedException {
         return prototype.clone();
     }
 

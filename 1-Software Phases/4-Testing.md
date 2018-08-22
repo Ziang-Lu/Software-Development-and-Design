@@ -1,14 +1,14 @@
 # Testing
 
-*Assumption: The behavior of the program with any other inputs is the consistent with the behavior shown with the tested input.*
+*Assumption: The <u>behavior of the program</u> with any other inputs is the <u>consistent</u> with the behavior shown with the tested input.*
 
 ## Pros and Cons
 
 - Pros:
 
-  - Doe not generate false positives
+  - Does not generate false positives
 
-    -> When testing generates a failure, it must be a failure.
+    => When testing generates a failure, it must be a failure.
 
 - **Cons:**
 
@@ -22,15 +22,15 @@
 
 ### Developer's Testing
 
-* Unit Testing
+* Unit testing
 
-* Integration Testing (集成测试)
+* Integration testing (集成测试)
 
   Test the <u>interaction among the differnet units/modules</u>
 
-* System Testing (系统测试)
+* System testing (系统测试)
 
-  Test the <u>sytem as a whole</u>
+  Test the <u>system as a whole</u>
 
   * Functional testing (功能测试)
 
@@ -77,6 +77,8 @@ Consider the software as a closed box (black-box)
 
 => Based on the **specification of the software**, but **not look into the software and the code implementation**
 
+<br>
+
 #### 2. Pros & Cons
 
 * Pros:
@@ -95,25 +97,151 @@ Consider the software as a closed box (black-box)
 
   * Since we don't look into the implementation, we cannot reveal failures due to implementation details.
 
+<br>
+
 #### 3. Systematic Approach
 
-*即根据功能描述 -> 找可独立测试的feature -> 确定测试的相关input -> 写test cases*
+*即根据功能描述 -> 找可独立测试的feature -> 确定相关input -> 写test cases*
 
-*且由于一次性找出所有的可独立测试的features太不现实, 这应该是一个iterative的过程.*
+*且由于一次性找出所有的可独立测试的features<u>太不现实</u>, 这应该是一个iterative的过程.*
 
-1. Start from <u>functional specification (功能规格说明)</u>
+1. Start from **functional specification (功能规格说明)**
 
-2. Identify <u>independent testable features</u>
+2. Identify **independent testable features**
 
-3. identify the <u>relevant inputs</u> for each one of the independent testable features
+3. identify the **relevant inputs** for each one of the independent testable features
 
    "Test data selection"
 
-4. Derive <u>test case specifications (测试用例规格说明)</u>
+   <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/test_data_selection.png?raw=true">
 
-   -> Descriptions of test cases
+   * Exaustive testing (穷举测试)?
 
-5. Generate <u>test cases</u> from the corresponding test case specifications
+     -> Impossible in terms of time => 不现实
+
+   * Random testing (随机测试)?
+
+     -> 大海捞针 => 效果不好
+
+   * <u>Partition testing (分割测试)</u>
+
+     Due to the fact that though failures are <u>generally sparse</u>, they are <u>dense in some subdomains (partitions)</u>
+
+     * Identify partitions
+
+     * Select inputs from each partition
+
+       => Errors tend to occur at the <u>boundary of the partitions</u>.
+
+       => Select inputs at these boundaries
+
+4. Derive **test case specifications (测试用例规格说明)**
+
+   -> Defines how the test input values should be put together when actually testing the system
+
+   * Simply combine the selected input values to actual test cases, and eliminate the meaningless and invalid ones
+
+5. Generate **test cases** from the corresponding test case specifications
+
+<br>
+
+#### 4. Category-Partition Method (类别-分割方法) - A Specific Black-Box Testing Approach
+
+1. Identify **independent testable features**
+
+   *Same as the systematic approach*
+
+2. Identify **categories**
+
+   ***
+
+   A <u>category</u> is the <u>characteristics of one input element</u>.
+
+   ***
+
+   => Identify characteristics that are meaningful and cover the main aspects of the input element
+
+   e.g.,
+
+   ```java
+   public void split(String s, int size) {}
+   ```
+
+   * Category 1: Characteristics of `String s`
+     * Characteristic: Length of the string
+     * Characteristic: Contents of the string
+   * Category 2: Characteristics of `int size`
+     * Characteristic: Value of the integer
+
+3. **Partition categories into choices**
+
+   ***
+
+   A <u>choice</u> is an <u>interesting case in a category</u>.
+
+   ***
+
+   e.g.,
+
+   ```java
+   public void split(String s, int size) {}
+   ```
+
+   - Category 1: Characteristics of `String s`
+     - Characteristic: Length of the string
+       - `length = 0`
+       - `length = size - 1 `
+       - `length = size`
+       - `length = size + 1`
+       - `length = 2 * size - 1`
+       - ...
+     - Characteristic: Contents of the string
+       - Only whitespaces
+       - Only special characters, like non-printable characters
+       - ...
+   - Category 2: Characteristics of `int size`
+     - Characteristic: Value of the integer
+       - `size = Integer.MIN_VALUE`
+       - `size < 0`
+       - `size = 0`
+       - `size > 0`
+       - `size = Integer.MAX_VALUE`
+
+4. Identify **constraints among choices**
+
+   => To eliminate the meaningless and invalid combinations of inputs
+
+   *即识别出一些不合法的输入choice组合, 并排除掉他们*
+
+5. Produce/Evaluate **test case specifications**
+
+   * Can be <u>automated</u>
+
+     i.e., Identify categories, then choices, and then add constraints   => (Automate, 有脚本或应用程序来处理)   Test frames
+
+   * Produce <u>test frames (测试框架)</u>
+
+     ***
+
+     A test frame is a specification of a test. (Similar to test case specification).
+
+     ***
+
+     | Test Frame #36   |                                                 |
+     | ---------------- | ----------------------------------------------- |
+     | Input "String s" | length: size - 1<br>content: special characters |
+     | Input "int size" | Value: > 0                                      |
+
+6. Generate **test cases** from test case specifications
+
+   * Simply <u>instantiate test frames, producing concrete test cases</u>
+
+     | Test Case #36 | wvv         |
+     | ------------- | ----------- |
+     | s             | "ABCC!\n\t" |
+     | size          | 9           |
+
+     *(满足之前的test frame #36)*
 
 <br>
 
