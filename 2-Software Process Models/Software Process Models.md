@@ -2,6 +2,8 @@ How should we <u>organize</u> the <u>software phases</u> into the software devel
 
 # Software Process Models (软件过程模型) / Software Lifecycle Model (软件生命周期模型)
 
+*软件过程模型是软件开发全部过程、活动和任务的<u>结构框架</u>. 它能直观表达软件开发的全过程, 明确规定要完成的主要活动、任务和<u>开发策略</u>.*
+
 Main functions:
 
 * Determine the **order of the software activities** described in "Software Phases"
