@@ -1,7 +1,7 @@
 package model.weights;
 
 /**
- * Weight machine class.
+ * WeightMachine class.
  *
  * @author Ziang Lu
  */
@@ -18,7 +18,7 @@ public class WeightMachine extends Weight {
      * @param muscleGroup muscle group that the weight machine targets
      */
     public WeightMachine(int pounds, String muscleGroup) {
-        // We asusme that pounds is positive.
+        // We assume that pounds is positive.
         super(pounds);
         this.muscleGroup = muscleGroup;
     }

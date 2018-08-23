@@ -1,7 +1,7 @@
 package model.cardio;
 
 /**
- * Inner bike class.
+ * InnerBike class.
  *
  * @author Ziang Lu
  */

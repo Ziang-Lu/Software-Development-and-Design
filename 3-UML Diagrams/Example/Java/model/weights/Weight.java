@@ -1,7 +1,7 @@
 package model.weights;
 
 /**
- * Abstract weight class.
+ * Abstract Weight class.
  *
  * @author Ziang Lu
  */

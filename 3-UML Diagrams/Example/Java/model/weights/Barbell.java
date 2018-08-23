@@ -36,6 +36,20 @@ public class Barbell extends Weight {
     private static final int PLATE_POUNDS_1 = 1;
 
     /**
+     * Private helper method to add a pair of plates weighing the given pounds
+     * to the given plates, and returns the remaining pounds after the addition.
+     * @param plates plates to be added
+     * @param platePounds pounds per plate to add
+     * @param remainingPounds remaining pounds
+     * @return remaining pounds after the addition
+     */
+    private static int addPlatePair(List<Plate> plates, int platePounds, int remainingPounds) {
+        plates.add(new Plate(platePounds));
+        plates.add(new Plate(platePounds));
+        return remainingPounds - 2 * platePounds;
+    }
+
+    /**
      * Constructor with parameter.
      * @param pounds weight of the barbell
      */
@@ -73,19 +87,6 @@ public class Barbell extends Weight {
             }
         }
         return plates;
-    }
-
-    /**
-     * 
-     * @param plates
-     * @param platePounds
-     * @param remainingPounds
-     * @return
-     */
-    private int addPlatePair(List<Plate> plates, int platePounds, int remainingPounds) {
-        plates.add(new Plate(platePounds));
-        plates.add(new Plate(platePounds));
-        return remainingPounds - 2 * platePounds;
     }
 
 }

@@ -18,8 +18,7 @@ public class Treadmill extends CardioMachine {
      * @param minutes minutes of this treadmill
      */
     public Treadmill(double speed, int minutes) {
-        // We assume that speed is positive.
-        // We assume that minutes is positive.
+        // We assume that both speed and minutes are positive.
         super(minutes);
         this.speed = speed;
     }
