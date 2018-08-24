@@ -19,4 +19,9 @@ public class Rectangle extends Shape {
         System.out.println("In Rectangle.draw() method");
     }
 
+    @Override
+    public Rectangle clone() throws CloneNotSupportedException {
+        return (Rectangle) super.clone();
+    }
+
 }

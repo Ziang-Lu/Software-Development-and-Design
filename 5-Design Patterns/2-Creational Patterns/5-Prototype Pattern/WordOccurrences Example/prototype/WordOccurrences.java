@@ -74,11 +74,8 @@ public class WordOccurrences extends Prototype {
 
     @Override
     public WordOccurrences clone() throws CloneNotSupportedException {
-        Prototype obj = super.clone();
-        WordOccurrences cloned = (WordOccurrences) obj;
-        cloned.text = text;
-        cloned.word = word;
-        cloned.occurrences = occurrences;
+        WordOccurrences cloned = (WordOccurrences) super.clone();
+        cloned.occurrences = new ArrayList<>(occurrences); // Make sure to deep copy
         return cloned;
     }
 

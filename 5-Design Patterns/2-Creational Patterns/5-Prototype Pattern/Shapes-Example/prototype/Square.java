@@ -19,4 +19,9 @@ public class Square extends Shape {
         System.out.println("In Square.draw() method");
     }
 
+    @Override
+    public Square clone() throws CloneNotSupportedException {
+        return (Square) super.clone();
+    }
+
 }

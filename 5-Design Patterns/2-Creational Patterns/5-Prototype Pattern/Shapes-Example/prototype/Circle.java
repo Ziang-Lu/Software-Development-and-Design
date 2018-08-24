@@ -19,4 +19,8 @@ public class Circle extends Shape {
         System.out.println("In Circle.draw() method");
     }
 
+    @Override
+    public Circle clone() throws CloneNotSupportedException {
+        return (Circle) super.clone();
+    }
 }
