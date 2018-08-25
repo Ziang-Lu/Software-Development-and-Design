@@ -9,7 +9,7 @@ public class OsxButton implements MyButton {
 
     @Override
     public void paint() {
-        System.out.println("This is an MacOSX button.");
+        System.out.println("This is a MacOSX button.");
     }
 
 }
