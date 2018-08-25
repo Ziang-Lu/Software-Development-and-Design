@@ -94,7 +94,8 @@ public class Gym {
      */
     public void addWeight(Weight weight) {
         if (weight == null) {
-            throw new IllegalArgumentException("The weight should not be null");
+            System.out.println("The weight should not be null");
+            return;
         }
         weights.add(weight);
     }
@@ -105,7 +106,8 @@ public class Gym {
      */
     public void addCardioMachine(CardioMachine machine) {
         if (machine == null) {
-            throw new IllegalArgumentException("The cardio machine should not be null");
+            System.out.println("The cardio machine should not be null");
+            return;
         }
         machines.add(machine);
     }
@@ -116,18 +118,19 @@ public class Gym {
      */
     public void addFitnessClass(FitnessClass cls) {
         if (cls == null) {
-            throw new IllegalArgumentException("The fitness class should not be null");
+            System.out.println("The fitness class should not be null");
         }
         classes.add(cls);
     }
 
     /**
-     * Guids the given member through workout.
+     * Guides the given member through workout.
      * @param member member to guide
      */
     public void guideMemberThroughWorkout(Member member) {
         if (member == null) {
-            throw new IllegalArgumentException("The member should not be null.");
+            System.out.println("The member should not be null.");
+            return;
         }
 
         String name = member.getName();

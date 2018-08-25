@@ -26,22 +26,7 @@ public class Visit {
 
     @Override
     public String toString() {
-        String monthStr = prettyFormat(month);
-        String dayStr = prettyFormat(day);
-        return monthStr + "/" + dayStr + "/" + year;
-    }
-
-    /**
-     * Returns a pretty format of the given number.
-     * @param n given number
-     * @return pretty format of the given number
-     */
-    private String prettyFormat(int n) {
-        if (n < 10) {
-            return "0" + String.valueOf(n);
-        } else {
-            return String.valueOf(n);
-        }
+        return String.format("%d/%2d/%d", month, day, year);
     }
 
 }

@@ -24,6 +24,7 @@ public abstract class Shape implements Cloneable {
 
     /**
      * Type of this shape.
+     * Note that since String is immutable, it's okay to just do shallow copy.
      */
     private final String type;
 

@@ -8,7 +8,7 @@ import model.members.Member;
 import model.members.MembershipLevel;
 
 /**
- * Gym chain class.
+ * GymChain class.
  *
  * @author Ziang Lu
  */

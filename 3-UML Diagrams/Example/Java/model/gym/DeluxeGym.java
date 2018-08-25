@@ -1,7 +1,7 @@
 package model.gym;
 
 /**
- * Deluxe gym class.
+ * DeluxeGym class.
  *
  * @author Ziang Lu
  */

@@ -6,7 +6,7 @@ import java.util.List;
 import model.members.Member;
 
 /**
- * Class of fitness class.
+ * FitnessClass class.
  *
  * @author Ziang Lu
  */
@@ -70,11 +70,11 @@ public class FitnessClass {
      * @param member member to register
      */
     public void registerMember(Member member) {
-        if (registered.indexOf(member) >= 0) {
-            System.out.println("Sorry, but you seem to have registered the class");
+        if (registered.contains(member)) {
+            System.out.println("Sorry, but you have registered the class");
             return;
         }
-        if (registered.size() >= MAX_CAPACITY) {
+        if (registered.size() > MAX_CAPACITY) {
             System.out.println("Sorry, but the class is full");
             return;
         }
@@ -88,7 +88,7 @@ public class FitnessClass {
     public void removeMember(Member member) {
         int memberIdx = registered.indexOf(member);
         if (memberIdx < 0) {
-            System.out.println("Sorry, but you seem to have not registered the class");
+            System.out.println("Sorry, but you have not registered the class");
             return;
         }
         registered.remove(memberIdx);
