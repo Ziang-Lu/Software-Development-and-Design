@@ -63,12 +63,16 @@ public abstract class LoanableItem extends Item {
 
     /**
      * Accessor of dueDate.
-     * @return
+     * @return dueDate
      */
     public Date getDueDate() {
         return dueDate;
     }
 
+    /**
+     * Accessor of renewed.
+     * @return renewed
+     */
     public boolean isRenewed() {
         return renewed;
     }

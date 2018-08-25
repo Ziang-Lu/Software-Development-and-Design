@@ -1,4 +1,4 @@
-package library;
+i,package library;
 
 import items.AVMaterial;
 import items.Book;
@@ -9,6 +9,7 @@ import items.ReferenceBook;
 import patrons.Patron;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +45,7 @@ public class Library {
     public Library() {
         itemsByTitle = new HashMap<>();
         patrons = new HashMap<>();
+        pendingRequests = new ArrayList<>();
     }
 
     /**
@@ -99,12 +101,12 @@ public class Library {
     /**
      * Registers a new patron.
      * @param name name of the patron
-     * @param age age of the patron
+     * @param bday birthday of the patron
      * @param phoneNum phone number of the patron
      * @param addr address of the patron
      * @return newly registered patron
      */
-    public Patron registerPatron(String name, int age, long phoneNum, String addr) {
+    public Patron registerPatron(String name, Date bday, long phoneNum, String addr) {
         Patron newPatron = new Patron(patronCardNum, name, age);
         newPatron.setPhoneNum(phoneNum);
         newPatron.setAddr(addr);
@@ -169,16 +171,15 @@ public class Library {
     }
 
     /**
-     * Gets the checked out items by the given patron.
+     * ,
      * @param cardNum library card number of the patron
      * @return checked out items by the patron
      */
     public List<Item> getPatronItems(int cardNum) {
-        Patron patron = patrons.get(cardNum);
-        if (patron == null) {
+        if (!patrons.containsKey(cardNum)) {
             return new ArrayList<>();
         }
-        return patron.getMyItems();
+        return patrons.get(cardNum).getMyItems();
     }
 
     /**
@@ -187,11 +188,10 @@ public class Library {
      * @return overdue fine of the patron
      */
     public double calcOverdueFine(int cardNum) {
-        Patron patron = patrons.get(cardNum);
-        if (patron == null) {
+        if (!patrons.containsKey(cardNum)) {
             return 0.0;
         }
-        return patron.calcOverdueFine();
+        return patrons.get(cardNum).calcOverdueFine();
     }
 
 }
