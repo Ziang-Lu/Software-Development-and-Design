@@ -69,7 +69,7 @@
 
 ## Techniques
 
-### Black-box Testing (黑箱测试)
+### Black-box Testing (黑箱测试) / Functional Testing
 
 #### 1. Definition & Explanation
 
@@ -89,13 +89,13 @@ Consider the software as a closed box (black-box)
 
   * No need for the code
 
-    => Early test design before implementation
+    => <u>Early test design</u> before implementation
 
-  * Applicable at all granularity levels
+  * Applicable at <u>all granularity levels</u>
 
 * Cons:
 
-  * Since we don't look into the implementation, we cannot reveal failures due to implementation details.
+  * Since we don't look into the implementation, we <u>cannot reveal failures due to implementation details</u>.
 
 <br>
 
@@ -142,6 +142,8 @@ Consider the software as a closed box (black-box)
    * Simply combine the selected input values to actual test cases, and eliminate the meaningless and invalid ones
 
 5. Generate **test cases** from the corresponding test case specifications
+
+   *Note that test cases are simply instantiations of test case specifications*
 
 <br>
 
@@ -245,14 +247,105 @@ Consider the software as a closed box (black-box)
 
 <br>
 
-### White-box Testing (白箱测试)
+### White-box Testing (白箱测试) / Structural Testing (结构测试)
 
-Look inside the box
+#### 1. Definition & Explanation
+
+"Look inside the box"
+
+***
+
+*Assumption:*
+
+* *Executing the faulty statement is a necessary condition for revealing a fault.*
+
+  *If there is a bug in the program, but if we don't execute the statement that contains the bug, we won't be able to find it.*
+
+  *=> Make sense*
+
+***
 
 => Based on the **code implementation**, but **not look into the specification of the software**
 
-Limitation:
+<br>
 
-* Since we don't look into the specification, we cannot reveal the failures of parts of the software that haven't been implemented.
+#### 2. Pros & Cons
+
+* Pros:
+
+  * White-box testing is based on the code.
+
+    * It <u>can be measured objectively</u>.
+    * It <u>can be measured automatically</u>.
+
+  * Allows for <u>covering the coded behavior</u> of the software
+
+    i.e., If there is some mistake in the code, and is not obvious by looking at the specification of the code, white-box testing might be able to catch it, because white-box testing tries to exercise the code implementation.
+
+  * <u>Can be used to compare test suites (测试套件)</u>
+
+    i.e., If you have two alternative sets of tests that you can use to assess the quality of your software, white-box testing techniques can tell you which one of these two test suites is likely to be more effective in testing your code.
+
+* Cons: Since we don't look into the specification, we <u>cannot reveal the failures of parts of the software that haven't been implemented</u>.
 
 => Black-box and white-box testings are really **complementary** techniques.
+
+<br>
+
+#### 3. Classifications
+
+* **Control-flow based ~ (基于控制流的白盒测试)**
+
+* Data-flow based ~ (基于数据流的白盒测试)
+
+* Fault based ~ (基于错误的白盒测试)
+
+<br>
+
+#### 4. Approach
+
+**Coverage Criteria (覆盖标准)**
+
+* Defined in terms of <u>test requirements (测试需求)</u>
+
+  *Test requirement: Entities (interesting aspects) in the code that we need to execute in order to satisfy the criteria*
+
+* Result in <u>test specifcations (测试规格说明)</u> and <u>test cases</u>
+
+  By exploring the test requirements, we get the corresponding test specifications; and by instantiating the test specifications, we get the corresponding test cases.
+
+e.g.,
+
+```java
+public static void printSum(int a, int b) {
+    int result = a + b;
+    if (result > 0) {
+        printInColor("RED ", result); // TEST REQUIREMENT #1: Execution of this block
+        /*
+         * => Test Specification #1:
+         * a + b > 0
+         *
+         * => Test case #1:
+         * a = 1
+         * b = 2
+         * Expected output: red 3
+         * ...
+         */
+    } else if (result < 0) {
+        printInColor("BLUE ", result); // TEST REQUIREMENT #2: Execution of this block
+        /*
+         * => Test Specification #2:
+         * a + b < 0
+         *
+         * => Test case #2:
+         * a = -1
+         * b = -2
+         * Expected output: blue -3
+         * ...
+         */
+    }
+}
+```
+
+
+
