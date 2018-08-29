@@ -2,3 +2,7 @@
 
 # Java compilation files
 *.class
+
+# Python compilation files
+__pycache__/
+*.pyc

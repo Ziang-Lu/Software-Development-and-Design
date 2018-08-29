@@ -304,6 +304,8 @@ Consider the software as a closed box (black-box)
 
 #### 4. Approach
 
+***
+
 **Coverage Criteria (覆盖标准)**
 
 * Defined in terms of <u>test requirements (测试需求)</u>
@@ -347,5 +349,8 @@ public static void printSum(int a, int b) {
 }
 ```
 
+***
 
-
+1. Statement Coverage (语句覆盖)
+2. Branch Coverage (分支覆盖)
+3. Condition Coverage (条件覆盖)
