@@ -63,7 +63,8 @@ public class Robot {
         s.append("head=").append(head.getType()).append(", ");
         s.append("torso=").append(torso.getType()).append(", ");
         s.append("arms=").append(arms.getType()).append(", ");
-        s.append("legs=").append(legs.getType()).append("\n");
+        s.append("legs=").append(legs.getType());
+        s.append("]\n");
         return s.toString();
     }
 

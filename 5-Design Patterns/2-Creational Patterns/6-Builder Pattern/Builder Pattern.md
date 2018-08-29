@@ -18,7 +18,9 @@ The Builder Pattern is a **creational pattern** that **constructs complex object
 * Encapsulate creating and assembling <u>the parts of a complex object in a separate `Builder` object</u>
 * When needed, <u>delegate object creation to a `Builder` object instead of creating the objects directly</u>.
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/6-Builder%20Pattern/builder_pattern_example.png?raw=true">
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/6-Builder%20Pattern/phone_example.png?raw=true">
+
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/6-Builder%20Pattern/robot_example.png?raw=true">
 
 <br>
 

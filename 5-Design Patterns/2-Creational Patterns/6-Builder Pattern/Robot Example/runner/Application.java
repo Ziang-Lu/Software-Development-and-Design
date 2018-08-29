@@ -6,7 +6,7 @@ import builder.RobotEngineer;
 import robot.Robot;
 
 /**
- * Application that actually uses Builder Pattern to create robots.
+ * Application that actually makes use of Builder Pattern to create robots.
  *
  * @author Ziang Lu
  */
