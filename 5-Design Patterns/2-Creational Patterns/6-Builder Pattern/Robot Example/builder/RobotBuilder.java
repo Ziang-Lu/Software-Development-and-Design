@@ -4,7 +4,8 @@ import robot.Robot;
 
 /**
  * Abstract RobotBuilder interface that works as an abstract factory and
- * defines how to build a robot by creating and assembling all of its parts.
+ * defines the construction process for a robot, i.e., how to build a robot by
+ * creating and assembling all of its parts.
  *
  * @author Ziang Lu
  */

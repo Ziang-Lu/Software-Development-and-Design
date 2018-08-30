@@ -16,7 +16,7 @@ public class Phone {
      */
     private String processor;
     /**
-     * RAM of this phone, measured in GB.
+     * RAM of this phone, measured in MB.
      */
     private int ram;
     /**
@@ -32,7 +32,7 @@ public class Phone {
      * Constructor with parameter.
      * @param os operating system of the phone
      * @param processor processor brand of the phone
-     * @param ram RAM of the phone measured in GB
+     * @param ram RAM of the phone measured in MB
      * @param screenSize screen size of the phone
      * @param battery battery capacity of the phone measured in mAh
      */

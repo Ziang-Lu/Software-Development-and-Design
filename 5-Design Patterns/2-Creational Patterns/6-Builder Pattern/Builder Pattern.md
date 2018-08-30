@@ -20,6 +20,10 @@ It commits
 
 The Builder Pattern is a **creational pattern** that **constructs complex objects made up from a bunch of its component objects, and meanwhile keeps the creation of these part objects to be independent from the main object**.
 
+*Builder Pattern <u>builds a complex object using simple objects and using a step-by-step approach</u>.*
+
+*=> The <u>process of constructing an complex object should be generic</u> so that <u>the same process can be used to create different representations of the same complex object</u>.*
+
 * When needed, <u>delegate object creation to a `Builder` object instead of creating the objects directly</u>.
 
 * Encapsulate creating and assembling <u>the parts of a complex object in a separate `Builder` object</u>
@@ -28,11 +32,13 @@ The Builder Pattern is a **creational pattern** that **constructs complex object
 
 * `Product` is the final output object which is produced from `Builder` and as directed.
 
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/6-Builder%20Pattern/builder_pattern.png?raw=true">
+
 In this way, we successfuly **separate the representation of a class from its construction process**.
 
 *即正如前面[1]所说, 不必在constructor中一次性specify全部的parameter, 而可以通过builder动态地添加field*
 
-*例如, 在下面的例子中仅仅specify `os` to be "Android"以及`ram` to be 2GB, 可以构造出一部phone; 在另一个情况下, 可以仅仅specify `os` to be "iOS"以及`screenSize` to be 5.5 inch 来构造出另一部phone.*
+*例如, 在下面的例子中仅仅specify `os` to be "Android"以及`ram` to be 2MB, 可以构造出一部phone; 在另一个情况下, 可以仅仅specify `os` to be "iOS"以及`screenSize` to be 5.5 inch 来构造出另一部phone.*
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/6-Builder%20Pattern/phone_example.png?raw=true">
 

@@ -3,8 +3,9 @@ package builder;
 import phone.Phone;
 
 /**
- * PhoneBuilder class that works as a factory, a blueprint, that defines how to
- * build a phone by creating and assembling all of its parts.
+ * PhoneBuilder class that works as a factory, a blueprint, that defines the
+ * construction process for a phone, i.e., how to build a phone by creating and
+ * assembling all of its parts.
  *
  * @author Ziang Lu
  */
