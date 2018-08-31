@@ -77,14 +77,20 @@ This repo takes aspects regarding software development and design notes from:
 
 #### Detailedly Introduced Design Patterns
 
-* Factory Method Pattern (工厂方法模式)
-* Lazy Initialization Pattern (惰性初始化模式)
-* Singleton Pattern (单例模式)
-* Multiton Pattern (多例模式)
-* Composite Pattern (复合模式)
-* Iterator Pattern (迭代器模式)
-* Observer Pattern (观察者模式)
-* Strategy Pattern (策略模式)
+* Creational Patterns (创建型模式)
+  * Factory Method Pattern (工厂方法模式) + Abstract Factory Pattern (抽象工厂模式)
+  * Lazy Initialization Pattern (惰性初始化模式)
+  * Singleton Pattern (单例模式)
+    * Multiton Pattern (多例模式)
+  * Prototype Pattern (原型模式)
+  * Builder Pattern (构造器模式)
+* Structural Patterns (结构型模式)
+  * Composite Pattern (复合模式)
+* Behavioral Patterns (行为型模式)
+  * Strategy Pattern (策略模式) / Policy Pattern (政策模式)
+  * Iterator Pattern (迭代器模式)
+  * Observer Pattern (观察者模式)
+* Concurrency Patterns (并发型模式)
 
 <br>
 
