@@ -55,10 +55,4 @@ e.g.,
 DocumentCreator newCreator = new NewDocumentCreator();
 ```
 
-<br>
-
-### Code Example
-
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/2-Creational%20Patterns/1-Factory%20Method%20Pattern%20&%20Abstract%20Factory%20Pattern/gui_example.png?raw=true">
-
 

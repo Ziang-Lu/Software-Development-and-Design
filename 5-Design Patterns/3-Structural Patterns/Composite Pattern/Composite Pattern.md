@@ -8,7 +8,7 @@ e.g., branches may contain branches and leaves, folders may contain folders and 
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/3-Structural%20Patterns/Composite%20Pattern/composite_pattern.png?raw=true">
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/3-Structural%20Patterns/Composite%20Pattern/Composite%20Pattern.png?raw=true">
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/3-Structural%20Patterns/Composite%20Pattern/composite_pattern_uml.png?raw=true">
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/3-Structural%20Patterns/Composite%20Pattern/Topic-Lecture-Video%20Example.png?raw=true">
 

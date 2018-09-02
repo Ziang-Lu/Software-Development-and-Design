@@ -4,7 +4,7 @@
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/4-Behavioral%20Patterns/3-Observer%20Pattern/observer_pattern.png?raw=true">
 
-<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/4-Behavioral%20Patterns/3-Observer%20Pattern/Observer%20Pattern.png?raw=true">
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/4-Behavioral%20Patterns/3-Observer%20Pattern/observer_pattern_uml.png?raw=true">
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/5-Design%20Patterns/4-Behavioral%20Patterns/3-Observer%20Pattern/Java_Observable_Observer.png?raw=true">
 
