@@ -25,19 +25,19 @@ public class Application {
         System.out.println("Please enter Travel Type: 'Auto' or 'Bus' or 'Taxi' or 'Train' ");
         Scanner scanner = new Scanner(System.in);
         String travelType = scanner.next();
-        System.out.println("Travel Type is " + travelType);
+        System.out.println("Travel Type : " + travelType);
 
-        TravelContext travelContext = new TravelContext();
+        TravelContext context = new TravelContext();
         if (travelType.equalsIgnoreCase("Auto")) {
-            travelContext.setTravelStrategy(new AutoTravelStrategy());
+            context.setTravelStrategy(new AutoTravelStrategy());
         } else if (travelType.equalsIgnoreCase("Bus")) {
-            travelContext.setTravelStrategy(new BusTravelStrategy());
+            context.setTravelStrategy(new BusTravelStrategy());
         } else if (travelType.equalsIgnoreCase("Taxi")) {
-            travelContext.setTravelStrategy(new TaxiTravelStrategy());
+            context.setTravelStrategy(new TaxiTravelStrategy());
         } else if (travelType.equalsIgnoreCase("Train")) {
-            travelContext.setTravelStrategy(new TrainTravelStrategy());
+            context.setTravelStrategy(new TrainTravelStrategy());
         }
-        travelContext.useStrategyToGotoAirport();
+        context.useStrategyToGotoAirport();
     }
 
 }
