@@ -17,7 +17,7 @@ public class Waiter extends FrontOfHouseEmployee {
     /**
      * List of orders.
      */
-    private List<Order> orders;
+    private final List<Order> orders;
     /**
      * Current cash.
      */

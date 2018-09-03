@@ -7,6 +7,9 @@ package model;
  */
 public class Lecture extends Module {
 
+    /**
+     * Genre of this module.
+     */
     private static final String GENRE = "Lecture - ";
 
     /**

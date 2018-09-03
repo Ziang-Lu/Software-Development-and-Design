@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Abstract EndingChoice class.
+ *
+ * @author Ziang Lu
+ */
 public abstract class EndingChoice extends Choice {
 
     /**

@@ -17,7 +17,7 @@ public class OldRobotBuilder implements RobotBuilder {
     /**
      * Robot to build.
      */
-    private Robot robot = new Robot();
+    private final Robot robot = new Robot();
 
     @Override
     public void buildRobotHead() {

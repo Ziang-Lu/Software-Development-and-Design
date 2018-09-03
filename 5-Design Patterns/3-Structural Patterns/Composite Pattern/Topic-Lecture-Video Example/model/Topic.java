@@ -10,6 +10,9 @@ import java.util.List;
  */
 public class Topic extends Module {
 
+    /**
+     * Genre of this module.
+     */
     private static final String GENRE = "Topic - ";
 
     /**

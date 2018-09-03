@@ -4,6 +4,11 @@ import model.Monster;
 import model.Room;
 import model.Treasure;
 
+/**
+ * Application that actually uses Composite Pattern.
+ *
+ * @author Ziang Lu
+ */
 public class MonsterMaze {
 
     /**

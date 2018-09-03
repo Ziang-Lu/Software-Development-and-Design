@@ -26,15 +26,15 @@ public class WordOccurrences extends Prototype {
     /**
      * Background text.
      */
-    private String text;
+    private final String text;
     /**
      * Word to search.
      */
-    private String word;
+    private final String word;
     /**
      * Positions of all the occurrences of word in text.
      */
-    private List<Integer> occurrences;
+    private final List<Integer> occurrences;
 
     /**
      * Constructor with parameter.

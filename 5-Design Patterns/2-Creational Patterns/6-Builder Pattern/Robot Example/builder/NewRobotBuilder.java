@@ -14,7 +14,7 @@ import robot.RobotTorso;
  */
 public class NewRobotBuilder implements RobotBuilder {
 
-    private Robot robot = new Robot();
+    private final Robot robot = new Robot();
 
     @Override
     public void buildRobotHead() {

@@ -13,7 +13,7 @@ public class RobotEngineer {
     /**
      * Robot builder owned by this robot engineer.
      */
-    private RobotBuilder robotBuilder;
+    private final RobotBuilder robotBuilder;
 
     /**
      * Constructor with parameter.

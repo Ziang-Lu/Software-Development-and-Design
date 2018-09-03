@@ -7,6 +7,9 @@ package model;
  */
 public class Video extends Module {
 
+    /**
+     * Genre of this module.
+     */
     private static final String GENRE = "Video - ";
 
     /**

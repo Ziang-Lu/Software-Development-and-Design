@@ -5,7 +5,7 @@ import model.Topic;
 import model.Video;
 
 /**
- * Application.
+ * Application that actually uses Composite Pattern.
  *
  * @author Ziang Lu
  */

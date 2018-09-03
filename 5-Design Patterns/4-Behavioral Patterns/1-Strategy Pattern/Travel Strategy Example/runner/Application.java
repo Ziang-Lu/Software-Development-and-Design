@@ -27,17 +27,17 @@ public class Application {
         String travelType = scanner.next();
         System.out.println("Travel Type : " + travelType);
 
-        TravelContext context = new TravelContext();
+        Traveler traveler = new TravelContext();
         if (travelType.equalsIgnoreCase("Auto")) {
-            context.setTravelStrategy(new AutoTravelStrategy());
+            traveler.setTravelStrategy(new AutoTravelStrategy());
         } else if (travelType.equalsIgnoreCase("Bus")) {
-            context.setTravelStrategy(new BusTravelStrategy());
+            traveler.setTravelStrategy(new BusTravelStrategy());
         } else if (travelType.equalsIgnoreCase("Taxi")) {
-            context.setTravelStrategy(new TaxiTravelStrategy());
+            traveler.setTravelStrategy(new TaxiTravelStrategy());
         } else if (travelType.equalsIgnoreCase("Train")) {
-            context.setTravelStrategy(new TrainTravelStrategy());
+            traveler.setTravelStrategy(new TrainTravelStrategy());
         }
-        context.useStrategyToGotoAirport();
+        traveler.useStrategyToGotoAirport();
     }
 
 }

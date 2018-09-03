@@ -10,23 +10,23 @@ public class Phone {
     /**
      * Operating system of this phone.
      */
-    private String os;
+    private final String os;
     /**
      * Processor brand of this phone.
      */
-    private String processor;
+    private final String processor;
     /**
      * RAM of this phone, measured in MB.
      */
-    private int ram;
+    private final int ram;
     /**
      * Screen size of this phone.
      */
-    private double screenSize;
+    private final double screenSize;
     /**
      * Battery capacity of this phone, measured in mAh.
      */
-    private int battery;
+    private final int battery;
 
     /**
      * Constructor with parameter.

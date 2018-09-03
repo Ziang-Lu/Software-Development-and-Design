@@ -3,13 +3,13 @@ package runner;
 import strategy.TravelStrategy;
 
 /**
- * TravelContext class works as an interface to the outside world: it wraps a
- * travel strategy and the traveler will use that travel strategy to go to the
- * airport.
+ * Traveler class works as the director, an interface to the outside world: it
+ * wraps a travel strategy and the traveler will use that travel strategy to go
+ * to the airport.
  *
  * @author Ziang Lu
  */
-public class TravelContext {
+public class Traveler {
 
     /**
      * Travel strategy to use.
