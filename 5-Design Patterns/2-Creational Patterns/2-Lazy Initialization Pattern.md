@@ -1,4 +1,4 @@
-# Lazy Initialization Pattern
+# Lazy Initialization Pattern (惰性初始化模式)
 
 ### Definition & Explanation
 

@@ -1,4 +1,4 @@
-# Decorator Pattern
+# Decorator Pattern (装饰器模式)
 
 ### Definition & Explanation
 

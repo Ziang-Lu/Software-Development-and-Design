@@ -1,4 +1,4 @@
-# Prototype Pattern
+# Prototype Pattern (原型模式)
 
 ### Applicability
 

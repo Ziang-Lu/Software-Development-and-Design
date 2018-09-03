@@ -1,4 +1,4 @@
-# Multiton Pattern
+# Multiton Pattern (多例模式)
 
 ### Definition & Explanation
 

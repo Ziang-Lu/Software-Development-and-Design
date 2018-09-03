@@ -1,4 +1,4 @@
-# Strategy Pattern / Policy Pattern
+# Strategy Pattern (策略模式)
 
 ### Applicability
 

@@ -1,4 +1,4 @@
-# Factory Method Pattern & Abstract Factory Pattern
+# Factory Method Pattern (工厂方法模式) & Abstract Factory Pattern (抽象工厂模式)
 
 ### Applicability (of Factory Method Pattern and Abstract Factory Pattern combined)
 

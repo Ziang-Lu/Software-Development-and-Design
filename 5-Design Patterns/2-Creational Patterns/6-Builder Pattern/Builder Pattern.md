@@ -1,4 +1,4 @@
-# Builder Pattern
+# Builder Pattern (构造器模式)
 
 ### Applicability
 

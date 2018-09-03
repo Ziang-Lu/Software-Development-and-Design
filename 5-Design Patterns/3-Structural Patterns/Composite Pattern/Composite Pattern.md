@@ -1,4 +1,4 @@
-# Composition Pattern
+# Composite Pattern (复合模式)
 
 Problem: Many things in the world are **self-referential**, as in **they can contain themselves** in their inherent structure.
 

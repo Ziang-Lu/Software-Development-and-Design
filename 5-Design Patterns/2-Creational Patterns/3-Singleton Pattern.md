@@ -1,4 +1,4 @@
-# Singleton Pattern
+# Singleton Pattern (单例模式)
 
 ### Applicability
 

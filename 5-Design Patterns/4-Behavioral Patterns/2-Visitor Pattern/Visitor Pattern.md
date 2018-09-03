@@ -1,4 +1,4 @@
-# Visitor Pattern
+# Visitor Pattern (访问者模式)
 
 ### Definition & Explanation
 
