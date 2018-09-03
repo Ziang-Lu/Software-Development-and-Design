@@ -88,6 +88,7 @@ This repo takes aspects regarding software development and design notes from:
   * Composite Pattern (复合模式)
 * Behavioral Patterns (行为型模式)
   * Strategy Pattern (策略模式) / Policy Pattern (政策模式)
+  * Visitor Pattern (访问者模式)
   * Iterator Pattern (迭代器模式)
   * Observer Pattern (观察者模式)
 * Concurrency Patterns (并发型模式)

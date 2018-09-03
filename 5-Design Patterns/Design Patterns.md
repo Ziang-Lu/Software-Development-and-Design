@@ -28,6 +28,7 @@
 -> **Help realize interactions among objects**
 
 * Strategy Pattern (策略模式) / Policy Pattern (政策模式)
+* Visitor Pattern (访问者模式)
 * Iterator Pattern (迭代器模式)
 * Observer Pattern (观察者模式)
 
