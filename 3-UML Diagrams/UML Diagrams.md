@@ -67,6 +67,8 @@
   }
   ```
 
+***
+
 <br>
 
 <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/3-UML%20Diagrams/associations_example.png?raw=true">
