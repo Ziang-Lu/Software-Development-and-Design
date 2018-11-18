@@ -13,7 +13,7 @@ from items import AVMaterial, Book, Item, LoanableItem, Magazine, ReferenceBook
 from patron import Patron
 
 
-class Library(object):
+class Library:
     """
     Library class.
     """

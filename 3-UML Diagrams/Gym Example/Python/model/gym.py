@@ -14,7 +14,7 @@ from model.members import Member
 from model.weights import Weight
 
 
-class FitnessClass(object):
+class FitnessClass:
     """
     FitnessClass class.
     """
@@ -82,7 +82,7 @@ class FitnessClass(object):
         self._registered.remove(member)
 
 
-class Gym(object):
+class Gym:
     """
     Gym class.
     """

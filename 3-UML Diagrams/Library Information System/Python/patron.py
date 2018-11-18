@@ -14,7 +14,7 @@ from items import Item, LoanableItem
 from library import Library
 
 
-class Patron(object):
+class Patron:
 
     def __init__(self, card_num: int, name: str, bday):
         """

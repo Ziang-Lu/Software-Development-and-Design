@@ -8,21 +8,20 @@ Member-related module.
 __author__ = 'Ziang Lu'
 
 import datetime
+from enum import Enum, auto
 from typing import List
 
 
-class MembershipLevels(object):
+class MembershipLevel(Enum):
     """
     Membership level enumeration.
     """
-    __slots__ = []
-
-    BASIC = 1
-    CLASSES = 2
-    DELUXE = 3
+    BASIC = auto()
+    CLASSES = auto()
+    DELUXE = auto()
 
 
-class Visit(object):
+class Visit:
     """
     Visit class.
     """
@@ -43,7 +42,7 @@ class Visit(object):
         return f'{self._month}/{self._day}/{self._year}'
 
 
-class Member(object):
+class Member:
     """
     Member class.
     """
@@ -54,7 +53,7 @@ class Member(object):
         :param name: str
         """
         self._name = name
-        self._my_level = MembershipLevels.BASIC
+        self._my_level = MembershipLevel.BASIC
         self._visit_records = []
 
     @property
@@ -66,10 +65,10 @@ class Member(object):
         return self._name
 
     @property
-    def membership_level(self) -> int:
+    def membership_level(self) -> MembershipLevel:
         """
         Accessor of my_level.
-        :return: int
+        :return: Membership
         """
         return self._my_level
 
@@ -86,10 +85,10 @@ class Member(object):
         Updates this member, if possible.
         :return: None
         """
-        if self._my_level == MembershipLevels.BASIC:
-            self._my_level = MembershipLevels.CLASSES
-        elif self._my_level == MembershipLevels.CLASSES:
-            self._my_level = MembershipLevels.DELUXE
+        if self._my_level == MembershipLevel.BASIC:
+            self._my_level = MembershipLevel.CLASSES
+        elif self._my_level == MembershipLevel.CLASSES:
+            self._my_level = MembershipLevel.DELUXE
 
     def check_in(self) -> None:
         """

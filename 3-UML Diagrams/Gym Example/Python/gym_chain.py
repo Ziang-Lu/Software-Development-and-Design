@@ -8,10 +8,10 @@ Gym-chain module.
 from typing import List
 
 from model.gym import DeluxeGym, Gym
-from model.members import Member, MembershipLevels
+from model.members import Member, MembershipLevel
 
 
-class GymChain(object):
+class GymChain:
     """
     GymChain class.
     """
@@ -62,7 +62,7 @@ class GymChain(object):
         if not member or not gym:
             return False
 
-        if member.membership_level == MembershipLevels.DELUXE:
+        if member.membership_level == MembershipLevel.DELUXE:
             return True
         return type(gym).__name__ != DeluxeGym.__name__
 

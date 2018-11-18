@@ -77,7 +77,7 @@ class Plate(Weight):
         """
         super().__init__(pounds)
 
-    def get_weight(self) -> int:
+    def get_weight(self):
         return self._pounds
 
 
