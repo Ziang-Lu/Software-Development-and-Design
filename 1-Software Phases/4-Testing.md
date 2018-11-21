@@ -294,7 +294,7 @@ Consider the software as a closed box (black-box)
 
 #### 3. Classifications
 
-* **Control-flow based ~ (基于控制流的白盒测试)**
+* **Control-flow based ~ (基于控制流的白盒测试)**   [讨论重点]
 
 * Data-flow based ~ (基于数据流的白盒测试)
 
@@ -302,11 +302,7 @@ Consider the software as a closed box (black-box)
 
 <br>
 
-#### 4. Approach
-
-***
-
-**Coverage Criteria (覆盖标准)**
+#### 4. Coverage Criteria (覆盖标准)
 
 * Defined in terms of <u>test requirements (测试需求)</u>
 
@@ -322,24 +318,24 @@ e.g.,
 public static void printSum(int a, int b) {
     int result = a + b;
     if (result > 0) {
-        printInColor("RED ", result); // TEST REQUIREMENT #1: Execution of this block
+        printInColor("red", result); // TEST REQUIREMENT #1: Execution of this block
         /*
          * => Test Specification #1:
          * a + b > 0
          *
-         * => Test case #1:
+         * => Test Case #1:
          * a = 1
          * b = 2
          * Expected output: red 3
          * ...
          */
     } else if (result < 0) {
-        printInColor("BLUE ", result); // TEST REQUIREMENT #2: Execution of this block
+        printInColor("blue", result); // TEST REQUIREMENT #2: Execution of this block
         /*
          * => Test Specification #2:
          * a + b < 0
          *
-         * => Test case #2:
+         * => Test Case #2:
          * a = -1
          * b = -2
          * Expected output: blue -3
@@ -349,8 +345,118 @@ public static void printSum(int a, int b) {
 }
 ```
 
-***
+**Specific coverage criterions:**
 
-1. Statement Coverage (语句覆盖)
-2. Branch Coverage (分支覆盖)
-3. Condition Coverage (条件覆盖)
+1. **Statement Coverage (语句覆盖)**
+
+   Described by
+
+   * Test requirements:
+
+     <u>All the statements</u> in the program
+
+   * Coverage measure:
+
+     $\frac{\# \ of \ executed \ statements}{Total \ \# \ statementsl}$
+
+     *=> The higher this ratio, the better we execise our code.*
+
+2. **Branch Coverage (分支覆盖)**
+
+   Described by
+
+   - Test requirements:
+
+     <u>All the branches</u> in the program
+
+   - Coverage measure:
+
+     $\frac{\# \ of \ executed \ branches}{Total \ \# \ branches}$
+
+     *=> The higher this ratio, the better we execise our code.*
+
+   ```java
+   public static void printSum(int a, int b) {
+       int result = a + b;
+       if (result > 0) { // if-1
+           printInColor("red", result); // Branch-1
+       } else if (result < 0) { // Branch-2 & if-2
+           printInColor("blue", result); // Branch-2-1
+       } // Branch-2-2
+   }
+   // 4 branches => 4 test requirements
+   ```
+
+   ***
+
+   * <u>Branch coverage => (subsume)/(stronger) => Statement coverage</u>
+
+     Branch coverage 100% $\Rightarrow$ Statement coverage 100%
+
+     Branch coverage 100% $\nLeftarrow$ Statement coverage 100%
+
+     => Achieving 100% branch coverage requires more test cases than statement coverage.
+
+     => It is more expensive to achieve 100% branch coverage than statement coverage.
+
+   ***
+
+3. **Condition Coverage (条件覆盖)**
+
+   Described by
+
+   - Test requirements:
+
+     <u>Individual conditions</u> in the program
+
+   - Coverage measure:
+
+     $\frac{\# \ of \ executed \ conditions \ that \ are \ both \ true \ and \ false}{Total \ \# \ conditions}$
+
+     *=> The higher this ratio, the better we execise our code.*
+
+   ***
+
+   * <u>就subsumption关系而言, condition coverage与statement coverage / branch coverage并无直接关联, 即没有subsumption关系.</u>
+
+     与branch coverage并无直接subsumption关系的原因是branch coverage关注于if statement的整个expression, 而condition coverage关注于individual condition (即if statement中boolean的sub-expression).
+
+     * 因此有可能一套test suite可以满足if statement的整个expression为`true`和`false` (100% branch coverage), 却不能满足每个if statement中每个boolean的sub-expression都为`true`和`false` ($\neq$ 100% condition coverage)
+
+       (100% branch coverage $\nRightarrow$ 100$ condition coverage)
+
+     * 也有可能一套test suite可以满足每个if statement中每个boolean的sub-expression都为`true`和`false` (100% condition coverage), 却有一些if statement的expression恒为`true`或`false` ($\neq$ 100% branch coverage)
+
+       (100% condition coverage $\nRightarrow$ 100$ branch coverage)
+
+   ***
+
+   <br>
+
+   Combining branch and condition coverage => **Branch and Condition Coverage (分支与条件覆盖)**
+
+   ***
+
+   * <u>Branch and condition coverage => (subsume)/(stronger) => Branch coverage</u>
+
+     Branch and condition coverage 100% $\Rightarrow$ Branch coverage 100%
+
+     Branch and condition coverage 100% $\nLeftarrow$ Branch coverage 100%
+
+   * <u>Branch and condition coverage => (subsume)/(stronger) => Condition coverage</u>
+
+     Branch and condition coverage 100% $\Rightarrow$ Condition coverage 100%
+
+     Branch and condition coverage 100% $\nLeftarrow$ Condition coverage 100%
+
+   * <u>Branch coverage => (subsume)/(stronger) => Statement coverage</u>
+
+     Branch coverage 100% $\Rightarrow$ Statement coverage 100%
+
+     Branch coverage 100% $\nLeftarrow$ Statement coverage 100%
+
+     => Achieving 100% branch coverage requires more test cases than statement coverage.
+
+     => It is more expensive to achieve 100% branch coverage than statement coverage.
+
+   ***
