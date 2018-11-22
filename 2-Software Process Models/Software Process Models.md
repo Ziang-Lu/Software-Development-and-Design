@@ -351,3 +351,5 @@ XP is a **lightweight methodology** for small to medium sized teams developing s
 
   When we <u>modify or add new code to the codebase</u>, we <u>integrate and test every few hours, or at most a day</u>.
 
+  <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/2-Software%20Process%20Models/continuous_integration.png?raw=true" width="500px">
+
