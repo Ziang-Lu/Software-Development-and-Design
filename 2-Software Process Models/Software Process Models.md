@@ -59,7 +59,7 @@ Main functions:
 
      *Developers start by developing part of the system that they understand, instead of working on a whole system.*
 
-  3. Refine the prototype until it's acceptable.  *(iterative process)*
+  3. Refine the prototype until it's acceptable.  *(Iterative process)*
 
      *The partial system is shown to the customer, and customer feedback is used to drive the next iteration: change the current features, or add new features, i.e., the prototype is improved or extended, respectively.*
 
@@ -126,7 +126,7 @@ Use cases define the function of the system, whereas architecture defines the fo
 
   2. According to the <u>key use cases</u>, identify and define the main subsystems
 
-  3. According to <u>additional use cases</u>, refine the architecture   *(iterative process)*
+  3. According to <u>additional use cases</u>, refine the architecture   *(Iterative process)*
 
   Use-case driven development can also be reflected here.
 
@@ -247,33 +247,107 @@ Note that the labels represents **iterations** within each phase:
 
 <br>
 
-## Agile Software Process (敏捷软件过程) ***
+## Agile Software Process (敏捷软件过程) / Test-Driven Development (TDD) (测试驱动开发) ***
 
 **[Iterative/Incremental]**
 
 -> **Sacrifice discipline a little bit, in order to be more flexible, and be more able to account for changes**, specifically changes in requirements
 
-### Test-Driven Development (TDD) (测试驱动开发)
+### 1. Overview
+
+#### Principles
+
+- **Expectation that requirements will change**
+- Customer involvement
+  - To get customer <u>feedback for requirement change</u> and <u>drive the corresponding code modification</u>
+- Focus on the code
+- **Simplicity: Simple design, simple code**
+  - *Lvie for today without worrying too much about the future*
+- Focus on <u>people</u>
+  - Value people over process
+  - Promote <u>communication</u>
+
+#### General Workflow
 
 (在收集完requirements之后)
 
-#### 1. Test cases according to the requirements
+1. **Test cases according to the requirements**
 
-Since we haven't implement of the system, these <u>tests must fail</u>.
+   Since we haven't implement of the system, these <u>tests must fail</u>.
 
-#### 2. Code implementation to make the test cases pass
+2. **Code implementation to make the test cases pass**
 
-Since the <u>test cases represent requirements</u>, we have <u>just enough code implementation to satisfy the requirements</u>.
+   Since the <u>test cases represent requirements</u>, we have <u>just enough code implementation to satisfy the requirements</u>.
 
-*Since this is just a raw and naive implementation, the structure of the code deteriorate over time because we keep adding pieces.*
+   *Since this is just a raw and naive implementation, the structure of the code deteriorate over time because we keep adding pieces.*
 
-#### 3. Refactoring to improve the code quality
+3. **Refactoring to improve the code quality**
 
-*Then go back to Phase 1 to collect more requirements and turn them into new test cases.*
+   Then go back to Phase 1 to collect more requirements and turn them into new test cases.*
 
-<br>
-
-根据需求写test case => 写代码 => 重构 => 根据新需求写新test case => 写代码 => 重构 => ......
+**根据需求写test case => 写代码 => 重构 => 根据新需求写新test case => 写代码 => 重构 => ……**
 
 <br>
+
+### 2. (Specific) Agile Methods - Extreme Programming (XP) (极限编程)
+
+#### Definition
+
+XP is a **lightweight methodology** for small to medium sized teams developing software in the face of **vague of rapidly changing requirements**.
+
+=> <u>XP is all about changing and adapting.</u>
+
+#### Practices
+
+* Requirement engineering (as mentioned previously)
+
+* **Incremental planning (增量式计划)**
+
+  1. Select user stories for this release
+  2. Break the stories into specific development tasks
+  3. Plan this release
+  4. Develop / Integrate / Test the code for this release   *(Iterative process)*
+  5. Release the software
+  6. Evaluate the software system (from developers and customers feedback)
+  7. (Iteration)
+
+  *(基本上与上面的general workflow差不多.)*
+
+* **Test-first development (测试优先开发)**
+
+  <u>Any program feature without an automatic test, simply shouldn't exist.</u>
+
+  <u>=> If you need a feature, you need to first write a test for it.</u>
+
+  *(基本与上面的general workflow中所描述的差不多, 只是可能会更严格: 即如果要开发某个feature, 一定要先为其写unit test, 再去实现.)*
+
+* **Small releases (小型发布)**  *(-> 对应principle里的Customer involvement)*
+
+  Instead of having a big release at the end of a long development cycle, we try to <u>release very often</u>.
+
+  * <u>Reduce risks</u>   *(If we are going down the wrong path, we'll know right away.)*
+
+  * <u>Deliver real business value on a very short cycle</u>, which in turn <u>increases our customer confidence</u>
+
+  * <u>Produce a sense of accomplishment</u> for the developers
+
+* **Simple design**   *(-> 对应principle里的Simplicity)*
+
+  <u>Just enough to meet the requirements</u>, to get our system to work
+
+* **Refactoring**
+
+  *(基本上与上面的general workflow中所描述的差不多.)*
+
+* **Pair programming (结对编程)**
+
+  <u>All production code</u> is written with <u>two developers looking at one machine</u>.
+
+  The <u>two developers play different roles at different times</u>: the two developers <u>alternate in the role of programming and strategizing</u>.
+
+  * Strategizing: Looking at the code that is being written, and thinking whether it would work, whether the code can be made simpler, more efficient, more maintainable
+
+* **Continuous integration (连续集成)**
+
+  When we <u>modify or add new code to the codebase</u>, we <u>integrate and test every few hours, or at most a day</u>.
 
