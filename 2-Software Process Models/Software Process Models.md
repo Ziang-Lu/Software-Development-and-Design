@@ -258,14 +258,22 @@ Note that the labels represents **iterations** within each phase:
 #### Principles
 
 - **Expectation that requirements will change**
+
 - Customer involvement
-  - To get customer <u>feedback for requirement change</u> and <u>drive the corresponding code modification</u>
+
+  -> To get customer <u>feedback for requirement change</u> and <u>drive the corresponding code modification</u>
+
 - Focus on the code
+
 - **Simplicity: Simple design, simple code**
-  - *Lvie for today without worrying too much about the future*
+
+  -> *Live for today without worrying too much about the future*
+
 - Focus on <u>people</u>
-  - Value people over process
-  - Promote <u>communication</u>
+
+  -> Value people over process
+
+  => Promote <u>communication</u>
 
 #### General Workflow
 
@@ -273,33 +281,31 @@ Note that the labels represents **iterations** within each phase:
 
 1. **Test cases according to the requirements**
 
-   Since we haven't implement of the system, these <u>tests must fail</u>.
+   Since we haven't implemented the system, these <u>tests must fail</u>.
 
 2. **Code implementation to make the test cases pass**
 
-   Since the <u>test cases represent requirements</u>, we have <u>just enough code implementation to satisfy the requirements</u>.
+   Since the <u>test cases represent requirements</u>, we have <u>just enough code implementation</u> to satisfy the requirements.
 
    *Since this is just a raw and naive implementation, the structure of the code deteriorate over time because we keep adding pieces.*
 
-3. **Refactoring to improve the code quality**
+3. **Refactor to improve the code quality**
 
-   Then go back to Phase 1 to collect more requirements and turn them into new test cases.*
+   *Then go back to Phase 1 to collect more requirements and turn them into new test cases.*
 
 **根据需求写test case => 写代码 => 重构 => 根据新需求写新test case => 写代码 => 重构 => ……**
 
 <br>
 
-### 2. (Specific) Agile Methods - Extreme Programming (XP) (极限编程)
+### 2. (Specific) Agile Method - Extreme Programming (XP) (极限编程)
 
 #### Definition
 
-XP is a **lightweight methodology** for small to medium sized teams developing software in the face of **vague of rapidly changing requirements**.
+XP is a **lightweight methodology** for small to medium sized teams developing software in the face of **vague or rapidly changing requirements**.
 
 => <u>XP is all about changing and adapting.</u>
 
 #### Practices
-
-* Requirement engineering (as mentioned previously)
 
 * **Incremental planning (增量式计划)**
 
@@ -315,11 +321,11 @@ XP is a **lightweight methodology** for small to medium sized teams developing s
 
 * **Test-first development (测试优先开发)**
 
-  <u>Any program feature without an automatic test, simply shouldn't exist.</u>
+  <u>Any program feature without an automatic test simply shouldn't exist.</u>
 
   <u>=> If you need a feature, you need to first write a test for it.</u>
 
-  *(基本与上面的general workflow中所描述的差不多, 只是可能会更严格: 即如果要开发某个feature, 一定要先为其写unit test, 再去实现.)*
+  *(基本上与上面的general workflow中所描述的差不多, 只是可能会更严格: 即如果要开发某个feature, 一定要先为其写unit test, 再去实现.)*
 
 * **Small releases (小型发布)**  *(-> 对应principle里的Customer involvement)*
 
@@ -337,15 +343,13 @@ XP is a **lightweight methodology** for small to medium sized teams developing s
 
 * **Refactoring**
 
-  *(基本上与上面的general workflow中所描述的差不多.)*
-
-* **Pair programming (结对编程)**
+* **Pair programming (结对编程)**   *(-> 对应principle里的focus on people (communication))*
 
   <u>All production code</u> is written with <u>two developers looking at one machine</u>.
 
-  The <u>two developers play different roles at different times</u>: the two developers <u>alternate in the role of programming and strategizing</u>.
+  -> The <u>two developers play different roles at different times</u>: the two developers <u>alternate in the role of programming and strategizing</u>.
 
-  * Strategizing: Looking at the code that is being written, and thinking whether it would work, whether the code can be made simpler, more efficient, more maintainable
+  * Strategizing: Looking at the code that is being written, thinking whether it would work, whether the code can be made simpler, more efficient, more maintainable
 
 * **Continuous integration (连续集成)**
 
