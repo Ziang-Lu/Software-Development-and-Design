@@ -295,6 +295,8 @@ Note that the labels represents **iterations** within each phase:
 
 **根据需求写test case => 写代码 => 重构 => 根据新需求写新test case => 写代码 => 重构 => ……**
 
+<img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/2-Software%20Process%20Models/customer_value_vs_time.png?raw=true">
+
 <br>
 
 ### 2. (Specific) Agile Method - Extreme Programming (XP) (极限编程)
