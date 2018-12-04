@@ -86,7 +86,7 @@ Main functions:
 
 <br>
 
-## Spiral Model (螺旋模型) ***
+## Spiral Model (螺旋模型)
 
 **[Iterative/Incremental, Risk-oritented]**
 

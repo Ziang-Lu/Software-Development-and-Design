@@ -20,7 +20,7 @@ This repo takes aspects regarding software development and design notes from:
 
 * Waterfall Model (瀑布模型)
 * Evolutionary Prototyping (进化原型)
-* Spiral Model (螺旋模型) ***
+* Spiral Model (螺旋模型)
 * Rational Unified Process (RUP) / Unified Software Process (USP) (统一软件开发) ***
 * Agile Software Process (敏捷软件过程) ***
 
