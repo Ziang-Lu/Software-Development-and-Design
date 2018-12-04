@@ -2,9 +2,9 @@
 
 This repo takes aspects regarding software development and design notes from:
 
-**Software Development Process** by Georgia Tech on Udacity
+* *Software Development Process* by Georgia Tech on Udacity
 
-**Software Construction** by University of British Columbia on edX
+* *Software Construction* by University of British Columbia on edX
 
 ## Software Phases
 
