@@ -8,11 +8,11 @@ This repo takes aspects regarding software development and design notes from:
 
 ## Software Phases
 
-1. Requirement Engineering (需求工程)
-2. Design
-3. Implementation
-4. Validation and Verification
-5. Maintenance
+1. <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/1-Requirement%20Engineering.md">Requirement Engineering (需求工程)</a>
+2. <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/2-Design.md">Design</a>
+3. <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/3-Implementation.md">Implementation</a>
+4. <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/4-Verification%20and%20Validation.md">Validation and Verification</a>
+5. <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/1-Software%20Phases/5-Maintenance.md">Maintenance</a>
 
 <br>
 
