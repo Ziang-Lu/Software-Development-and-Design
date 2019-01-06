@@ -46,6 +46,8 @@ Interviewer is looking for:
 
 * **Systematic approach** to the problem
 
+  <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Interview-System%20Design%20Practice/Parking%20Lot/Parking%20Lot.png?raw=true">
+
 <br>
 
 ## Library Information System
@@ -55,3 +57,5 @@ Interviewer is looking for:
   Check out `requirements`
 
 * **Systematic approach** to the problem
+
+  <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Interview-System%20Design%20Practice/Library%20Information%20System/Library%20Information%20System.png?raw=true">
