@@ -11,6 +11,7 @@ from abc import ABC
 
 
 class Vehicle(ABC):
+    __slots__ = ['_license_plate']
 
     def __init__(self, license_plate: str):
         """
@@ -29,24 +30,28 @@ class Vehicle(ABC):
 
 
 class MotorCycle(Vehicle):
+    __slots__ = []
 
     def __init__(self, license_plate: str):
         super().__init__(license_plate)
 
 
 class Car(Vehicle):
+    __slots__ = []
 
     def __init__(self, license_plate: str):
         super().__init__(license_plate)
 
 
 class Truck(Vehicle):
+    __slots__ = []
 
     def __init__(self, license_plate: str):
         super().__init__(license_plate)
 
 
 class Bus(Vehicle):
+    __slots__ = []
 
     def __init__(self, license_plate: str):
         super().__init__(license_plate)

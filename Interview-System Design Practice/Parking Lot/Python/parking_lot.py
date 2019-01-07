@@ -22,6 +22,8 @@ class ParkingSpotSize(Enum):
 
 
 class ParkingSpot:
+    __slots__ = ['_id', '_size', '_my_vehicle']
+
     _next_id = 0
 
     def __init__(self, size: ParkingSpotSize):
@@ -29,8 +31,8 @@ class ParkingSpot:
         Constructor with parameter.
         :param size: ParkingSpotSize
         """
-        self._id = self._next_id
-        self._next_id += 1
+        self._id = ParkingSpot._next_id
+        ParkingSpot._next_id += 1
         self._size = size
         self._my_vehicle = None
 
@@ -69,6 +71,7 @@ class ParkingSpot:
 
 
 class ParkingLot:
+    __slots__ = ['_addr', '_available', '_parked']
 
     def __init__(self, addr: str):
         """
@@ -97,7 +100,7 @@ class ParkingLot:
         """
         # Check whether the vehicle is already parked
         if vehicle.license_plate in self._parked:
-            raise RuntimeError('The vehicle is already parked.')
+            raise Exception('The vehicle is already parked.')
 
         if isinstance(vehicle, MotorCycle):
             parked_spot_id = \
@@ -162,7 +165,7 @@ class ParkingLot:
         """
         # Check whether the vehicle is already parked
         if license_plate not in self._parked:
-            raise RuntimeError('The vehicle is not parked.')
+            raise Exception('The vehicle is not parked.')
 
         spot = self._parked.pop(license_plate)
         vehicle = spot.vehicle

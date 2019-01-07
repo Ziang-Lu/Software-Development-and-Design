@@ -5,10 +5,10 @@ import vehicle.MotorCycle;
 import vehicle.Truck;
 import vehicle.Vehicle;
 
-import java.util.ArrayDeque;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * Sizes of the parking spots.
@@ -24,6 +24,8 @@ enum ParkingSpotSize {
  */
 public class ParkingLot {
 
+    private static final int DEFAULT_NUM_OF_SPOTS_PER_SIZE = 20;
+
     /**
      * Address of the parking lot.
      */
@@ -32,12 +34,12 @@ public class ParkingLot {
      * Mapping between parking spot sizes and the corresponding available
      * parking spots.
      */
-    private final Map<ParkingSpotSize, Queue<ParkingSpot>> available;
+    private final ConcurrentMap<ParkingSpotSize, BlockingQueue<ParkingSpot>> available;
     /**
      * Mapping between the license plates of the parked vehicles and the
      * corresponding parking spot.
      */
-    private final Map<String, ParkingSpot> parked;
+    private final ConcurrentMap<String, ParkingSpot> parked;
 
     /**
      * Constructor with parameter.
@@ -45,11 +47,11 @@ public class ParkingLot {
      */
     public ParkingLot(String addr) {
         this.addr = addr;
-        available = new HashMap<>();
+        available = new ConcurrentHashMap<>();
         for (ParkingSpotSize size : ParkingSpotSize.values()) {
-            available.put(size, new ArrayDeque<>());
+            available.put(size, new ArrayBlockingQueue<>(DEFAULT_NUM_OF_SPOTS_PER_SIZE));
         }
-        parked = new HashMap<>();
+        parked = new ConcurrentHashMap<>();
     }
 
     /**
@@ -57,7 +59,7 @@ public class ParkingLot {
      * @param size given parking spot size
      */
     public void addParkingSpot(ParkingSpotSize size) {
-        Queue<ParkingSpot> sizeAvailable = available.get(size);
+        BlockingQueue<ParkingSpot> sizeAvailable = available.get(size);
         sizeAvailable.offer(new ParkingSpot(size));
         available.put(size, sizeAvailable);
     }
@@ -109,7 +111,7 @@ public class ParkingLot {
      * @return parking spot ID on success, -1 on failure
      */
     private int placeVehicleToSizedSpot(Vehicle vehicle, ParkingSpotSize size) {
-        Queue<ParkingSpot> sizeAvailable = available.get(size);
+        BlockingQueue<ParkingSpot> sizeAvailable = available.get(size);
         if (sizeAvailable.isEmpty()) {
             return -1;
         }
@@ -137,7 +139,7 @@ public class ParkingLot {
         Vehicle vehicle = spot.getVehicle();
         // Free the parking spot
         spot.setVehicle(null);
-        Queue<ParkingSpot> sizeAvailable = available.get(spot.size());
+        BlockingQueue<ParkingSpot> sizeAvailable = available.get(spot.size());
         sizeAvailable.offer(spot);
         available.put(spot.size(), sizeAvailable);
         return vehicle;
