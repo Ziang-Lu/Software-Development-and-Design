@@ -1,21 +1,16 @@
 package parking_lot;
 
+import vehicle.Bus;
 import vehicle.Car;
 import vehicle.MotorCycle;
 import vehicle.Truck;
 import vehicle.Vehicle;
 
+import java.util.Arrays;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
-/**
- * Sizes of the parking spots.
- */
-enum ParkingSpotSize {
-    S, M, L, XL
-}
 
 /**
  * ParkingLot class.
@@ -24,12 +19,16 @@ enum ParkingSpotSize {
  */
 public class ParkingLot {
 
+    /**
+     * All parking spot sizes in ascending order.
+     */
+    private static final ParkingSpotSize[] ALL_SIZES_IN_ORDER =
+            {ParkingSpotSize.S, ParkingSpotSize.M, ParkingSpotSize.M, ParkingSpotSize.XL};
+    /**
+     * Default number of parking spots for each size.
+     */
     private static final int DEFAULT_NUM_OF_SPOTS_PER_SIZE = 20;
 
-    /**
-     * Address of the parking lot.
-     */
-    private final String addr;
     /**
      * Mapping between parking spot sizes and the corresponding available
      * parking spots.
@@ -42,11 +41,9 @@ public class ParkingLot {
     private final ConcurrentMap<String, ParkingSpot> parked;
 
     /**
-     * Constructor with parameter.
-     * @param addr address of the parking lot
+     * Default constructor.
      */
-    public ParkingLot(String addr) {
-        this.addr = addr;
+    public ParkingLot() {
         available = new ConcurrentHashMap<>();
         for (ParkingSpotSize size : ParkingSpotSize.values()) {
             available.put(size, new ArrayBlockingQueue<>(DEFAULT_NUM_OF_SPOTS_PER_SIZE));
@@ -66,51 +63,56 @@ public class ParkingLot {
 
     /**
      * Places the given vehicle.
-     * @param vehicle vehicle to place
+     * @param v vehicle to place
      * @return parking spot ID on success, -1 on failure
      */
-    public int placeVehicle(Vehicle vehicle) {
+    public int placeVehicle(Vehicle v) {
         // Check whether the vehicle is already parked
-        if (parked.containsKey(vehicle.licensePlate())) {
+        if (parked.containsKey(v.licensePlate())) {
             throw new RuntimeException("The vehicle is already parked.");
         }
 
-        int parkedSpotId = 0;
-        if (vehicle instanceof MotorCycle) {
-            if ((parkedSpotId = placeVehicleToSizedSpot(vehicle, ParkingSpotSize.S)) != -1) {
-                return parkedSpotId;
-            } else if ((parkedSpotId = placeVehicleToSizedSpot(vehicle, ParkingSpotSize.M)) != -1) {
-                return parkedSpotId;
-            } else if ((parkedSpotId = placeVehicleToSizedSpot(vehicle, ParkingSpotSize.L)) != -1) {
-                return parkedSpotId;
-            }
-            return placeVehicleToSizedSpot(vehicle, ParkingSpotSize.XL);
-        } else if (vehicle instanceof Car) {
-            if ((parkedSpotId = placeVehicleToSizedSpot(vehicle, ParkingSpotSize.M)) != -1) {
-                return parkedSpotId;
-            } else if ((parkedSpotId = placeVehicleToSizedSpot(vehicle, ParkingSpotSize.L)) != -1) {
-                return parkedSpotId;
-            }
-            return placeVehicleToSizedSpot(vehicle, ParkingSpotSize.XL);
-        } else if (vehicle instanceof Truck) {
-            if ((parkedSpotId = placeVehicleToSizedSpot(vehicle, ParkingSpotSize.L)) != -1) {
-                return parkedSpotId;
-            }
-            return placeVehicleToSizedSpot(vehicle, ParkingSpotSize.XL);
-        } else {
-            return placeVehicleToSizedSpot(vehicle, ParkingSpotSize.XL);
+        ParkingSpotSize vehicleSize = ParkingSpotSize.S;
+        if (v instanceof Car) {
+            vehicleSize = ParkingSpotSize.M;
+        } else if (v instanceof Truck) {
+            vehicleSize = ParkingSpotSize.L;
+        } else if (v instanceof Bus) {
+            vehicleSize = ParkingSpotSize.XL;
         }
+        return placeVehicleFromSizedSpot(v, vehicleSize);
         // Time: O(1)
     }
 
     /**
-     * Private helper method to place the given vehicle to a parking spot of the
-     * given size.
-     * @param vehicle vehicle to place
+     * Private helper method to place the given vehicle to a parking spot, starting
+     * from searching the given size.
+     * @param v vehicle to place
+     * @param fromSize given parking spot size from which to start searching
+     * @return parking spot ID on success, -1 on failure
+     */
+    private int placeVehicleFromSizedSpot(Vehicle v, ParkingSpotSize fromSize) {
+        int fromIdx = Arrays.binarySearch(ALL_SIZES_IN_ORDER, fromSize);
+        int parkedSpotId = -1;
+        for (int idx = fromIdx; idx < ALL_SIZES_IN_ORDER.length; ++idx) {
+            ParkingSpotSize size = ALL_SIZES_IN_ORDER[idx];
+            int parked_spot_id = placeVehicleToSizedSpot(v, size);
+            if (parked_spot_id != -1) {
+                break;
+            }
+        }
+        return parkedSpotId;
+        // Time: O(1)
+    }
+
+    /**
+     * Helper method to place the given vehicle to a parking spot of the given
+     * size.
+     * @param v vehicle to place
      * @param size given parking spot size
      * @return parking spot ID on success, -1 on failure
      */
-    private int placeVehicleToSizedSpot(Vehicle vehicle, ParkingSpotSize size) {
+    private int placeVehicleToSizedSpot(Vehicle v, ParkingSpotSize size) {
         BlockingQueue<ParkingSpot> sizeAvailable = available.get(size);
         if (sizeAvailable.isEmpty()) {
             return -1;
@@ -118,8 +120,8 @@ public class ParkingLot {
 
         ParkingSpot spot = sizeAvailable.poll();
         // Occupy the parking spot
-        spot.setVehicle(vehicle);
-        parked.put(vehicle.licensePlate(), spot);
+        spot.setVehicle(v);
+        parked.put(v.licensePlate(), spot);
         return spot.id();
         // Time: O(1)
     }
@@ -136,13 +138,13 @@ public class ParkingLot {
         }
 
         ParkingSpot spot = parked.remove(licensePlate);
-        Vehicle vehicle = spot.getVehicle();
+        Vehicle v = spot.getVehicle();
         // Free the parking spot
         spot.setVehicle(null);
         BlockingQueue<ParkingSpot> sizeAvailable = available.get(spot.size());
         sizeAvailable.offer(spot);
         available.put(spot.size(), sizeAvailable);
-        return vehicle;
+        return v;
         // Time: O(1)
     }
 

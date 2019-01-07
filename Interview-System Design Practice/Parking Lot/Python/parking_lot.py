@@ -8,7 +8,7 @@ Parking lot module.
 from collections import deque
 from enum import Enum, auto
 
-from vehicle import Bus, Car, MotorCycle, Truck, Vehicle
+from vehicle import Bus, Car, Truck, Vehicle
 
 
 class ParkingSpotSize(Enum):
@@ -61,17 +61,22 @@ class ParkingSpot:
         return self._my_vehicle
 
     @vehicle.setter
-    def vehicle(self, vehicle: Vehicle) -> None:
+    def vehicle(self, v: Vehicle) -> None:
         """
         Mutator of my_vehicle.
-        :param vehicle: Vehicle
+        :param v: Vehicle
         :return: None
         """
-        self._my_vehicle = vehicle
+        self._my_vehicle = v
 
 
 class ParkingLot:
     __slots__ = ['_addr', '_available', '_parked']
+
+    _ALL_SIZES = [
+        ParkingSpotSize.S, ParkingSpotSize.M, ParkingSpotSize.L,
+        ParkingSpotSize.XL
+    ]
 
     def __init__(self, addr: str):
         """
@@ -92,59 +97,49 @@ class ParkingLot:
         size_available.offer(ParkingSpot(size))
         self._parked[size] = size_available
 
-    def place_vehicle(self, vehicle: Vehicle) -> int:
+    def place_vehicle(self, v: Vehicle) -> int:
         """
         Places the given vehicle.
-        :param vehicle: Vehicle
+        :param v: Vehicle
         :return: int
         """
         # Check whether the vehicle is already parked
-        if vehicle.license_plate in self._parked:
+        if v.license_plate in self._parked:
             raise Exception('The vehicle is already parked.')
 
-        if isinstance(vehicle, MotorCycle):
-            parked_spot_id = \
-                self._place_vehicle_to_sized_spot(vehicle, ParkingSpotSize.S)
-            if parked_spot_id != -1:
-                return parked_spot_id
-            parked_spot_id = \
-                self._place_vehicle_to_sized_spot(vehicle, ParkingSpotSize.M)
-            if parked_spot_id != -1:
-                return parked_spot_id
-            parked_spot_id = \
-                self._place_vehicle_to_sized_spot(vehicle, ParkingSpotSize.L)
-            if parked_spot_id != -1:
-                return parked_spot_id
-            return self._place_vehicle_to_sized_spot(vehicle,
-                                                     ParkingSpotSize.XL)
-        elif isinstance(vehicle, Car):
-            parked_spot_id = \
-                self._place_vehicle_to_sized_spot(vehicle, ParkingSpotSize.M)
-            if parked_spot_id != -1:
-                return parked_spot_id
-            parked_spot_id = \
-                self._place_vehicle_to_sized_spot(vehicle, ParkingSpotSize.L)
-            if parked_spot_id != -1:
-                return parked_spot_id
-            return self._place_vehicle_to_sized_spot(vehicle,
-                                                     ParkingSpotSize.XL)
-        elif isinstance(vehicle, Truck):
-            parked_spot_id = \
-                self._place_vehicle_to_sized_spot(vehicle, ParkingSpotSize.L)
-            if parked_spot_id != -1:
-                return parked_spot_id
-            return self._place_vehicle_to_sized_spot(vehicle,
-                                                     ParkingSpotSize.XL)
-        else:
-            return self._place_vehicle_to_sized_spot(vehicle,
-                                                     ParkingSpotSize.XL)
+        vehicle_size = ParkingSpotSize.S
+        if isinstance(v, Car):
+            vehicle_size = ParkingSpotSize.M
+        elif isinstance(v, Truck):
+            vehicle_size = ParkingSpotSize.L
+        elif isinstance(v, Bus):
+            vehicle_size = ParkingSpotSize.XL
+        return self._place_vehicle_from_sized_spot(v, from_size=vehicle_size)
 
-    def _place_vehicle_to_sized_spot(self, vehicle: Vehicle,
+    def _place_vehicle_from_sized_spot(self, v: Vehicle,
+                                       from_size: ParkingSpotSize) -> int:
+        """
+        Private helper method to place the given vehicle to a parking spot,
+        starting from searching the given size.
+        :param v: Vehicle
+        :param from_size: int
+        :return: int
+        """
+        from_idx = self._ALL_SIZES.index(from_size)
+        parked_spot_id = -1
+        for idx in range(from_idx, len(self._ALL_SIZES)):
+            size = self._ALL_SIZES[idx]
+            parked_spot_id = self._place_vehicle_to_sized_spot(v, size=size)
+            if parked_spot_id != -1:
+                break
+        return parked_spot_id
+
+    def _place_vehicle_to_sized_spot(self, v: Vehicle,
                                      size: ParkingSpotSize) -> int:
         """
-        Private helper method to place the given vehicle to a parking spot of
-        the given size.
-        :param vehicle: Vehicle
+        Helper method to place the given vehicle to a parking spot of the given
+        size.
+        :param v: Vehicle
         :param size: ParkingSpotSize
         :return: int
         """
@@ -152,8 +147,8 @@ class ParkingLot:
         if not size_available:
             return -1
         spot = size_available.popleft()
-        spot.vehicle = vehicle
-        self._parked[vehicle.license_plate] = spot
+        spot.vehicle = v
+        self._parked[v.license_plate] = spot
         return spot.id
         # Time: O(1)
 
@@ -168,11 +163,11 @@ class ParkingLot:
             raise Exception('The vehicle is not parked.')
 
         spot = self._parked.pop(license_plate)
-        vehicle = spot.vehicle
+        v = spot.vehicle
         # Free the parking spot
         spot.vehicle = None
         size_available = self._available[spot.size]
         size_available.append(spot)
         self._available[spot.size] = size_available
-        return vehicle
+        return v
         # Time: O(1)

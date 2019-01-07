@@ -64,10 +64,10 @@ class ParkingSpot {
 
     /**
      * Mutator of myVehicle
-     * @param vehicle vehicle to set
+     * @param v vehicle to set
      */
-    void setVehicle(Vehicle vehicle) {
-        myVehicle = vehicle;
+    void setVehicle(Vehicle v) {
+        myVehicle = v;
     }
 
 }
