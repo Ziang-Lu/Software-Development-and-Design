@@ -3,8 +3,9 @@
 This repo takes aspects regarding software development and design notes from:
 
 * **Software Development Process** by *Georgia Tech* on Udacity
-
 * **Software Construction** by *University of British Columbia* on edX
+
+Plus, this repo also notes some development aspects, like testing and dev & ops.
 
 ## Software Phases
 
@@ -38,11 +39,34 @@ This repo takes aspects regarding software development and design notes from:
 
 ## Design Principles
 
-* Single Responsibility Principle (SRP) (单一功能原则)
-* Interface Segregation Principle (ISP) (接口分离原则)
-* Liskov Substitution Principle (LSP) (里氏代换原则)
-* Open-Closed Principle (开闭原则)
-* Dependency Inversion (依赖反转原则)
+- Single Responsibility Principle (SRP) (单一功能原则)
+- Interface Segregation Principle (ISP) (接口分离原则)
+- Liskov Substitution Principle (LSP) (里氏代换原则)
+- Open-Closed Principle (开闭原则)
+- Dependency Inversion (依赖反转原则)
+
+<br>
+
+## Logging
+
+Check out `err.py`
+
+<br>
+
+## Testing
+
+|        | Unit Testing       | Profiling                              | Code Coverage (by Test Cases)                                |
+| ------ | ------------------ | -------------------------------------- | ------------------------------------------------------------ |
+| Java   | `JUnit`            |                                        |                                                              |
+| Python | unittest<br>pytest | Overview<br>`coverage`<br>`pytest-cov` | Overview<br>`time`<br>`timeit`<br>`cProfile` (+ `snakeviz`)<br>`line_profiler`<br>`yappi` |
+
+
+
+<br>
+
+## Dev & Ops
+
+* Docker
 
 <br>
 

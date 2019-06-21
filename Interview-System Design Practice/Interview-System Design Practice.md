@@ -59,3 +59,22 @@ Interviewer is looking for:
 * **Systematic approach** to the problem
 
   <img src="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Interview-System%20Design%20Practice/Library%20Information%20System/Library%20Information%20System.png?raw=true">
+
+<br>
+
+## Twitter
+
+* **Handling ambiguity** to restrict the problem breadth:
+
+* **Systematic approach** to the problem:
+
+  Based on LeetCode 355-Design Twitter, we add the following considerations:
+
+  - Most of the cases, users tend to get news feed more often than posting new tweets.
+
+    Therefore, we optimize for fetching: cache the news feed for each user.
+
+  - In this way, since we need to cache the news feed for each user, the memory usage may be too large.
+
+    Therefore, we only cache for those active users, like ever logged-in in the past two weeks.
+

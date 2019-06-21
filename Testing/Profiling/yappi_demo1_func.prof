@@ -1,0 +1,8 @@
+
+Clock type: CPU
+Ordered by: totaltime, desc
+
+name                                  ncall  tsub      ttot      tavg      
+yappi_demo1.py:13 func                1      0.274677  0.274677  0.274677
+..tlocale.py:33 getpreferredencoding  1      0.000013  0.000021  0.000021
+..py:186 IncrementalEncoder.__init__  1      0.000006  0.000006  0.000006
