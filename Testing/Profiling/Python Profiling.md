@@ -1,17 +1,19 @@
 # Python Profiling
 
+-> Look for bottleneck!
+
 ## Small Code Snippets => `timeit` Module
 
 Check out `timeit_sum.py`
 
 ```bash
-> python3 -m timeit -s 'import sum' 'sum.main()'
+> python3 -m timeit -s 'import timeit_sum' 'timeit_sum.main()'
 ```
 
 Check out `timeit_for_loop.py`
 
 ```bash
-> python3 -m timeit -s 'import for_loop' 'for_loop.main()'
+> python3 -m timeit -s 'import timeit_for_loop' 'timeit_for_loop.main()'
 ```
 
 **(Diretly run <u>the codes to be timed</u> from command-line interface)**
@@ -79,7 +81,7 @@ Assume that we got a profile file called `result_stats.prof`, we can visualize i
 
 1. As decorator
 
-   Use `@profile` decorator to decorate the function to profile: Check out `line_profiler_grid2d.py`
+   Use `@profile` decorator to decorate the function to profile: Check out `line_profiler_demo.py`
 
 2. As context manager
 
@@ -89,7 +91,7 @@ Assume that we got a profile file called `result_stats.prof`, we can visualize i
 > kernprof -l -o line_profiler_demo.lprof -v line_profiler_demo.py
 ```
 
-The above command will also print the profiling statistics to to the terminal. However, if later we want to check out the profiling statistics stored in `result_stats.lprof`, we can do
+The above command will also print the profiling statistics to to the terminal. However, if later we want to check out the profiling statistics stored in `line_profiler_demo.lprof`, we can do
 
 ```bash
 > python -m line_profiler line_profiler_demo.lprof

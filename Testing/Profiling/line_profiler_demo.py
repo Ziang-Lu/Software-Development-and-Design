@@ -32,7 +32,7 @@ class Grid2D:
     def grid_loop(self, func):
         """
         Evaluates the given function at each node of this 2D grid.
-        :param func: callable:
+        :param func: callable
         :return: ndarray
         """
         x_size = np.size(self._xcoor)
@@ -44,20 +44,20 @@ class Grid2D:
         return result
 
 
+def simple_func(x, y):
+    """
+    Self-defined simple function.
+    :param x: float
+    :param y: float
+    :return: float
+    """
+    return np.sin(x * y) + y
+
+
 def main():
-
-    def myfunc(x, y):
-        """
-        Self-defined simply function.
-        :param x: float
-        :param y: float
-        :return: float
-        """
-        return np.sin(x * y) + y
-
     grid = Grid2D(dx=0.001, dy=0.001)
     print('Computing values...')
-    result = grid.grid_loop(func=myfunc)
+    result = grid.grid_loop(func=simple_func)
     x_size, y_size = result.shape
     rand_i = random.randint(0, x_size - 1)
     rand_j = random.randint(0, y_size - 1)

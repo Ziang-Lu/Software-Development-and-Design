@@ -50,7 +50,7 @@ def profile(func: Callable) -> Callable:
 def find_duplicate_movies(filename: str) -> List[str]:
     """
     Finds the duplicate movie titles from the given file.
-    :param src_filename: str
+    :param filename: str
     :return: list[str]
     """
     movies = _read_movies(filename)
@@ -59,8 +59,7 @@ def find_duplicate_movies(filename: str) -> List[str]:
     for movie in movies:
         if movie.lower() in seen:  # Duplicate movie
             duplicates.append(movie)
-        else:  # New movie
-            seen.add(movie.lower())
+        seen.add(movie.lower())
     return duplicates
 
 
