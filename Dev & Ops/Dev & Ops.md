@@ -26,7 +26,7 @@ During development, if we run the web application using Docker container by doin
 * Instantiate the Docker image to create and run a Docker container
 
   ```bash
-  > docker run -p 80:80 my-app-img
+  > docker run --it -p 80:80 my-app-img
   ```
 
 -> Then, <u>any subsequent changes we made to the application files won't reflect on the Docker container, which is inconvenient for development</u>.
