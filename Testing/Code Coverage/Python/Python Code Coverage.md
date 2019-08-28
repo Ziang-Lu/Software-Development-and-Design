@@ -5,7 +5,7 @@
 ### Installation
 
 ```bash
-> pip3 install coverage
+$ pip3 install coverage
 ```
 
 ### Usage
@@ -22,13 +22,13 @@ Check out https://github.com/Ziang-Lu/Software-Development-and-Design/blob/maste
 * **Statement Coverage**
 
   ```bash
-  > coverage3 run script.py
+  $ coverage3 run script.py
   ```
 
 * **Branch Coverage**
 
   ```bash
-  > coverage3 run --branch script.py
+  $ coverage3 run --branch script.py
   ```
 
 **Specify / Omit the source files:**
@@ -38,7 +38,7 @@ Use `--source`, `--include`, `--omit` command-line options
 **Output the report to the terminal:**
 
 ```bash
-> coverage3 report -m --fail-under=0.8
+$ coverage3 report -m --fail-under=0.8
 # -m will show the line numbers of the codes that are not covered
 # --fail-under=MIN specifies that if the total coverage is < MIN, exit with a status of 2
 ```
@@ -46,7 +46,7 @@ Use `--source`, `--include`, `--omit` command-line options
 **Generate a `htmlcov/` folder, which contains reports in html format:**
 
 ```bash
-> coverage3 html --fail-under=0.8 --title="Coverage Result"
+$ coverage3 html --fail-under=0.8 --title="Coverage Result"
 ```
 
 **Exclude reporting on some code:**
@@ -73,7 +73,7 @@ Prerequisite: <a href="https://github.com/Ziang-Lu/Software-Development-and-Desi
 ### Installation
 
 ```bash
-> pip3 install pytest-cov
+$ pip3 install pytest-cov
 ```
 
 ### Usage
@@ -81,7 +81,7 @@ Prerequisite: <a href="https://github.com/Ziang-Lu/Software-Development-and-Desi
 * **Statement Coverage**
 
   ```bash
-  > pytest --cov=myproj tests/
+  $ pytest --cov=myproj tests/
   ```
 
   Folder to test coverage against: `myproj/`
@@ -91,13 +91,13 @@ Prerequisite: <a href="https://github.com/Ziang-Lu/Software-Development-and-Desi
 * **Branch Coverage**
 
   ```bash
-  > pytest --cov-branch --cov=myproj tests/
+  $ pytest --cov-branch --cov=myproj tests/
   ```
 
 **Output the report to the terminal:**
 
 ```bash
-> pytest --cov-report term-missing:skip-covered --cov=myproj tests/
+$ pytest --cov-report term-missing:skip-covered --cov=myproj tests/
 # --cov-report term-missing will show the line numbers of the codes that are not covered
 # :skip-covered will skip the files with complete coverage
 ```
@@ -105,6 +105,6 @@ Prerequisite: <a href="https://github.com/Ziang-Lu/Software-Development-and-Desi
 **Generate a `htmlcov/` folder, which contains reports in html format:**
 
 ```bash
-> pytest --cov-report html:htmlcov --cov=myproj tests/
+$ pytest --cov-report html:htmlcov --cov=myproj tests/
 ```
 

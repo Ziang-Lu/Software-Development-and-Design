@@ -9,19 +9,19 @@
 Check out `timeit_sum.py`
 
 ```bash
-> python3 -m timeit -s 'import timeit_sum' 'timeit_sum.main()'
+$ python3 -m timeit -s 'import timeit_sum' 'timeit_sum.main()'
 ```
 
 Check out `timeit_for_loop.py`
 
 ```bash
-> python3 -m timeit -s 'import timeit_for_loop' 'timeit_for_loop.main()'
+$ python3 -m timeit -s 'import timeit_for_loop' 'timeit_for_loop.main()'
 ```
 
 **(Diretly run <u>the codes to be timed</u> from command-line interface)**
 
 ```bash
-> python3 -m timeit -s 'x = range(10000)' 'total = sum(x)'
+$ python3 -m timeit -s 'x = range(10000)' 'total = sum(x)'
 ```
 
 <br>
@@ -48,7 +48,7 @@ Check out `timeit_for_loop.py`
 (Directly run <u>the script to be profiled</u> from command-line interface)
 
 ```bash
-> python3 -m cProfile -s 2 -o result_stats.prof script.py
+$ python3 -m cProfile -s 2 -o result_stats.prof script.py
 ```
 
 ***
@@ -58,9 +58,9 @@ Check out `timeit_for_loop.py`
 Assume that we got a profile file called `result_stats.prof`, we can visualize it using `SnakeViz`:
 
 ```bash
-> pip3 install snakeviz  # Install SnakeViz
+$ pip3 install snakeviz  # Install SnakeViz
 
-> snakeviz result_stats.prof
+$ snakeviz result_stats.prof
 # Note that the path to the profile file is not allowed to contain space!!!
 ```
 
@@ -78,7 +78,7 @@ Assume that we got a profile file called `result_stats.prof`, we can visualize i
 **Installation**
 
 ```bash
-> pip install line_profiler
+$ pip install line_profiler
 ```
 
 **Usage**
@@ -92,13 +92,13 @@ Assume that we got a profile file called `result_stats.prof`, we can visualize i
    Use `with profile:` to profile a single code section
 
 ```bash
-> kernprof -l -o line_profiler_demo.lprof -v line_profiler_demo.py
+$ kernprof -l -o line_profiler_demo.lprof -v line_profiler_demo.py
 ```
 
 The above command will also print the profiling statistics to to the terminal. However, if later we want to check out the profiling statistics stored in `line_profiler_demo.lprof`, we can do
 
 ```bash
-> python -m line_profiler line_profiler_demo.lprof
+$ python -m line_profiler line_profiler_demo.lprof
 ```
 
 <br>
@@ -114,7 +114,7 @@ The above command will also print the profiling statistics to to the terminal. H
 **Installation**
 
 ```bash
-> pip3 install statprof
+$ pip3 install statprof
 ```
 
 **Usage**
@@ -133,7 +133,7 @@ statptof.display()
 And then simple from command-line interface:
 
 ```bash
-> python3 module.py
+$ python3 module.py
 ```
 
 <br>
@@ -146,7 +146,7 @@ And then simple from command-line interface:
 **Installation**
 
 ```bash
-> pip3 install yappi
+$ pip3 install yappi
 ```
 
 **Usage**

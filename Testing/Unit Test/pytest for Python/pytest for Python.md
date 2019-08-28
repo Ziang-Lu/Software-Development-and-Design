@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-> pip3 install pytest
+$ pip3 install pytest
 ```
 
 ## Usage
@@ -11,7 +11,7 @@
 Check out `test_my_dict_func.py` and `test_my_dict_class.py` for test discovery rules
 
 ```bash
-> pytest -v -s tests/
+$ pytest -v -s tests/
 # -v increase verbosity
 # -s or --capture=no allows print statements inside test functions to be printed to terminal
 # tests/ contains the test files ("test_*.py" and "*_test.py")
@@ -20,7 +20,7 @@ Check out `test_my_dict_func.py` and `test_my_dict_class.py` for test discovery 
 **Skip some tests (maybe on some condition)**
 
 ```bash
-> pytest -v -rxs tests/
+$ pytest -v -rxs tests/
 # -r shows extra test summry info as specified by ...
 #     x: failed
 #     s: skipped
@@ -29,7 +29,7 @@ Check out `test_my_dict_func.py` and `test_my_dict_class.py` for test discovery 
 **Run tests selectively by <u>name</u>**
 
 ```bash
-> pytest -k 'key or attr' -v tests/
+$ pytest -k 'key or attr' -v tests/
 # -k [EXPRESSION] EXPRESSION is a Python expression within which substrings are used to be checked against the test names
 # => Run tests whose name contains "key" or "attr"
 ```
@@ -37,7 +37,7 @@ Check out `test_my_dict_func.py` and `test_my_dict_class.py` for test discovery 
 **Run tests selectively by <u>custom mark</u>**
 
 ```bash
-> pytest -m 'linux or mac' -v tests/
+$ pytest -m 'linux or mac' -v tests/
 # -m [MARKEXPR] MARKEXPR is a Python expression within which substrings are used to be checked against the custom marks of the tests
 # => Run tests whose custom mark is "linux" or "mac"
 ```

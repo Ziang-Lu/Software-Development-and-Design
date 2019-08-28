@@ -20,13 +20,13 @@ During development, if we run the web application using Docker container by doin
 
   ```bash
   # Assumption: The current folder contains the Dockerfile to build the image.
-  > docker build -t my-app-img .
+  $ docker build -t my-app-img .
   ```
 
 * Instantiate the Docker image to create and run a Docker container
 
   ```bash
-  > docker run -it -p 80:80 my-app-img
+  $ docker run -it -p 80:80 my-app-img
   ```
 
 -> Then, <u>any subsequent changes we made to the application files won't reflect on the Docker container, which is inconvenient for development</u>.
@@ -36,7 +36,7 @@ During development, if we run the web application using Docker container by doin
 During development, we can <u>mount a directory on the host machine, to a directory in the Docker image file system</u>.
 
 ```bash
-> docker run -p 80:80 -v /path/to/host/folder:path/to/image/folder my-app-img
+$ docker run -p 80:80 -v /path/to/host/folder:path/to/image/folder my-app-img
 ```
 
 *(This is like on the Docker image file system, the directory is just a <u>pointer</u> to a directory on the host machine.)*
