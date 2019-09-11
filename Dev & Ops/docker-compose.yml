@@ -1,0 +1,26 @@
+# This docker-compose.yml file is taken from the "Flask-Blog" project, and
+# creates two images, one for Nginx and the other one for the Python Flask app.
+
+version: "3.7"
+
+services:
+
+  nginx:
+    build: ./nginx_web_server
+    restart: always
+    ports:
+      # Bind container port 80 to the host port 80
+      - "80:80"
+    depends_on:
+      - flask
+
+  flask:
+    build: ./flask_app
+    restart: always
+    expose:
+      # Since we'll use Gunicorn to run the application, we need to expose its
+      # default port 8000, rather than the default port 5000 of Flask
+      # development server.
+      - 8000
+      # Note that this port is only exposed to other services in the same
+      # network, but not to outside world
