@@ -71,19 +71,19 @@ class ParkingSpot:
 
 
 class ParkingLot:
-    __slots__ = ['_addr', '_available', '_parked']
+    __slots__ = ['_address', '_available', '_parked']
 
     _ALL_SIZES = [
         ParkingSpotSize.S, ParkingSpotSize.M, ParkingSpotSize.L,
         ParkingSpotSize.XL
     ]
 
-    def __init__(self, addr: str):
+    def __init__(self, address: str):
         """
         Constructor with parameter.
-        :param addr: str
+        :param address: str
         """
-        self._addr = addr
+        self._address = address
         self._available = {size: deque() for size in ParkingSpotSize}
         self._parked = {}
 
@@ -93,9 +93,7 @@ class ParkingLot:
         :param size: ParkingSpotSize
         :return: None
         """
-        size_available = self._parked[size]
-        size_available.offer(ParkingSpot(size))
-        self._parked[size] = size_available
+        self._available[size].offer(ParkingSpot(size))
 
     def place_vehicle(self, v: Vehicle) -> int:
         """
@@ -128,8 +126,8 @@ class ParkingLot:
         from_idx = self._ALL_SIZES.index(from_size)
         parked_spot_id = -1
         for idx in range(from_idx, len(self._ALL_SIZES)):
-            size = self._ALL_SIZES[idx]
-            parked_spot_id = self._place_vehicle_to_sized_spot(v, size=size)
+            spot_size = self._ALL_SIZES[idx]
+            parked_spot_id = self._place_vehicle_to_sized_spot(v, spot_size)
             if parked_spot_id != -1:
                 break
         return parked_spot_id
@@ -166,8 +164,7 @@ class ParkingLot:
         v = spot.vehicle
         # Free the parking spot
         spot.vehicle = None
-        size_available = self._available[spot.size]
-        size_available.append(spot)
-        self._available[spot.size] = size_available
+        spot_size = spot.size
+        self._available[spot_size].append(spot)
         return v
         # Time: O(1)

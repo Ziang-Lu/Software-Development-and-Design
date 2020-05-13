@@ -4,7 +4,7 @@ Interviewer is looking for:
 
 * **Handling ambiguity** to restrict the problem breadth
 
-  => Ask questions to <u>restrict the problem breadth</u>, especially <u>the details that the interviewer is purposfully hiding</u>
+  => Ask questions to <u>restrict the problem breadth</u>, especially <u>the details that the interviewer is purposefully hiding</u>
 
 * **Systemematic approach** to the problem
 
@@ -64,7 +64,7 @@ Interviewer is looking for:
 
 ## Twitter
 
-* **Handling ambiguity** to restrict the problem breadth:
+* **Handling ambiguity** to restrict the problem breadth
 
 * **Systematic approach** to the problem:
 

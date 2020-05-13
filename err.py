@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Dlogging module demo.
+Logging module demo.
 """
 
 __author__ = 'Ziang Lu'

@@ -56,9 +56,7 @@ public class ParkingLot {
      * @param size given parking spot size
      */
     public void addParkingSpot(ParkingSpotSize size) {
-        BlockingQueue<ParkingSpot> sizeAvailable = available.get(size);
-        sizeAvailable.offer(new ParkingSpot(size));
-        available.put(size, sizeAvailable);
+        available.get(size).offer(new ParkingSpot(size));
     }
 
     /**
@@ -85,8 +83,8 @@ public class ParkingLot {
     }
 
     /**
-     * Private helper method to place the given vehicle to a parking spot, starting
-     * from searching the given size.
+     * Private helper method to place the given vehicle to a parking spot,
+     * starting from searching the given size.
      * @param v vehicle to place
      * @param fromSize given parking spot size from which to start searching
      * @return parking spot ID on success, -1 on failure
@@ -95,9 +93,10 @@ public class ParkingLot {
         int fromIdx = Arrays.binarySearch(ALL_SIZES_IN_ORDER, fromSize);
         int parkedSpotId = -1;
         for (int idx = fromIdx; idx < ALL_SIZES_IN_ORDER.length; ++idx) {
-            ParkingSpotSize size = ALL_SIZES_IN_ORDER[idx];
-            int parked_spot_id = placeVehicleToSizedSpot(v, size);
-            if (parked_spot_id != -1) {
+            ParkingSpotSize spotSize = ALL_SIZES_IN_ORDER[idx];
+            // Try to place the given vehicle to a parking spot of this size
+            int parkedSpotId = placeVehicleToSizedSpot(v, spotSize);
+            if (parkedSpotId != -1) {
                 break;
             }
         }
@@ -141,9 +140,7 @@ public class ParkingLot {
         Vehicle v = spot.getVehicle();
         // Free the parking spot
         spot.setVehicle(null);
-        BlockingQueue<ParkingSpot> sizeAvailable = available.get(spot.size());
-        sizeAvailable.offer(spot);
-        available.put(spot.size(), sizeAvailable);
+        available.get(spot.size()).offer(spot);
         return v;
         // Time: O(1)
     }

@@ -33,6 +33,10 @@ class MotorCycle(Vehicle):
     __slots__ = []
 
     def __init__(self, license_plate: str):
+        """
+        Constructor with parameter.
+        :param license_plate: str
+        """
         super().__init__(license_plate)
 
 
@@ -40,6 +44,10 @@ class Car(Vehicle):
     __slots__ = []
 
     def __init__(self, license_plate: str):
+        """
+        Constructor with parameter.
+        :param license_plate: str
+        """
         super().__init__(license_plate)
 
 
@@ -47,6 +55,10 @@ class Truck(Vehicle):
     __slots__ = []
 
     def __init__(self, license_plate: str):
+        """
+        Constructor with parameter.
+        :param license_plate: str
+        """
         super().__init__(license_plate)
 
 
@@ -54,4 +66,8 @@ class Bus(Vehicle):
     __slots__ = []
 
     def __init__(self, license_plate: str):
+        """
+        Constructor with parameter.
+        :param license_plate: str
+        """
         super().__init__(license_plate)
