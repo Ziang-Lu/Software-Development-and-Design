@@ -2,22 +2,17 @@
 # -*- coding: utf-8 -*-
 
 """
-Logging module demo.
+glog module demo.
 """
 
-__author__ = 'Ziang Lu'
-
-import logging
-
-# Set the level of the logging messages to print
-logging.basicConfig(level=logging.INFO)
+import glog as logging
 
 
 def foo(s: str) -> float:
     """
     Sample function to interpret the given string as a floating-point number,
     and return its result when divided by 10.
-    :param s: str:
+    :param s: str
     :return: float
     """
     n = int(s)
@@ -34,12 +29,12 @@ if __name__ == '__main__':
 
 
 # Output:
-# INFO:root:n = 0
-# Traceback (most recent call last):
-#   File "err.py", line 19, in <module>
-#     main()
-#   File "err.py", line 15, in main
-#     print(foo('0'))
-#   File "err.py", line 11, in foo
-#     return 10 / n
+# I0706 18:06:29.690877 231 glog_demo.py:19] n = 0
+# Traceback(most recent call last):
+#   File "glog_demo.py", line 28, in <module >
+#   main()
+#   File "glog_demo.py", line 24, in main
+#   print(foo('0'))
+#   File "glog_demo.py", line 20, in foo
+#   return 10 / n
 # ZeroDivisionError: division by zero
