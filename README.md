@@ -49,7 +49,7 @@ Plus, this repo also notes some development aspects, like testing and dev & ops.
 
 ## Logging
 
-Check out `err.py`
+Check out `Logging/logging_demo.py` and `Logging/glog_demo.py`
 
 <br>
 
@@ -57,16 +57,7 @@ Check out `err.py`
 
 |        | Unit Testing                                                 | Profiling                                                    | Code Coverage (by Test Cases)                                |
 | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Java   | <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/tree/master/Testing/Unit%20Test/JUnit%20for%20Java">`JUnit`</a> |                                                              |                                                              |
-| Python | <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/tree/master/Testing/Unit%20Test/unittest%20for%20Python">`unittest`</a><br><a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Testing/Unit%20Test/pytest%20for%20Python/pytest%20for%20Python.md">`pytest`</a> | <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Testing/Profiling/Python%20Profiling.md">Overview</a><br>`coverage`<br>`pytest-cov` | <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Testing/Code%20Coverage/Python/Python%20Code%20Coverage.md">Overview</a><br>`time`<br>`timeit`<br>`cProfile` (+ `snakeviz`)<br>`line_profiler`<br>`statprof`<br>`yappi` |
-
-
-
-<br>
-
-## Dev & Ops
-
-* Docker
+| Python | <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/tree/master/Testing/Unit%20Test/unittest%20for%20Python">`unittest`</a><br/><a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Testing/Unit%20Test/pytest%20for%20Python/pytest%20for%20Python.md">`pytest`</a> | <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Testing/Profiling/Python%20Profiling.md">Overview</a><br/>`coverage`<br/>`pytest-cov` | <a href="https://github.com/Ziang-Lu/Software-Development-and-Design/blob/master/Testing/Code%20Coverage/Python/Python%20Code%20Coverage.md">Overview</a><br/>`time`<br/>`timeit`<br/>`cProfile` (+ `snakeviz`)<br/>`line_profiler`<br/>`statprof`<br/>`yappi` |
 
 <br>
 
