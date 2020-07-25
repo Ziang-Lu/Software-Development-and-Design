@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Library class.
@@ -24,7 +25,7 @@ public class Library {
     /**
      * Next library card number to assign.
      */
-    private static int patronCardNum = 0;
+    private static int nextPatronCardNum = 0;
 
     /**
      * Items by title.
@@ -66,8 +67,7 @@ public class Library {
      * @param bestSeller whether the book to add is a best-seller
      */
     public void addBook(String title, double value, boolean bestSeller) {
-        Book newBook = new Book(title, value, bestSeller);
-        addItem(newBook);
+        addItem(new Book(title, value, bestSeller));
     }
 
     /**
@@ -76,8 +76,7 @@ public class Library {
      * @param value value of the A/V material
      */
     public void addAVMaterial(String title, double value) {
-        AVMaterial newAVMaterial = new AVMaterial(title, value);
-        addItem(newAVMaterial);
+        addItem(new AVMaterial(title, value));
     }
 
     /**
@@ -85,8 +84,7 @@ public class Library {
      * @param title title of the reference book
      */
     public void addReferenceBook(String title) {
-        ReferenceBook newReferenceBook = new ReferenceBook(title);
-        addItem(newReferenceBook);
+        addItem(new ReferenceBook(title));
     }
 
     /**
@@ -94,8 +92,7 @@ public class Library {
      * @param title title of the magazine
      */
     public void addMagazine(String title) {
-        Magazine newMagazine = new Magazine(title);
-        addItem(newMagazine);
+        addItem(new Magazine(title));
     }
 
     /**
@@ -103,13 +100,10 @@ public class Library {
      * @param name name of the patron
      * @param bday birthday of the patron
      * @param phoneNum phone number of the patron
-     * @param addr address of the patron
      * @return newly registered patron
      */
-    public Patron registerPatron(String name, Date bday, long phoneNum, String addr) {
-        Patron newPatron = new Patron(patronCardNum, name, age);
-        newPatron.setPhoneNum(phoneNum);
-        newPatron.setAddr(addr);
+    public Patron registerPatron(String name, Date bday, long phoneNum) {
+        Patron newPatron = new Patron(patronCardNum, name, bday, phoneNum);
         patrons.put(patronCardNum, newPatron);
         ++patronCardNum;
         return newPatron;
@@ -150,9 +144,8 @@ public class Library {
             return false;
         }
         // If there is a pending request for this item, it cannot be renewed.
-        String title = item.getTitle();
         for (String pendingRequest : pendingRequests) {
-            if (pendingRequest.equals(title)) {
+            if (pendingRequest.equals(item.getTitle())) {
                 return false;
             }
         }
@@ -167,7 +160,10 @@ public class Library {
     public void itemReturned(Item item) {
         ((LoanableItem) item).checkIn();
         // Remove the corresponding pending request if there is one
-        pendingRequests.remove(item.getTitle());
+        int pendingRequestIdx = pendingRequests.indexOf(item.getTitle());
+        if (pendingRequestIdx >= 0) {
+            pendingRequests.remove(pendingRequestIdx);
+        }
     }
 
     /**
@@ -191,7 +187,20 @@ public class Library {
         if (!patrons.containsKey(cardNum)) {
             return 0.0;
         }
-        return patrons.get(cardNum).calcOverdueFine();
+
+        Date today = new Date();
+        double overdueFine = 0.0;
+        for (Item item : getPatronItems(cardNum)) {
+            LoanableItem loanable = (LoanableItem) item;
+            Date dueDate = loanable.getDueDate();
+            if (dueDate.compareTo(today) < 0) {
+                long delay = today.getTime() - dueDate.getTime();
+                long delayedDays = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+                // The overdue fine for an item cannot be higher than the value of the item.
+                overdueFine += Math.min(delayedDays * 1.0, loanable.getValues());
+            }
+        }
+        return overdueFine;
     }
 
 }

@@ -38,6 +38,7 @@ class LoanableItem(Item):
     Abstract loanable item class.
     """
     __slots__ = ['_value', '_checked_out', '_due_date', '_renewed']
+
     _DAYS_PER_WEEK = 7
 
     def __init__(self, title: str, value: float):
@@ -95,7 +96,7 @@ class LoanableItem(Item):
 
     def _set_due_date(self) -> None:
         """
-        Private helper function to set the due date when checking out.
+        Private helper method to set the due date when checking out.
         :return: None
         """
         today = date.today()
@@ -105,7 +106,7 @@ class LoanableItem(Item):
     @abstractmethod
     def _get_loan_length(self) -> int:
         """
-        Helper function to get the loan length of this item.
+        Helper method to get the loan length of this item.
         :return: int
         """
         pass
@@ -134,6 +135,7 @@ class Book(LoanableItem):
     Book class.
     """
     __slots__ = ['_best_seller']
+
     _NORMAL_LOAN_LENGTH = 3 * super()._DAYS_PER_WEEK
     _BEST_SELLER_LOAN_LENGTH = 2 * super()._DAYS_PER_WEEK
 
@@ -165,6 +167,7 @@ class AVMaterial(LoanableItem):
     Audio/Video material class.
     """
     __slots__ = []
+
     _LOAN_LENGTH = 2 * super()._DAYS_PER_WEEK
 
     def __init__(self, title: str, value: float):

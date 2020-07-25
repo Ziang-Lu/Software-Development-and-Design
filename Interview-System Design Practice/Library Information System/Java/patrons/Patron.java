@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Patron class.
@@ -29,7 +28,7 @@ public class Patron {
     /**
      * Birthday of this patron.
      */
-    private final l bday;
+    private final Date bday;
     /**
      * Phone number of this patron.
      */
@@ -48,11 +47,13 @@ public class Patron {
      * @param cardNum library card number assigned to the patron
      * @param name name of the patron
      * @param bday birthday of the patron
+     * @param phoneNum phone number of the patron
      */
-    public Patron(int cardNum, String name, Date bday) {
+    public Patron(int cardNum, String name, Date bday, long phoneNum) {
         this.cardNum = cardNum;
         this.name = name;
         this.bday = bday;
+        this.phoneNum = phoneNum;
         myItemsByTitle = new HashMap<>();
     }
 
@@ -103,14 +104,6 @@ public class Patron {
      */
     public List<Item> getMyItems() {
         return new ArrayList<>(myItemsByTitle.values());
-    }
-
-    /**
-     * Mutator of phoneNum.
-     * @param phoneNum phone number to set
-     */
-    public void setPhoneNum(long phoneNum) {
-        this.phoneNum = phoneNum;
     }
 
     /**
@@ -175,26 +168,6 @@ public class Patron {
         }l
         Item item = myItemsByTitle.get(title);
         returnItem(lib, item);
-    }
-
-    /**
-     * Calculates this patron's overdue fine.
-     * @return this patron's overdue fine
-     */
-    public double calcOverdueFine() {
-        Date today = new Date();
-        double overdueFine = 0.0;
-        for (Item item : myItemsByTitle.values()) {
-            LoanableItem loanable = (LoanableItem) item;
-            Date dueDate = loanable.getDueDate();
-            if (dueDate.compareTo(today) < 0) {
-                long diff = today.getTime() - dueDate.getTime();
-                long delayedDays = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
-                // The overdue fine for an item cannot be higher than the value of the item.
-                overdueFine += Math.min(delayedDays * 0.1, loanable.getValue());
-            }
-        }
-        return overdueFine;
     }
 
 }

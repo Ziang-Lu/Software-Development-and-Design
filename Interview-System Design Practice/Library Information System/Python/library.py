@@ -7,6 +7,7 @@ Library module.
 
 __author__ = 'Ziang Lu'
 
+from datetime import date
 from typing import Iterable
 
 from items import AVMaterial, Book, Item, LoanableItem, Magazine, ReferenceBook
@@ -18,7 +19,8 @@ class Library:
     Library class.
     """
     __slots__ = ['_items_by_title', '_patrons', '_pending_requests']
-    _patron_card_num = 0
+
+    _next_patron_card_num = 0
 
     def __init__(self):
         """
@@ -47,8 +49,7 @@ class Library:
         :param best_seller: bool
         :return: None
         """
-        new_book = Book(title, value, best_seller)
-        self._add_item(new_book)
+        self._add_item(Book(title, value, best_seller))
 
     def add_av_material(self, title: str, value: float) -> None:
         """
@@ -57,8 +58,7 @@ class Library:
         :param value: float
         :return: None
         """
-        new_av_material = AVMaterial(title, value)
-        self._add_item(new_av_material)
+        self._add_item(AVMaterial(title, value))
 
     def add_reference_book(self, title: str) -> None:
         """
@@ -66,8 +66,7 @@ class Library:
         :param title: str
         :return: None
         """
-        new_reference_book = ReferenceBook(title)
-        self._add_item(new_reference_book)
+        self._add_item(ReferenceBook(title))
 
     def add_magazine(self, title: str) -> None:
         """
@@ -75,24 +74,19 @@ class Library:
         :param title: str
         :return: None
         """
-        new_magazine = Magazine(title)
-        self._add_item(new_magazine)
+        self._add_item(Magazine(title))
 
-    def register_patron(self, name: str, bday: int, phone_num: int,
-                        addr: str) -> Patron:
+    def register_patron(self, name: str, bday: date, phone_num: int) -> Patron:
         """
         Registers a new patron.
         :param name: str
-        :param bday: datetime object
+        :param bday: date object
         :param phone_num: int
-        :param addr: str
         :return: Patron
         """
-        new_patron = Patron(self._patron_card_num, name, bday)
-        new_patron.phone_num = phone_num
-        new_patron.addr = addr
-        self._patrons[self._patron_card_num] = new_patron
-        self._patron_card_num += 1
+        new_patron = Patron(self._next_patron_card_num, name, bday, phone_num)
+        self._patrons[self._next_patron_card_num] = new_patron
+        self._next_patron_card_num += 1
         return new_patron
 
     def item_requested(self, title: str) -> LoanableItem:
@@ -122,9 +116,8 @@ class Library:
         if item.is_renewed:
             return False
         # If there is a pending request for this item, it cannot be renewed.
-        title = item.title
         for pending_request in self._pending_requests:
-            if pending_request == title:
+            if pending_request == item.title:
                 return False
         item.renew()
         return True
@@ -137,7 +130,8 @@ class Library:
         """
         item.check_in()
         # Remove the corresponding pending request if there is one
-        self._pending_requests.remove(item.title)
+        if item.title in self._pending_requests:
+            self._pending_requests.remove(item.title)
 
     def get_patron_items(self, card_num: int) -> Iterable[Item]:
         """
@@ -157,4 +151,14 @@ class Library:
         """
         if card_num not in self._patrons:
             return 0.0
-        return self._patrons[card_num].calc_overdue_fine()
+
+        today = date.today()
+        overdue_fine = 0.0
+        for item in self.get_patron_items(card_num):
+            due_date = item.due_date
+            if due_date < today:
+                delayed_days = (today - due_date).days
+                # The overdue fine for an item cannot be higher than the value
+                # of the item.
+                overdue_fine += min(delayed_days * 1.0, item.value)
+        return overdue_fine

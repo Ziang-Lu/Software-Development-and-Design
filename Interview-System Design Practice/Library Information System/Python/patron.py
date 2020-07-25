@@ -16,17 +16,18 @@ from library import Library
 
 class Patron:
 
-    def __init__(self, card_num: int, name: str, bday):
+    def __init__(self, card_num: int, name: str, bday: date, phone_num: int):
         """
         Constructor with parameter.
         :param card_num: int
         :param name: str
-        :param bday: datetime object
+        :param bday: date object
+        :param phone_num: int
         """
         self._card_num = card_num
         self._name = name
         self._bday = bday
-        self._phone_num = 0
+        self._phone_num = phone_num
         self._addr = None
         self._my_items_by_title = {}
 
@@ -79,15 +80,6 @@ class Patron:
         """
         return self._my_items_by_title.values()
 
-    @phone_num.setter
-    def phone_num(self, phone_num: int) -> None:
-        """
-        Mutator of phone_num.
-        :param phone_num: int
-        :return: None
-        """
-        self._phone_num = phone_num
-
     @addr.setter
     def addr(self, addr: str) -> None:
         """
@@ -128,7 +120,7 @@ class Patron:
 
     def _return_item(self, lib: Library, item: LoanableItem) -> None:
         """
-        Private helper function to return the given item to the given library.
+        Private helper method to return the given item to the given library.
         :param lib: Library
         :param item: Item
         :return: None

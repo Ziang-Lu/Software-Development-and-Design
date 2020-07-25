@@ -12,9 +12,6 @@ from vehicle import Bus, Car, Truck, Vehicle
 
 
 class ParkingSpotSize(Enum):
-    """
-    Sizes of the parking spots.
-    """
     S = auto()
     M = auto()
     L = auto()
@@ -74,7 +71,9 @@ class ParkingLot:
     __slots__ = ['_address', '_available', '_parked']
 
     _ALL_SIZES = [
-        ParkingSpotSize.S, ParkingSpotSize.M, ParkingSpotSize.L,
+        ParkingSpotSize.S,
+        ParkingSpotSize.M,
+        ParkingSpotSize.L,
         ParkingSpotSize.XL
     ]
 
@@ -117,8 +116,8 @@ class ParkingLot:
     def _place_vehicle_from_sized_spot(self, v: Vehicle,
                                        from_size: ParkingSpotSize) -> int:
         """
-        Private helper method to place the given vehicle to a parking spot,
-        starting from searching the given size.
+        Places the given vehicle to a parking spot, starting from searching the
+        given size.
         :param v: Vehicle
         :param from_size: int
         :return: int
@@ -135,8 +134,7 @@ class ParkingLot:
     def _place_vehicle_to_sized_spot(self, v: Vehicle,
                                      size: ParkingSpotSize) -> int:
         """
-        Helper method to place the given vehicle to a parking spot of the given
-        size.
+        Places the given vehicle to a parking spot of the given size.
         :param v: Vehicle
         :param size: ParkingSpotSize
         :return: int
@@ -148,7 +146,6 @@ class ParkingLot:
         spot.vehicle = v
         self._parked[v.license_plate] = spot
         return spot.id
-        # Time: O(1)
 
     def retrieve_vehicle(self, license_plate: str) -> Vehicle:
         """
@@ -164,7 +161,5 @@ class ParkingLot:
         v = spot.vehicle
         # Free the parking spot
         spot.vehicle = None
-        spot_size = spot.size
-        self._available[spot_size].append(spot)
+        self._available[spot.size].append(spot)
         return v
-        # Time: O(1)
