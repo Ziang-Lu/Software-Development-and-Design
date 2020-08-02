@@ -28,10 +28,18 @@ class User:
 
     @property
     def name(self) -> str:
+        """
+        Accessor of name.
+        :return: str
+        """
         return self._name
 
     @property
     def pwd(self) -> str:
+        """
+        Accessor of pwd.
+        :return: str
+        """
         return self._pwd
 
     def clean_up(self) -> None:

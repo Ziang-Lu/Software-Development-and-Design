@@ -9,6 +9,7 @@ The module name must start with "test_" or end with "_test".
 __author__ = 'Ziang Lu'
 
 import sys
+
 import pytest
 
 from my_dict import MyDict
@@ -38,7 +39,9 @@ def test_key():
     assert d.key == 'value'
 
 
-@pytest.mark.skipif(sys.version_info < (3, 4), reason='Too low Python version')
+@pytest.mark.skipif(
+    sys.version_info < (3, 4), reason='Requires Python 3.4 or higher'
+)
 def test_key_error():
     d = MyDict()
     with pytest.raises(KeyError):

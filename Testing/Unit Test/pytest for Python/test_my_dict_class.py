@@ -9,6 +9,7 @@ The module name must start with "test_" or end with "_test".
 __author__ = 'Ziang Lu'
 
 import sys
+
 import pytest
 
 from my_dict import MyDict
