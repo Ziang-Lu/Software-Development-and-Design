@@ -3,6 +3,7 @@
 
 """
 pytest demo module by grouping tests into custom marks.
+Note that the custom marks are registered in "pytest.ini"
 """
 
 __author__ = 'Ziang Lu'

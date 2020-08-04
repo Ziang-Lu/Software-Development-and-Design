@@ -12,7 +12,7 @@ import sys
 
 import pytest
 
-from my_dict import MyDict
+from pytest_for_python.src.my_dict import MyDict
 
 
 @pytest.mark.skipif(

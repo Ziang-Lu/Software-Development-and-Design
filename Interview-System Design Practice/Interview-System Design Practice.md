@@ -2,11 +2,19 @@
 
 Interviewer is looking for:
 
-* **Handling ambiguity** to restrict the problem breadth
+* **Gathering requirements**, especially **handling ambiguity** to restrict the problem breadth
 
   => Ask questions to <u>restrict the problem breadth</u>, especially <u>the details that the interviewer is purposefully hiding</u>
 
+  * Functionality
+  * Scalability and capability
+
 * **Systemematic approach** to the problem
+
+  * Start with a <u>high-level diagram with different components</u>
+    * For the storage layer (database), may need to design the database schema
+    * For communication between the components, may need to define the API
+  * Dive deeply into <u>1 or 2 detailed designs</u>
 
 <br>
 

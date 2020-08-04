@@ -21,7 +21,7 @@ $ pytest -v -s tests/
 
 ```bash
 $ pytest -v -rxs tests/
-# -r shows extra test summry info as specified by ...
+# -r shows extra test summary info as specified by ...
 #     x: failed
 #     s: skipped
 ```
@@ -44,7 +44,7 @@ $ pytest -m 'linux or mac' -v tests/
 
 *Side Note:*
 
-*Using `pytest.raises` is likely to be better for cases where you are testing exceptions your own code is deliberately raising, whereas using `@pytest.mark.xfail()` with a check function is probably better for something like documenting unfixed bugs or bugs in dependencies.*
+*Using `pytest.raises` is likely to be better for cases where you are testing exceptions that your own code is deliberately raising, whereas using `@pytest.mark.xfail()` with a check function is probably better for something like documenting unfixed bugs or bugs in dependencies.*
 
 **Fixtures**
 
