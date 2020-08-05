@@ -8,7 +8,7 @@ $ pip3 install pytest
 
 ## Usage
 
-Check out `test_my_dict_func.py` and `test_my_dict_class.py` for test discovery rules
+Check out `tests/test_my_dict_func.py` and `tests/test_my_dict_class.py` for test discovery rules
 
 ```bash
 $ pytest -v -s tests/
@@ -16,6 +16,8 @@ $ pytest -v -s tests/
 # -s or --capture=no allows print statements inside test functions to be printed to terminal
 # tests/ contains the test files ("test_*.py" and "*_test.py")
 ```
+
+<br>
 
 **Skip some tests (maybe on some condition)**
 
@@ -26,6 +28,8 @@ $ pytest -v -rxs tests/
 #     s: skipped
 ```
 
+<br>
+
 **Run tests selectively by <u>name</u>**
 
 ```bash
@@ -34,7 +38,21 @@ $ pytest -k 'key or attr' -v tests/
 # => Run tests whose name contains "key" or "attr"
 ```
 
+<br>
+
 **Run tests selectively by <u>custom mark</u>**
+
+First register the custom marks in `pytest.ini`:
+
+```ini
+[pytest]
+marks =
+    linux
+    mac
+    windows
+```
+
+And then
 
 ```bash
 $ pytest -m 'linux or mac' -v tests/
@@ -46,9 +64,17 @@ $ pytest -m 'linux or mac' -v tests/
 
 *Using `pytest.raises` is likely to be better for cases where you are testing exceptions that your own code is deliberately raising, whereas using `@pytest.mark.xfail()` with a check function is probably better for something like documenting unfixed bugs or bugs in dependencies.*
 
+<br>
+
 **Fixtures**
 
-*(Can be regarded as … functions?)*
+(Just like the classic `setup()` and `teardown()` functions in `unittest`!)
+
+Note that we can also define `setup_module(module)` and `teardown_module(module)` functions, just like how they work in `unittest`!
+
+Check out `tests/test_setup_teardown_demo.py`
+
+***
 
 => Fixture functions can be used to do some useful work before/after a single test function / test module / test session.
 
@@ -58,13 +84,5 @@ $ pytest -m 'linux or mac' -v tests/
 * per module
 * per session
 
-(Just like the classic `setup()` and `teardown()` functions!)
-
-***
-
-Note that we can also define `setup_module(module)` and `teardown_module(module)` functions, just like how they work in `unittest`!
-
-***
-
-Check out `fixture_demo.py`
+Check out `tests/test_fixture_demo.py`
 

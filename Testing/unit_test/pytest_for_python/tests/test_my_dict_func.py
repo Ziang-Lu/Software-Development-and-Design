@@ -12,7 +12,7 @@ import sys
 
 import pytest
 
-from pytest_for_python.src.my_dict import MyDict
+from pytest_for_python.src.codes import MyDict
 
 
 # Use pytest.mark.skip decorator if you want to simply skip a test
