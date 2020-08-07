@@ -77,8 +77,6 @@ Consider the software as a closed box (black-box)
 
 => Based on the **specification of the software**, but **not look into the software and the code implementation**
 
-<br>
-
 #### 2. Pros & Cons
 
 * Pros:
@@ -96,8 +94,6 @@ Consider the software as a closed box (black-box)
 * Cons:
 
   * Since we don't look into the implementation, we <u>cannot reveal failures due to implementation details</u>.
-
-<br>
 
 #### 3. Systematic Approach
 
@@ -144,8 +140,6 @@ Consider the software as a closed box (black-box)
 5. Generate **test cases** from the corresponding test case specifications
 
    *Note that test cases are simply instantiations of test case specifications*
-
-<br>
 
 #### 4. Category-Partition Method (类别-分割方法) - A Specific Black-Box Testing Approach
 
@@ -267,8 +261,6 @@ Consider the software as a closed box (black-box)
 
 => Based on the **code implementation**, but **not look into the specification of the software**
 
-<br>
-
 #### 2. Pros & Cons
 
 * Pros:
@@ -290,8 +282,6 @@ Consider the software as a closed box (black-box)
 
 => Black-box and white-box testings are really **complementary** techniques.
 
-<br>
-
 #### 3. Classifications
 
 * **Control-flow based ~ (基于控制流的白盒测试)**   [讨论重点]
@@ -299,8 +289,6 @@ Consider the software as a closed box (black-box)
 * Data-flow based ~ (基于数据流的白盒测试)
 
 * Fault based ~ (基于错误的白盒测试)
-
-<br>
 
 #### 4. Coverage Criteria (覆盖标准)
 

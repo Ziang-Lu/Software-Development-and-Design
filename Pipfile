@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+coverage = "*"
+glog = "*"
+line_profiler = "*"
+pytest = "*"
+pytest-cov = "*"
+snakeviz = "*"
+statprof = "*"
+yappi = "*"
+
+[requires]
+python_version = "3.8"
