@@ -6,16 +6,16 @@
 
 ### 1. Small Code Snippets => `timeit` Module
 
-Check out `timeit_sum.py`
-
-```bash
-$ python3 -m timeit -s 'import timeit_sum' 'timeit_sum.main()'
-```
-
 Check out `timeit_for_loop.py`
 
 ```bash
 $ python3 -m timeit -s 'import timeit_for_loop' 'timeit_for_loop.main()'
+```
+
+Check out `timeit_sum.py`
+
+```bash
+$ python3 -m timeit -s 'import timeit_sum' 'timeit_sum.main()'
 ```
 
 **(Diretly run <u>the codes to be timed</u> from command-line interface)**

@@ -7,6 +7,3 @@ __author__ = 'Ziang Lu'
 def main():
     x = range(10000)
     total = sum(x)
-
-
-main()
