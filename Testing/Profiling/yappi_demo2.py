@@ -24,7 +24,7 @@ def aggregate(func: Callable, stats: YFuncStats) -> None:
         stats.add(filename)
     except IOError:
         pass
-    stats.save(path=filename)
+    stats.save(filename)
 
 
 @profile(return_callback=aggregate)

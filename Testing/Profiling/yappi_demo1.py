@@ -22,6 +22,8 @@ def func() -> None:
 def main():
     yappi.start()
     func()
+
+    # Output the profile data to binary files
     with open('yappi_demo1_func.prof', 'w') as fout:
         yappi.get_func_stats().print_all(out=fout)
     with open('yappi_demo1_thread.prof', 'w') as fout:

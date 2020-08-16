@@ -9,6 +9,7 @@ verify_ssl = true
 coverage = "*"
 glog = "*"
 line_profiler = "*"
+numpy = "*"
 pytest = "*"
 pytest-cov = "*"
 snakeviz = "*"

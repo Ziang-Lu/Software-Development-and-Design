@@ -1,4 +1,4 @@
-#!usr/bin/env python
+#!usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -6,6 +6,7 @@ line_profiler module demo.
 """
 
 import random
+from typing import Callable
 
 import numpy as np
 
@@ -29,7 +30,7 @@ class Grid2D:
         self._ycoor = np.arange(ymin, ymax + dy, step=dy)
 
     @profile
-    def grid_loop(self, func):
+    def grid_loop(self, func: Callable) -> np.ndarray:
         """
         Evaluates the given function at each node of this 2D grid.
         :param func: callable
@@ -44,7 +45,7 @@ class Grid2D:
         return result
 
 
-def simple_func(x, y):
+def simple_func(x: float, y: float) -> float:
     """
     Self-defined simple function.
     :param x: float
@@ -61,8 +62,8 @@ def main():
     x_size, y_size = result.shape
     rand_i = random.randint(0, x_size - 1)
     rand_j = random.randint(0, y_size - 1)
-    print 'Random sampled value at ({i}, {j}):'.format(i=rand_i, j=rand_j)
-    print result[rand_i, rand_j]
+    print(f'Randome sampled value at ({rand_i}, {rand_j})')
+    print(result[rand_i, rand_j])
 
 
 if __name__ == '__main__':

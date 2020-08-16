@@ -6,3 +6,10 @@
 # Python compilation files
 __pycache__/
 *.pyc
+
+# Python profiling files
+*.prof
+*.lprof
+
+# Project files
+.vscode/

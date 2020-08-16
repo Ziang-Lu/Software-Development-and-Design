@@ -6,13 +6,26 @@
 
 ### 1. Small Code Snippets => `timeit` Module
 
-Check out `timeit_for_loop.py`
+`timeit_for_loop.py`:
+
+```python
+def main():
+    total = 0
+    for i in range(10000):
+        total += i
+```
 
 ```bash
 $ python3 -m timeit -s 'import timeit_for_loop' 'timeit_for_loop.main()'
 ```
 
-Check out `timeit_sum.py`
+`timeit_sum.py`:
+
+```python
+def main():
+    x = range(10000)
+    total = sum(x)
+```
 
 ```bash
 $ python3 -m timeit -s 'import timeit_sum' 'timeit_sum.main()'
@@ -33,22 +46,37 @@ $ python3 -m timeit -s 'x = range(10000)' 'total = sum(x)'
 * Profile <u>function calls</u>
 * <u>Deterministic</u>
 
-**Python Programming Interface (as Module)**
+<br>
 
-* Use `cProfile.run()` function
+**Usage**
 
-  Check out `cprofile_demo1.py`
+* **Python programming interface (as module)**
 
-* Use `cProfile.Profile` and `pstats.Stats` classes
+  * Use `cProfile.run()` function
 
-  Check out `cprofile_demo2.py`
+    Check out `cprofile_demo1.py`, dumping to `result_stats1.prof`
 
-**Command-Line Interface (as Script)**
+  * Use `cProfile.Profile` and `pstats.Stats` classes
 
-(Directly run <u>the script to be profiled</u> from command-line interface)
+    Check out `cprofile_demo2.py`, dumping to `result_stats2.prof`
 
-```bash
-$ python3 -m cProfile -s 2 -o result_stats.prof script.py
+* **Command-line interface (as script)**
+
+  (Directly run <u>the script to be profiled</u> from command-line interface)
+
+  ```bash
+  $ python3 -m cProfile -s 2 -o result_stats.prof script.py
+  # Dumping to "result_stats.prof"
+  ```
+
+**Viewing Profile Data**
+
+```python
+from pstats import SortKey, Stats
+
+stats = Stats('result_stats.prof').sort_stats(SortKey.CUMULATIVE)
+stats.strip_dirs()
+stats.print_stats()
 ```
 
 ***
@@ -70,35 +98,34 @@ $ snakeviz result_stats.prof
 
 #### 2) `line_profiler` Module
 
-*Note: Currently Python 3.7 is not well supported by `line_profiler`, so we'll just do Python 2.7 version.*
-
 * Profile the execution <u>line by line</u>
 * <u>Deterministic</u>
 
 **Installation**
 
 ```bash
-$ pip install line_profiler
+$ pip3 install line_profiler
 ```
 
 **Usage**
 
-1. As decorator
+* <u>As decorator</u>: Use `@profile` decorator to decorate the function to profile
 
-   Use `@profile` decorator to decorate the function to profile: Check out `line_profiler_demo.py`
+  Check out `line_profiler_demo.py`, dumping to `line_profiler_demo.lprof`
 
-2. As context manager
-
-   Use `with profile:` to profile a single code section
+* <u>As context manager</u>: Use `with profile:` to profile a single code section
 
 ```bash
 $ kernprof -l -o line_profiler_demo.lprof -v line_profiler_demo.py
+# -v: Immediately view the formatted results at the terminal
 ```
 
-The above command will also print the profiling statistics to to the terminal. However, if later we want to check out the profiling statistics stored in `line_profiler_demo.lprof`, we can do
+Dumps to `line_profiler_demo.lprof`
+
+**Viewing Profile Data**
 
 ```bash
-$ python -m line_profiler line_profiler_demo.lprof
+$ python3 -m line_profiler line_profiler_demo.lprof
 ```
 
 <br>
@@ -107,7 +134,7 @@ $ python -m line_profiler line_profiler_demo.lprof
 
 * <u>Statistical</u>
 
-  -> Instead of instrumenting each and every line, just peep at the stack from time to time, and figure out where we are!
+  -> Instead of instrumenting each and every line, just peep at the stack from time to time, and figure out where we are
 
   => 虽然结果准确性可能会稍稍下降, 但是会大大缩短profiling的时间
 
@@ -127,13 +154,7 @@ try:
     # Code to be profiled
 finally:
     statprof.stop()
-statptof.display()
-```
-
-And then simple from command-line interface:
-
-```bash
-$ python3 module.py
+statptof.display()  # View the results at the terminal
 ```
 
 <br>
@@ -151,13 +172,17 @@ $ pip3 install yappi
 
 **Usage**
 
-1. Direct usage
+* Direct usage
 
-   Check out `yappi_demo1.py`
+  Check out `yappi_demo1.py`, dumping to `yappi_demo1_func.prof` and `yappi_demo1_thread.prof`
 
-2. As context manager
+* As context manager
 
-   Check out `yappi_demo2.py`
+  Check out `yappi_demo2.py`, dumping to `<func.__name__>.prof`
+
+**Viewing Profile Data**
+
+Same as using `pstats` to view `.prof` files
 
 <br>
 
