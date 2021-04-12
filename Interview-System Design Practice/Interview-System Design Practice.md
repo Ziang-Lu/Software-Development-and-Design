@@ -12,8 +12,8 @@ Interviewer is looking for:
 * **Systemematic approach** to the problem
 
   * Start with a <u>high-level diagram with different components</u>
-    * For the storage layer (database), may need to design the database schema
-    * For communication between the components, may need to define the API
+    * For the <u>storage layer (database)</u>, may need to <u>design the database schema</u>
+    * For <u>communication between the components</u>, may need to <u>define the API</u>
   * Dive deeply into <u>1 or 2 detailed designs</u>
 
 <br>
