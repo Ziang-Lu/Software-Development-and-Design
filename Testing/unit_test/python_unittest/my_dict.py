@@ -27,7 +27,7 @@ class MyDict(dict):
         except KeyError:
             # To let this dict act like a class, transform KeyError to
             # ArributeError
-            raise AttributeError(f"'Dict' object has no attribute '{key}'")
+            raise AttributeError(f"'MyDict' object has no attribute '{key}'")
 
     def __setattr__(self, key: Any, val: Any) -> None:
         self[key] = val
